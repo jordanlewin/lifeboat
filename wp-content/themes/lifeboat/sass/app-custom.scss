@@ -1,0 +1,137 @@
+/*
+ * CSS for Lifeboat.
+ *
+ * jordan@digitalsparks.com
+ * February 2013
+ *
+ */
+
+
+/* --------------------------------------------------
+   Global
+-----------------------------------------------------
+*/
+
+
+/* --------------------------------------------------
+   Typography
+-----------------------------------------------------
+*/
+
+@font-face {
+  font-family: 'MuseoSlab';
+  src: url('../webfonts/MuseoSlab-100.eot');
+  src: url('../webfonts/MuseoSlab-100.eot?#iefix') format('embedded-opentype'), url('../webfonts/MuseoSlab-100.woff') format('woff'), url('../webfonts/MuseoSlab-100.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseoSlab';
+  src: url('../webfonts/MuseoSlab-100Italic.eot');
+  src: url('../webfonts/MuseoSlab-100Italic.eot?#iefix') format('embedded-opentype'), url('../webfonts/MuseoSlab-100Italic.woff') format('woff'), url('../webfonts/MuseoSlab-100Italic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MuseoSlab';
+  src: url('../webfonts/MuseoSlab-300.eot');
+  src: url('../webfonts/MuseoSlab-300.eot?#iefix') format('embedded-opentype'), url('../webfonts/MuseoSlab-300.woff') format('woff'), url('../webfonts/MuseoSlab-300.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseoSlab';
+  src: url('../webfonts/MuseoSlab-300Italic.eot');
+  src: url('../webfonts/MuseoSlab-300Italic.eot?#iefix') format('embedded-opentype'), url('../webfonts/MuseoSlab-300Italic.woff') format('woff'), url('../webfonts/MuseoSlab-300Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MuseoSlab';
+  src: url('../webfonts/MuseoSlab-500.eot');
+  src: url('../webfonts/MuseoSlab-500.eot?#iefix') format('embedded-opentype'), url('../webfonts/MuseoSlab-500.woff') format('woff'), url('../webfonts/MuseoSlab-500.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseoSlab';
+  src: url('../webfonts/MuseoSlab-500Italic.eot');
+  src: url('../webfonts/MuseoSlab-500Italic.eot?#iefix') format('embedded-opentype'), url('../webfonts/MuseoSlab-500Italic.woff') format('woff'), url('../webfonts/MuseoSlab-500Italic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MuseoSlab';
+  src: url('../webfonts/MuseoSlab-700.eot');
+  src: url('../webfonts/MuseoSlab-700.eot?#iefix') format('embedded-opentype'), url('../webfonts/MuseoSlab-700.woff') format('woff'), url('../webfonts/MuseoSlab-700.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseoSlab';
+  src: url('../webfonts/MuseoSlab-700Italic.eot');
+  src: url('../webfonts/MuseoSlab-700Italic.eot?#iefix') format('embedded-opentype'), url('../webfonts/MuseoSlab-700Italic.woff') format('woff'), url('../webfonts/MuseoSlab-700Italic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MuseoSlab';
+  src: url('../webfonts/MuseoSlab-900.eot');
+  src: url('../webfonts/MuseoSlab-900.eot?#iefix') format('embedded-opentype'), url('../webfonts/MuseoSlab-900.woff') format('woff'), url('../webfonts/MuseoSlab-900.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseoSlab';
+  src: url('../webfonts/MuseoSlab-900Italic.eot');
+  src: url('../webfonts/MuseoSlab-900Italic.eot?#iefix') format('embedded-opentype'), url('../webfonts/MuseoSlab-900Italic.woff') format('woff'), url('../webfonts/MuseoSlab-900Italic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/*
+@font-face {
+  font-family: 'MuseoSlab';
+  src: url('../webfonts/MuseoSlab-1000.eot');
+  src: url('../webfonts/MuseoSlab-1000.eot?#iefix') format('embedded-opentype'), url('../webfonts/MuseoSlab-1000.woff') format('woff'), url('../webfonts/MuseoSlab-1000.ttf') format('truetype');
+  font-weight: 1000;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseoSlab';
+  src: url('../webfonts/MuseoSlab-1000Italic.eot');
+  src: url('../webfonts/MuseoSlab-1000Italic.eot?#iefix') format('embedded-opentype'), url('../webfonts/MuseoSlab-1000Italic.woff') format('woff'), url('../webfonts/MuseoSlab-1000Italic.ttf') format('truetype');
+  font-weight: 1000;
+  font-style: italic;
+}
+*/
+
+
+/* --------------------------------------------------
+   Navigation
+-----------------------------------------------------
+*/
+
+/* Hide parts of nav at a breakpoint */
+@media screen and (max-width: 800px) {
+  #primary {
+    span {
+      display: none;
+    }
+  }
+}
+
+/* Make Sidebar fixed width: test */
+/*#sidebar {
+  min-width: 180px;
+}*/
