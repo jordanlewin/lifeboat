@@ -2,3 +2,4 @@ wp-config.php
 *.bak
 uploads/
 .sass-cache/
+.DS_Store
