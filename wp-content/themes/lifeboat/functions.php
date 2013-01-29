@@ -744,6 +744,12 @@ class footer_links_walker extends Walker_Nav_Menu
             }       
 }
 
+/* Add Exerpt to Pages */
+add_action( 'init', 'lifeboat_add_excerpts_to_pages' );
+function lifeboat_add_excerpts_to_pages() {
+     add_post_type_support( 'page', 'excerpt' );
+}
+
 /*
 // Add Lifeboat Meta Box
 function add_lifeboat_meta_box() {  
