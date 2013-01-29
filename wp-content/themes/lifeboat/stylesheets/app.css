@@ -1,4 +1,11 @@
 @charset "UTF-8";
+/*
+ * CSS for Lifeboat Website
+ *
+ * jordan@digitalsparks.com
+ * February 2013
+ *
+ */
 /* Requires: normalize.css */
 /* Global Reset & Standards ---------------------- */
 /* line 5, ../../../../../../../../Library/Ruby/Gems/1.8/gems/zurb-foundation-3.2.3/scss/foundation/common/_globals.scss */
@@ -6204,13 +6211,6 @@ table.hide-for-medium {
     margin: 0;
   }
 }
-/*
- * CSS for Lifeboat.
- *
- * jordan@digitalsparks.com
- * February 2013
- *
- */
 @font-face {
   font-family: 'MuseoSlab';
   src: url("../webfonts/MuseoSlab-100.eot");
@@ -6312,18 +6312,349 @@ table.hide-for-medium {
    Global
 -----------------------------------------------------
 */
+/* Layout & Structure */
+/* line 92, ../sass/app.scss */
+#main-container {
+  padding-bottom: 85px;
+  border-bottom: 1px solid #7f7f7f;
+}
+
+/* line 98, ../sass/app.scss */
+.inside #main-container {
+  padding-top: 150px;
+}
+
+/* line 102, ../sass/app.scss */
+.inside #sidebar {
+  margin-top: 155px;
+}
+
+/* line 107, ../sass/app.scss */
+#footer-container {
+  margin-top: 3px;
+  padding: 35px 0 50px;
+  border-top: 1px solid #7f7f7f;
+}
+
+/* Common Elements */
+/* line 114, ../sass/app.scss */
+.subheader {
+  font-family: "MuseoSlab", MuseoSlab, serif;
+}
+
+/* line 117, ../sass/app.scss */
+.subtitle {
+  font-family: "MuseoSlab", MuseoSlab, serif;
+  font-size: 32px;
+  font-size: 3.2rem;
+  font-weight: 100;
+  color: #e9722b;
+}
+
+/* line 125, ../sass/app.scss */
+h1.page-title {
+  font-size: 90px;
+  font-size: 9rem;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+
+/* Clearfix */
+/* line 134, ../sass/app.scss */
+.clearfix {
+  zoom: 1;
+}
+
+/* line 138, ../sass/app.scss */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+/* line 142, ../sass/app.scss */
+.clearfix:after {
+  clear: both;
+}
+
 /* --------------------------------------------------
    Navigation
 -----------------------------------------------------
 */
-/* Hide parts of nav at a breakpoint */
-@media screen and (max-width: 800px) {
-  /* line 31, ../sass/app-custom.scss */
-  nav#primary span, nav#primary small {
-    display: none;
+/* LOGO */
+/* Inside Pages / General */
+/* line 156, ../sass/app.scss */
+#header .nav.container {
+  position: absolute;
+  width: 100%;
+  height: 97px;
+  background-image: url('../images/header-bg@2x.png?1359119109');
+  background-repeat: repeat-x;
+  -webkit-background-size: 100px 97px;
+  -moz-background-size: 100px 97px;
+  -o-background-size: 100px 97px;
+  background-size: 100px 97px;
+}
+
+/* line 166, ../sass/app.scss */
+#logo {
+  margin-left: -20.45455%;
+  margin-top: -12.27273%;
+  width: 140.90909%;
+  z-index: 10;
+}
+@media screen and (max-width: 767px) {
+  /* line 166, ../sass/app.scss */
+  #logo {
+    width: 217px;
+    margin-left: -17px;
+    margin-top: -17px;
   }
 }
-/* Make Sidebar fixed width: test */
-/*#sidebar {
-  min-width: 180px;
-}*/
+
+/* Home Page */
+/* line 184, ../sass/app.scss */
+.home #header .nav.container {
+  height: 59px;
+  top: 441px;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 190, ../sass/app.scss */
+.home #logo {
+  margin-top: -56.36364%;
+}
+
+/* PRIMARY NAV */
+/* Inside Pages / General */
+/* line 198, ../sass/app.scss */
+nav#primary #menu-primary-nav {
+  margin: 0 0 0 -15px;
+}
+/* line 201, ../sass/app.scss */
+nav#primary #menu-primary-nav li {
+  float: left;
+  list-style: none;
+  line-height: 1.55em;
+  margin-right: 0.52632%;
+}
+/* line 206, ../sass/app.scss */
+nav#primary #menu-primary-nav li:last-child {
+  margin-right: 0;
+}
+/* line 209, ../sass/app.scss */
+nav#primary #menu-primary-nav li a {
+  display: block;
+  color: #fff;
+  padding: 42px 15px 30px;
+}
+@media screen and (max-width: 900px) {
+  /* line 209, ../sass/app.scss */
+  nav#primary #menu-primary-nav li a {
+    padding-top: 63px;
+  }
+}
+/* line 220, ../sass/app.scss */
+nav#primary #menu-primary-nav li a:hover {
+  background: #00aeef;
+}
+/* line 223, ../sass/app.scss */
+nav#primary #menu-primary-nav li a small {
+  display: block;
+  opacity: .8;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: bold;
+}
+/* line 230, ../sass/app.scss */
+nav#primary #menu-primary-nav li a div {
+  font-family: "Solano Gothic MVB", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+/* line 240, ../sass/app.scss */
+.home nav#primary #menu-primary-nav li a {
+  padding-top: 7px;
+}
+
+/* --------------------------------------------------
+   Homepage
+-----------------------------------------------------
+*/
+/* Home Slider */
+/* line 253, ../sass/app.scss */
+#home-slider {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+/* line 258, ../sass/app.scss */
+#home-slider .slides {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+/* line 264, ../sass/app.scss */
+#home-slider .slides .slide {
+  min-width: 960px;
+}
+/* line 266, ../sass/app.scss */
+#home-slider .slides .slide img {
+  margin: auto;
+  width: 50%;
+  min-width: 960px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Home Positioning Statement Area */
+/* line 281, ../sass/app.scss */
+#home-intro {
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+/* line 286, ../sass/app.scss */
+#home-intro .subheader {
+  font-weight: normal;
+  text-align: center;
+  color: black;
+}
+/* line 291, ../sass/app.scss */
+#home-intro .home-buttons {
+  margin: 0 auto;
+  width: 465px;
+}
+/* line 294, ../sass/app.scss */
+#home-intro .home-buttons .button {
+  float: left;
+  margin-right: 45px;
+}
+/* line 298, ../sass/app.scss */
+#home-intro .home-buttons .share {
+  float: right;
+}
+
+/* Sidebar and content label titles */
+/* line 305, ../sass/app.scss */
+.sidebar-label-title, .content-label-title {
+  color: black;
+  font-family: "MuseoSlab", MuseoSlab, serif;
+  font-size: 0.85714285714286em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #dedede;
+}
+
+/* --------------------------------------------------
+   Blog
+-----------------------------------------------------
+*/
+/* line 327, ../sass/app.scss */
+.blog-post a.blog-post-link {
+  display: block;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 330, ../sass/app.scss */
+.blog-post a.blog-post-link .post-image {
+  float: left;
+  width: 52.63158%;
+  margin-right: 2.63158%;
+}
+/* line 335, ../sass/app.scss */
+.blog-post a.blog-post-link .post-content {
+  float: left;
+  width: 44.73684%;
+}
+/* line 338, ../sass/app.scss */
+.blog-post a.blog-post-link .post-content h2 {
+  margin: -4px 0 10px;
+  color: #fbbd26;
+  font-size: 62px;
+  font-size: 6.2rem;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: .85em;
+}
+/* line 347, ../sass/app.scss */
+.blog-post a.blog-post-link .post-content h4.subtitle {
+  color: #333333;
+  font-weight: normal;
+  margin-top: 0;
+}
+/* line 354, ../sass/app.scss */
+.blog-post a.blog-post-link:hover .post-content h2 {
+  color: #e9722b;
+}
+
+/* Homepage Featured Blog Post */
+/* line 364, ../sass/app.scss */
+.home .blog-post a#more-from-blog {
+  top: -31px;
+  margin-left: 55.26316%;
+}
+/* line 370, ../sass/app.scss */
+.home .blog-post .post-content h2 {
+  font-size: 72px;
+  font-size: 7.2rem;
+}
+
+/* Blog Index Page */
+/* line 379, ../sass/app.scss */
+.blog.inside h1.page-title {
+  margin: 0 0 35px 0;
+  padding-bottom: 20px;
+  line-height: 1em;
+  border-bottom: 1px solid #e0e0e0;
+}
+/* line 385, ../sass/app.scss */
+.blog.inside .blog-post {
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* --------------------------------------------------
+   Custom Classes
+-----------------------------------------------------
+*/
+/* --------------------------------------------------
+   Media Queries
+-----------------------------------------------------
+*/
+@media screen and (max-width: 900px) {
+  /* line 407, ../sass/app.scss */
+  #home-slider {
+    height: 350px;
+  }
+
+  /* line 410, ../sass/app.scss */
+  .home #header .nav.container {
+    top: 291px;
+  }
+
+  /* Hide parts of nav at a breakpoint */
+  /* line 416, ../sass/app.scss */
+  nav#primary span, nav#primary small {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 422, ../sass/app.scss */
+  #home-slider {
+    height: 300px;
+  }
+
+  /* line 425, ../sass/app.scss */
+  .home #header .nav.container {
+    top: 241px;
+  }
+}

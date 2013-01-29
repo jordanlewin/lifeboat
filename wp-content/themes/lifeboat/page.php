@@ -5,48 +5,64 @@
   		<section id="main" class="thirteen columns offset-by-one push-four">
   		  <div class="row">
     		  <nav id="secondary" class="eighteen columns">
-      		  <ul>
-        		  <li><a href="">Item 1</a></li>
-        		  <li><a href="">Item 2</a></li>
-        		  <li><a href="">Item 3</a></li>
-        		  <li><a href="">Item 4</a></li>
-        		  <li><a href="">Item 5</a></li>
-      		  </ul>
+    		    <?php
+            $subpages = ($post->post_parent) ? wp_list_pages('title_li=&child_of='.$post->post_parent.'&depth=1&echo=0') : wp_list_pages('title_li=&child_of='.$post->ID.'&depth=1&echo=0');
+            if($subpages) { echo('<ul>'.$subpages.'</ul>'); }
+            ?>
     		  </nav><!-- secondary -->
   		  </div><!-- row -->
-  		  <article id="content" class="content-page">
+  		  
+        <div id="content" class="content-page">
+
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				
+  		  <article id="page-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
   		    <div class="row">
     		    <div class="eighteen columns">
       		    <div id="img-vid">
         		    <p class="panel">Image or Video Here</p>
       		    </div><!-- img-vid -->
-      		    <h1><?php the_title(); ?></h1>
+      		    <header>
+        		    <h1 class="page-title"><?php the_title(); ?></h1>
+      		    </header>
     		    </div><!-- eighteen columns -->
   		    </div><!-- row -->
   		    <div class="row content">
     		    <div class="twelve columns">
-      		    <h4 class="subheader">We’re in a friendship crisis.</h4>
-    		      <p>The average American adult reports having only one real friend. Paradoxically, in an age of Facebook and always-on connections, a growing body of science proves what we already feel deep in our gut: we’re actually lonelier and more isolated than ever before. The way many of us use the internet is only making the crisis worse.</p>
-              <p>The solution isn’t to retreat from the web. It’s to aim higher—to re-think what friendship means in adulthood. Indeed, we need to explore uncharted relationship territory—academic research, philosophy, expert advice and our own heads and hearts—for a better path forward.</p>
-              <p>Lifeboat is a movement of people re-investing in deep friendships. We’re not offering grand solutions or complex schemes, but instead, simple things that work. Here you’ll find our unique content on the art of friendship, full of inspiration, learning and practice. It’s designed to help move us beyond fast-food-friendships and become self-assured friendship pioneers!</p>
-              <p>For those who choose it, Lifeboat is a pathway back to friends.</p>
+    		      <?php if(get_field('subtitle')): ?>
+      		    <h4 class="subtitle"><?php the_field('subtitle'); ?></h4>
+      		    <?php endif; ?>
+    		      <?php the_content(); ?>
     		    </div><!-- twelve columns -->
     		    <div class="five columns offset-by-one">
     		      <p class="panel">Share Icons Here</p>
+    		      <?php edit_post_link(__('Edit This Page'), '<p class="edit-links">', '</p>'); ?>
     		    </div><!-- five columns offset-by-one -->
   		    </div><!-- row content -->
   		  </article><!-- content -->
+  		  
+  		  <?php endwhile; ?>
+				<?php else: ?>
+				
+				<article id="post-not-found">
+				    <header>
+				    	<h1 class="page-title">Not Found</h1>
+				    </header>
+				    <section class="post-content">
+				    	<p>Sorry, but the requested page was not found on this site.</p>
+				    </section>
+				    <footer>
+				    </footer>
+				</article>
+				
+				<?php endif; ?>
+  		  
+        </div><!-- content-page -->
   		</section><!-- main -->
   	
-  		<section id="sidebar" class="four columns pull-fourteen">
-  		  <aside id="become-insider" class="widget">
-    		  <p class="panel">Become an Insider Here</p>
-  		  </aside><!-- become-insider -->
-  		  <aside id="share-manifesto" class="widget">
-    		  <p class="panel">Share the Manifesto Here</p>
-  		  </aside><!-- share-manifesto -->
-  		</section><!-- sidebar -->
+  		<?php get_sidebar(); ?>
+  		
 	  </div><!-- row -->
-	  <!-- Begin Custom Page Markup -->
+	  <!-- End Custom Page Markup -->
 
 <?php get_footer(); ?>

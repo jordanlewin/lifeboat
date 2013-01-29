@@ -55,12 +55,12 @@ function bones_queue_js(){ if (!is_admin()){ if ( is_singular() AND comments_ope
 // Adding WP 3+ Functions & Theme Support
 function bones_theme_support() {
 	add_theme_support( 'post-thumbnails' );      // wp thumbnails (sizes handled in functions.php)
-	set_post_thumbnail_size( 125, 125, true );   // default thumb size
-	add_theme_support( 'custom-background' );   // wp custom background
+	set_post_thumbnail_size( 300, 300, true );   // default thumb size
+	//add_theme_support( 'custom-background' );   // wp custom background
 	add_theme_support( 'automatic-feed-links' ); // rss thingy
 	// to add header image support go here: http://themble.com/support/adding-header-background-image-support/
 	// adding post format support
-	add_theme_support( 'post-formats',      // post formats
+	/*add_theme_support( 'post-formats',      // post formats
 		array( 
 			'aside',   // title less blurb
 			'gallery', // gallery of images
@@ -72,12 +72,12 @@ function bones_theme_support() {
 			'audio',   // audio
 			'chat'     // chat transcript 
 		)
-	);	
+	);	*/
 	add_theme_support( 'menus' );            // wp menus
 	register_nav_menus(                      // wp3+ menus
 		array( 
 			'primary_nav' => 'Primary Nav Menu',   // main nav in header
-			'secondary_nav' => 'Secondary Nav Menu',   // sub nav in content area
+			//'secondary_nav' => 'Secondary Nav Menu',   // sub nav in content area
 			'footer_links' => 'Footer Links' // secondary nav in footer
 		)
 	);	
@@ -104,11 +104,33 @@ function lifeboat_primary_nav() {
         'after' => '',                                  // after the menu
         'link_before' => '',                            // before each link
         'link_after' => '',                             // after each link
+        'depth' => 1,                                   // limit the depth of the nav
+  		'walker' => new description_walker()
+  	)
+  );
+}
+
+/* JL Experiment to create subnavigation based on Primary Nav Menu */
+function lifeboat_sub_nav() {
+	// display the wp3 menu if available
+  wp_nav_menu( 
+  	array( 
+      'container' => false, // remove nav container
+    	'container_class' => 'menu clearfix', // class of container (should you choose to use it)
+  		'menu' => 'primary_nav', /* menu name */
+  		'menu_class' => 'secondary-nav',
+  		'theme_location' => 'primary_nav', /* where in the theme it's assigned */
+  		'fallback_cb' => 'lifeboat_primary_nav_fallback', /* menu fallback */
+    	'before' => '',                                 // before the menu
+        'after' => '',                                  // after the menu
+        'link_before' => '',                            // before each link
+        'link_after' => '',                             // after each link
         'depth' => 0,                                   // limit the depth of the nav
   		'walker' => new description_walker()
   	)
   );
 }
+
 
 function bones_mobile_nav() {
 	// display the wp3 menu if available
@@ -273,10 +295,10 @@ add_filter('admin_footer_text', 'bones_custom_admin_footer');
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'wpf-featured', 639, 300, true );
-add_image_size ( 'wpf-home-featured', 970, 364, true );
-add_image_size( 'bones-thumb-600', 600, 150, false );
-add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'featured', 1520, 652, true );
+add_image_size ( 'featured-index', 800, 500, true );
+//add_image_size( 'bones-thumb-600', 600, 150, false );
+//add_image_size( 'bones-thumb-300', 300, 100, true );
 /* 
 to add more sizes, simply copy a line from above 
 and change the dimensions & name. As long as you
@@ -302,16 +324,16 @@ you like. Enjoy!
 // Sidebars & Widgetizes Areas
 function bones_register_sidebars() {
     register_sidebar(array(
-    	'id' => 'sidebar1',
+    	'id' => 'sidebar',
     	'name' => 'Main Sidebar',
-    	'description' => 'Used on every page BUT the homepage page template.',
-    	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    	'after_widget' => '</div>',
-    	'before_title' => '<h4 class="widgettitle">',
+    	'description' => 'Standard sidebar for Lifeboat.',
+    	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    	'after_widget' => '</aside>',
+    	'before_title' => '<h4 class="widget-title">',
     	'after_title' => '</h4>',
     ));
     
-    register_sidebar(array(
+    /*register_sidebar(array(
     	'id' => 'sidebar2',
     	'name' => 'Homepage Sidebar',
     	'description' => 'Used only on the homepage page template.',
@@ -319,7 +341,7 @@ function bones_register_sidebars() {
     	'after_widget' => '</div>',
     	'before_title' => '<h4 class="widgettitle">',
     	'after_title' => '</h4>',
-    ));
+    ));*/
     
     /* 
     to add more sidebars or widgetized areas, just copy
@@ -722,65 +744,66 @@ class footer_links_walker extends Walker_Nav_Menu
             }       
 }
 
-
-// Add the Meta Box to the homepage template
-function add_homepage_meta_box() {  
-    add_meta_box(  
-        'homepage_meta_box', // $id  
-        'Custom Fields', // $title  
-        'show_homepage_meta_box', // $callback  
-        'page', // $page  
-        'normal', // $context  
-        'high'); // $priority  
+/*
+// Add Lifeboat Meta Box
+function add_lifeboat_meta_box() {  
+  add_meta_box(
+    $id = 'lifeboat_meta_box', // $id  
+    $title = 'Lifeboat Custom Fields', // $title  
+    $callback = 'show_lifeboat_meta_box' // $callback  
+    //'post', // $page  
+    //$context = 'normal', // $context
+    //$priority = 'high' // $priority
+  ); 
 }  
-add_action('add_meta_boxes', 'add_homepage_meta_box');
+add_action('add_meta_boxes', 'add_lifeboat_meta_box');
 
-// Field Array  
-$prefix = 'custom_';  
-$custom_meta_fields = array(  
-    array(  
-        'label'=> 'Homepage tagline area',  
-        'desc'  => 'Displayed underneath page title. Only used on homepage template. HTML can be used.',  
-        'id'    => $prefix.'tagline',  
-        'type'  => 'textarea' 
-    )  
-);  
+// Field Array: Subtitle, ...
+//$prefix = 'custom_';  
+$custom_meta_fields = array(
+  array(
+    'label' => 'Subtitle',
+    'desc'  => 'Used on Pages, Posts, and Landing Pages to display orange subtitle.',
+    'id'    => 'subtitle',
+    'type'  => 'textarea'
+  )
+);
 
-// The Homepage Meta Box Callback  
-function show_homepage_meta_box() {  
-global $custom_meta_fields, $post;  
-// Use nonce for verification  
-echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce(basename(__FILE__)).'" />';  
-  
-    // Begin the field table and loop  
-    echo '<table class="form-table">';  
-    foreach ($custom_meta_fields as $field) {  
-        // get value of this field if it exists for this post  
-        $meta = get_post_meta($post->ID, $field['id'], true);  
-        // begin a table row with  
-        echo '<tr> 
-                <th><label for="'.$field['id'].'">'.$field['label'].'</label></th> 
-                <td>';  
-                switch($field['type']) {  
-                    // text  
-                    case 'text':  
-                        echo '<input type="text" name="'.$field['id'].'" id="'.$field['id'].'" value="'.$meta.'" size="60" /> 
-                            <br /><span class="description">'.$field['desc'].'</span>';  
-                    break;
-                    
-                    // textarea  
-                    case 'textarea':  
-                        echo '<textarea name="'.$field['id'].'" id="'.$field['id'].'" cols="80" rows="4">'.$meta.'</textarea> 
-                            <br /><span class="description">'.$field['desc'].'</span>';  
-                    break;  
-                } //end switch  
-        echo '</td></tr>';  
-    } // end foreach  
-    echo '</table>'; // end table  
+// The Lifeboat Meta Box Callback  
+function show_lifeboat_meta_box() {  
+  global $custom_meta_fields, $post;
+  // Use nonce for verification  
+  echo '<input type="hidden" name="custom_meta_box_nonce" value="'.wp_create_nonce(basename(__FILE__)).'" />';  
+
+  // Begin the field table and loop  
+  echo '<table class="form-table">';  
+  foreach ($custom_meta_fields as $field) {  
+      // get value of this field if it exists for this post  
+      $meta = get_post_meta($post->ID, $field['id'], true);  
+      // begin a table row with  
+      echo '<tr> 
+              <th><label for="'.$field['id'].'">'.$field['label'].'</label></th> 
+              <td>';  
+              switch($field['type']) {  
+                  // text  
+                  case 'text':  
+                      echo '<input type="text" name="'.$field['id'].'" id="'.$field['id'].'" value="'.$meta.'" size="60" /> 
+                          <br /><span class="description">'.$field['desc'].'</span>';  
+                  break;
+                  
+                  // textarea  
+                  case 'textarea':  
+                      echo '<textarea name="'.$field['id'].'" id="'.$field['id'].'" cols="80" rows="4">'.$meta.'</textarea> 
+                          <br /><span class="description">'.$field['desc'].'</span>';  
+                  break;  
+              } //end switch  
+      echo '</td></tr>';  
+  } // end foreach  
+  echo '</table>'; // end table  
 }  
 
 // Save the Data  
-function save_homepage_meta($post_id) {  
+function save_lifeboat_meta($post_id) {  
     global $custom_meta_fields;  
   
     // verify nonce  
@@ -808,6 +831,7 @@ function save_homepage_meta($post_id) {
         }  
     } // end foreach  
 }  
-add_action('save_post', 'save_homepage_meta');  
+add_action('save_post', 'save_lifeboat_meta');
+*/
 
 ?>

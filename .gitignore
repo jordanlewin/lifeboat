@@ -1,2 +1,4 @@
 wp-config.php
 *.bak
+uploads/
+.sass-cache/

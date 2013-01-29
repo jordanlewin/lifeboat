@@ -1,54 +1,428 @@
+/*
+ * CSS for Lifeboat Website
+ *
+ * jordan@digitalsparks.com
+ * February 2013
+ *
+ */
+
 // Your custom settings file to override Foundation defaults
 @import "settings";
 
-// Comment out this import if you are customizing you imports below
+// Import all of Foundation. Comment out this import if you are customizing you imports below
 @import "foundation";
 
-// ----------------------------------------
-// Import specific parts of Foundation by commenting the import "foundation"
-// and uncommenting what you want below. You must uncomment the following if customizing
+// Import all of Compass
+@import "compass";
 
-// @import "compass/css3";
-// @import "foundation/settings";
-// @import "foundation/functions/all";
+// Or import custom Compass components
+// @import "compass/typography/links/link-colors";
 
-// Control which mixins you have access too
-
-// @import "foundation/mixins/clearfix";
-// @import "foundation/mixins/css-triangle";
-// @import "foundation/mixins/font-size";
-
-// Must include next two for semantic grid to work
-
-// @import "foundation/mixins/respond-to";
-// @import "foundation/mixins/semantic-grid";
-
-// @import "modular-scale";
-// @import "foundation/common/globals";
-
-// Must include the grid for any responsiveness
-
-// @import "foundation/components/grid";
-
-// Control which common styles get compiled
-
-// @import "foundation/common/typography";
-// @import "foundation/common/forms";
-
-// Control which components you get if customizing
-
-// @import "foundation/components/modules/buttons";
-// @import "foundation/components/modules/tabs";
-// @import "foundation/components/modules/ui";
-// @import "foundation/components/modules/topbar";
-// @import "foundation/components/modules/navbar";
-// @import "foundation/components/modules/orbit";
-// @import "foundation/components/modules/reveal";
-// @import "foundation/components/modules/offcanvas";
-
-// Media Queries Overrides
-// @import "foundation/components/modules/mqueries";
+// Custom Imports
+// @import "variables";
+@import "type";
 
 
-// Include custom styles for Lifeboat website
-@import "app-custom";
+// Set Custom Variables and Mixins
+
+// VARIABLES
+// Colors
+$lifeboat-blue: $mainColor;
+$lifeboat-orange: $secondaryColor;
+$lifeboat-yellow: #FBBD26;
+
+$border-light: #E0E0E0;
+
+// Type
+$title-letter-spacing: -.03em;
+
+// Logo measurements
+$logo-width: 310px;
+$logo-offset-left: -45px;
+$logo-offset-top-home: -124px;
+$logo-offset-top-inside: -27px;
+
+// Base column widths
+$left-col-width: 220px;
+$main-col-width: 760px;
+
+// Nav items
+$primary-nav-count: 5;
+
+// File locations
+$imgdir: "../images/";
+
+// Breakpoints
+$break-phone: 480px;
+$break-tablet: 768px;
+$break-tablet-middle: 900px;
+$break-desktop: 1024px;
+$break-desktop-large: 1200px;
+
+// MIXINS
+// Media Queries
+@mixin breakpoint($media, $value: false) {
+  @if $media == phone {
+    @media only screen and (max-width: $break-phone) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width: $break-tablet) and (max-width: $break-desktop) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: $break-desktop) and (max-width: $break-desktop-large) { @content; }
+  }
+  @else if $media == desktop-large {
+    @media only screen and (min-width: $break-desktop-large) { @content; }
+  }
+  @else if $media == min {
+    @media only screen and (min-width: $value) { @content; }
+  }
+  @else if $media == max {
+    @media only screen and (max-width: $value) { @content; }
+  }
+}
+
+
+/* --------------------------------------------------
+   Global
+-----------------------------------------------------
+*/
+
+/* Layout & Structure */
+#main-container {
+  padding: {
+    bottom: 85px;
+  }
+  border-bottom: 1px solid #7F7F7F;
+}
+.inside #main-container {
+  padding-top: 150px;
+}
+
+.inside #sidebar {
+ //padding-top: percentage(186px / $left-col-width);
+ margin-top: 155px;
+}
+
+#footer-container {
+  margin-top: 3px;
+  padding: 35px 0 50px;
+  border-top: 1px solid #7F7F7F;
+}
+
+/* Common Elements */
+.subheader {
+  font-family: $bodyFontFamily;
+}
+.subtitle {
+  //@extend .subheader;
+  font-family: $bodyFontFamily;
+  @include font-size(32);
+  font-weight: 100;
+  color: $lifeboat-orange;
+}
+
+h1.page-title {
+  //font-size: ms(7); // Should be 90px
+  @include font-size(90);
+  text-transform: uppercase;
+  letter-spacing: $title-letter-spacing;
+}
+
+/* Clearfix */
+// So I can add a class if desired; better to use @include clearfix(); SCSS mixin on elements if possible
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+
+
+/* --------------------------------------------------
+   Navigation
+-----------------------------------------------------
+*/
+
+/* LOGO */
+
+/* Inside Pages / General */
+#header .nav.container {
+  position: absolute;
+  width: 100%;
+  height: 97px;
+  background: {
+    image: image-url("header-bg@2x.png");
+    repeat: repeat-x;
+  }
+  @include background-size(100px 97px);
+}
+#logo {
+  margin: {
+    left: percentage($logo-offset-left / $left-col-width);
+    top: percentage($logo-offset-top-inside / $left-col-width);
+  }
+  width: percentage($logo-width / $left-col-width);
+  z-index: 10;
+  @media screen and (max-width: ($break-tablet - 1px)) {
+    width: 217px;
+    margin: {
+      left: -17px;
+      top: -17px;
+    }
+  }
+}
+
+/* Home Page */
+.home {
+  #header .nav.container {
+    height: 59px;
+    top: 441px;
+    background: rgba(#000, .5);
+  }
+  
+  #logo {
+    margin-top: percentage($logo-offset-top-home / $left-col-width);
+  }
+}
+
+/* PRIMARY NAV */
+/* Inside Pages / General */
+nav#primary {
+  #menu-primary-nav {
+    //margin: 0 0 0 ((15px / $main-col-width) * -100%);
+    margin: 0 0 0 -15px;
+    li {
+      float: left;
+      list-style: none;
+      line-height: 1.55em;
+      margin-right: percentage(4px / $main-col-width);
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        display: block;
+        color: #fff;
+        //height: 69px;
+        padding: 42px 15px 30px;
+        @media screen and (max-width: $break-tablet-middle) {
+          padding: {
+            top: 63px;
+            // 15px 30px;
+          }
+        }
+        &:hover {
+          background: $lifeboat-blue;
+        }
+        small {
+          display: block;
+          opacity: .8;
+          font-size: 15px;
+          font-style: italic;
+          font-weight: bold;
+        }
+        div {
+          font-family: $headerFontFamily;
+          font-weight: bold;
+          font-size: 30px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+.home nav#primary #menu-primary-nav li a {
+  padding-top: 7px;
+}
+
+
+
+
+/* --------------------------------------------------
+   Homepage
+-----------------------------------------------------
+*/
+
+/* Home Slider */
+#home-slider {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  .slides {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    .slide {
+      min-width: 960px;
+      img{
+        margin: auto;
+        width: 50%;
+        min-width: 960px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+/* Home Positioning Statement Area */
+#home-intro {
+  margin: {
+    top: 15px;
+    bottom: 35px;
+  }
+  .subheader {
+    font-weight: normal;
+    text-align: center;
+    color: $black;
+  }
+  .home-buttons {
+    margin: 0 auto;
+    width: 465px;
+    .button {
+      float: left;
+      margin-right: 45px;
+    }
+    .share {
+      float: right;
+    }
+  }
+}
+
+/* Sidebar and content label titles */
+.sidebar-label-title, .content-label-title {
+  color: $black;
+  font-family: $bodyFontFamily;
+  font-size: 0.85714285714286em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #DEDEDE;
+}
+.home {
+  .sidebar-label-title, .content-label-title {
+    //font-size: 12px;
+  }
+}
+
+
+/* --------------------------------------------------
+   Blog
+-----------------------------------------------------
+*/
+
+.blog-post {
+  a.blog-post-link {
+    display: block;
+    @include clearfix();
+    .post-image {
+      float: left;
+      width: percentage(400px / $main-col-width);
+      margin-right: percentage(20px / $main-col-width);
+    }
+    .post-content {
+      float: left;
+      width: percentage(340px / $main-col-width);
+      h2 {
+        margin: -4px 0 10px;
+        color: $lifeboat-yellow;
+        //font-size: ms(6); // Should be 62px
+        @include font-size(62);
+        text-transform: uppercase;
+        letter-spacing: $title-letter-spacing;
+        line-height: .85em;
+      }
+      h4.subtitle {
+        color: #333333;
+        font-weight: normal;
+        margin-top: 0;
+      }
+    }
+    &:hover .post-content {
+      h2 {
+        color: $lifeboat-orange;
+      }
+    }
+  }
+}
+
+
+/* Homepage Featured Blog Post */
+.home .blog-post {
+  a#more-from-blog {
+    //position: absolute;
+    top: -31px;
+    margin-left: percentage((400px + 20px) / $main-col-width);
+  }
+  .post-content {
+    h2 {
+      //font-size: ms(7); // Should be 72px
+      @include font-size(72);
+    }
+  }
+}
+
+/* Blog Index Page */
+.blog.inside {
+  h1.page-title {
+    margin: 0 0 35px 0;
+    padding-bottom: 20px;
+    line-height: 1em;
+    border-bottom: 1px solid #{$border-light};
+  }
+  .blog-post {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #{$border-light};
+  }
+}
+
+
+/* --------------------------------------------------
+   Custom Classes
+-----------------------------------------------------
+*/
+
+
+
+/* --------------------------------------------------
+   Media Queries
+-----------------------------------------------------
+*/
+
+
+@media screen and (max-width: $break-tablet-middle) {
+  #home-slider {
+    height: 350px;
+  }
+  .home #header .nav.container {
+    top: (350px - 59px);
+  }
+
+  /* Hide parts of nav at a breakpoint */
+  nav#primary {
+    span, small {
+      display: none !important;
+    }
+  }
+}
+@media screen and (max-width: $break-phone) {
+  #home-slider {
+    height: 300px;
+  }
+  .home #header .nav.container {
+    top: (300px - 59px);
+  }
+}

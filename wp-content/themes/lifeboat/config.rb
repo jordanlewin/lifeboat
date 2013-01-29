@@ -28,3 +28,4 @@ relative_assets = true
 
 # Customizations added by Jordan Lewin
 # debug_info = true
+# environment = :development
