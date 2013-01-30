@@ -1,0 +1,58 @@
+// Set Custom Variables and Mixins
+
+// VARIABLES
+// Colors
+$lifeboat-blue: $mainColor;
+$lifeboat-orange: $secondaryColor;
+$lifeboat-yellow: #FBBD26;
+
+$border-light: #E0E0E0;
+
+// Type
+$title-letter-spacing: -.03em;
+
+// Logo measurements
+$logo-width: 310px;
+$logo-offset-left: -45px;
+$logo-offset-top-home: -124px;
+$logo-offset-top-inside: -27px;
+
+// Base column widths
+$left-col-width: 220px;
+$main-col-width: 760px;
+
+// Nav items
+$primary-nav-count: 5;
+
+// File locations
+$imgdir: "../images/";
+
+// Breakpoints
+$break-phone: 480px;
+$break-tablet: 768px;
+$break-tablet-middle: 900px;
+$break-desktop: 1024px;
+$break-desktop-large: 1200px;
+
+// MIXINS
+// Media Queries
+@mixin breakpoint($media, $value: false) {
+  @if $media == phone {
+    @media only screen and (max-width: $break-phone) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width: $break-tablet) and (max-width: $break-desktop) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: $break-desktop) and (max-width: $break-desktop-large) { @content; }
+  }
+  @else if $media == desktop-large {
+    @media only screen and (min-width: $break-desktop-large) { @content; }
+  }
+  @else if $media == min {
+    @media only screen and (min-width: $value) { @content; }
+  }
+  @else if $media == max {
+    @media only screen and (max-width: $value) { @content; }
+  }
+}

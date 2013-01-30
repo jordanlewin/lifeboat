@@ -14,7 +14,7 @@
           <article <?php post_class('blog-post'); ?> role="article">
             <a href="<?php the_permalink(); ?>" class="blog-post-link">
               <div class="post-image">
-                <?php the_post_thumbnail('featured-index'); ?>
+                <?php the_post_thumbnail('lifeboat-index'); ?>
               </div><!-- post-image -->
               <div class="post-content">
                 <h2><?php the_title(); ?></h2>

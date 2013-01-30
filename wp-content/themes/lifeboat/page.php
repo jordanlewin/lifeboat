@@ -19,9 +19,11 @@
   		  <article id="page-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
   		    <div class="row">
     		    <div class="eighteen columns">
+      		    <?php if (has_post_thumbnail()): ?>
       		    <div id="img-vid">
-        		    <p class="panel">Image or Video Here</p>
+        		    <?php the_post_thumbnail('lifeboat-banner'); ?>
       		    </div><!-- img-vid -->
+      		    <?php endif; ?>
       		    <header>
         		    <h1 class="page-title"><?php the_title(); ?></h1>
       		    </header>
