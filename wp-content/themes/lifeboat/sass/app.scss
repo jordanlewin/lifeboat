@@ -28,6 +28,10 @@
 -----------------------------------------------------
 */
 
+body {
+  background-color: $background-grey;
+}
+
 /* Layout & Structure */
 #main-container {
   padding: {
@@ -36,7 +40,7 @@
   border-bottom: 1px solid #7F7F7F;
 }
 .inside #main-container {
-  padding-top: 150px;
+  padding-top: 156px;
 }
 
 .inside #sidebar {
@@ -53,6 +57,9 @@
 /* Common Elements */
 .subheader {
   font-family: $bodyFontFamily;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  color: lighten($lifeboat-blue, 10%);
 }
 .subtitle {
   //@extend .subheader;
@@ -60,13 +67,20 @@
   @include font-size(32);
   font-weight: 100;
   color: $lifeboat-orange;
+  margin-top: 0;
+  text-transform: none !important;
+  letter-spacing: normal !important;
 }
 
 h1.page-title {
   //font-size: ms(7); // Should be 90px
   @include font-size(90);
   text-transform: uppercase;
-  letter-spacing: $title-letter-spacing;
+  letter-spacing: $letter-spacing-title;
+  margin: 0 0 25px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #{$border-light};
+  line-height: .85em;
 }
 
 /* Clearfix */
@@ -82,6 +96,29 @@ h1.page-title {
 .clearfix:after {
   clear: both;
 }
+
+// Alternate Method
+/*.clearfix:after {
+   content: ".";
+   display: block;
+   clear: both;
+   visibility: hidden;
+   line-height: 0;
+   height: 0;
+}
+ 
+.clearfix {
+   display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+   display: block;
+}
+ 
+* html .clearfix {
+   height: 1%;
+   overflow: visible;
+}*/
 
 
 
@@ -182,7 +219,39 @@ nav#primary {
 }
 
 
-
+/* SECONDARY NAV */
+nav#secondary {
+  ul {
+    //@include clearfix();
+    margin: 0;
+    li {
+      list-style: none;
+      float: left;
+      padding: 0 30px 0 0;
+      margin: -10px 0 22px;
+      border-bottom: 1px solid #{$border-light};
+      a {
+        display: block;
+        color: $lifeboat-orange;
+        @include font-size(12);
+        font-weight: bold;
+        letter-spacing: $letter-spacing-label;
+        text-transform: uppercase;
+        border-bottom: 1px solid transparent;
+        line-height: 1em;
+        padding: 10px 0 10px;
+        margin-bottom: -1px;
+      }
+      &.current_page_item a, a:hover {
+        color: $lifeboat-blue;
+        border-bottom: 1px solid #{$lifeboat-blue};
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
 
 /* --------------------------------------------------
    Homepage
@@ -242,18 +311,57 @@ nav#primary {
 }
 
 /* Sidebar and content label titles */
-.sidebar-label-title, .content-label-title {
+.label-title, .label-title {
   color: $black;
   font-family: $bodyFontFamily;
-  font-size: 0.85714285714286em;
+  @include font-size(12);
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: $letter-spacing-label;
   padding-bottom: 4px;
   border-bottom: 1px solid #DEDEDE;
 }
 .home {
-  .sidebar-label-title, .content-label-title {
+  .label-title, .label-title {
     //font-size: 12px;
+  }
+}
+
+
+/* --------------------------------------------------
+   Shared Inside Styles
+-----------------------------------------------------
+*/
+
+#img-vid {
+  max-height: 325px;
+  overflow: hidden;
+  margin-bottom: 23px;
+}
+
+#refs {
+  color: $text-color-light-grey;
+  border-top: 1px solid #{$border-light};
+  padding: 10px 0;
+  margin: 40px 0 0;
+  h3, h4, h5, .label-title {
+    font-weight: 500;
+    @include font-size(11);
+    color: $text-color-dark-grey;
+    border-bottom: none;
+    margin: 0 0 12px;
+  }
+  ol, ul, p, li, div, dt, dl, dd {
+    @include font-size(13);
+  }
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+#content {
+  h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-title;
   }
 }
 
@@ -263,7 +371,7 @@ nav#primary {
 -----------------------------------------------------
 */
 
-.blog-post {
+.type-post {
   a.blog-post-link {
     display: block;
     @include clearfix();
@@ -281,10 +389,10 @@ nav#primary {
         //font-size: ms(6); // Should be 62px
         @include font-size(62);
         text-transform: uppercase;
-        letter-spacing: $title-letter-spacing;
+        letter-spacing: $letter-spacing-title;
         line-height: .85em;
       }
-      h4.subtitle {
+      .subtitle {
         color: #333333;
         font-weight: normal;
         margin-top: 0;
@@ -300,7 +408,7 @@ nav#primary {
 
 
 /* Homepage Featured Blog Post */
-.home .blog-post {
+.home .type-post {
   a#more-from-blog {
     //position: absolute;
     top: -31px;
@@ -318,22 +426,52 @@ nav#primary {
 .blog.inside {
   h1.page-title {
     margin: 0 0 35px 0;
-    padding-bottom: 20px;
-    line-height: 1em;
-    border-bottom: 1px solid #{$border-light};
   }
-  .blog-post {
+  .type-post {
     padding-bottom: 50px;
     margin-bottom: 50px;
     border-bottom: 1px solid #{$border-light};
   }
 }
 
-#img-vid {
-  max-height: 325px;
-  overflow: hidden;
-  img {
-    //margin-top: -12%;
+/* Single Blog Posts */
+.single .type-post {
+  .five.columns {
+    padding-right: 30px;
+  }
+  .subtitle, time, .credits {
+    margin-bottom: 23px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #{$border-light};
+  }
+  time {
+    display: block;
+    @include font-size(15);
+    font-style: italic;
+  }
+  .credits {
+    @include font-size(14);
+    line-height: 1.3em;
+    font-style: italic;
+    small {
+      color: $text-color-med-grey;
+      font-size: percentage(10px/14px);
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing-label;
+      font-style: normal;
+    }
+  }
+}
+
+
+/* --------------------------------------------------
+   Pages
+-----------------------------------------------------
+*/
+
+.page .type-page {
+  .five.columns {
+    padding-left: 30px;
   }
 }
 

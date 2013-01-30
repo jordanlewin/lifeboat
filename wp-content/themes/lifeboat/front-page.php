@@ -18,7 +18,7 @@
                 query_posts( $query_string . '&posts_per_page=1' );
                 if (have_posts()) : while (have_posts()) : the_post(); ?>
           
-          <article <?php post_class('blog-post'); ?> role="article">
+          <article <?php post_class('clearfix'); ?> role="article">
             <a href="<?php the_permalink(); ?>" class="blog-post-link">
               <div class="post-image">
                 <?php the_post_thumbnail('lifeboat-index'); ?>
