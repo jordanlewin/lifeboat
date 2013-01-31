@@ -72,6 +72,10 @@ body {
   letter-spacing: normal !important;
 }
 
+.panel {
+  background: $white;
+}
+
 h1.page-title {
   //font-size: ms(7); // Should be 90px
   @include font-size(90);
@@ -79,7 +83,7 @@ h1.page-title {
   letter-spacing: $letter-spacing-title;
   margin: 0 0 25px;
   padding-bottom: 23px;
-  border-bottom: 1px solid #{$border-light};
+  border-bottom: 1px solid #{$border-light-grey};
   line-height: .85em;
 }
 
@@ -229,7 +233,7 @@ nav#secondary {
       float: left;
       padding: 0 30px 0 0;
       margin: -10px 0 22px;
-      border-bottom: 1px solid #{$border-light};
+      border-bottom: 1px solid #{$border-light-grey};
       a {
         display: block;
         color: $lifeboat-orange;
@@ -311,21 +315,22 @@ nav#secondary {
 }
 
 /* Sidebar and content label titles */
-.label-title, .label-title {
-  color: $black;
-  font-family: $bodyFontFamily;
-  @include font-size(12);
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing-label;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #DEDEDE;
-}
-.home {
-  .label-title, .label-title {
-    //font-size: 12px;
+#main, #sidebar {
+  .label-title {
+    color: $text-color-black;
+    font-family: $bodyFontFamily;
+    @include font-size(12);
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-label;
   }
 }
 
+.home {
+  .label-title {
+    padding-bottom: 4px;
+    border-bottom: 1px solid #DEDEDE;
+  }
+}
 
 /* --------------------------------------------------
    Shared Inside Styles
@@ -338,17 +343,66 @@ nav#secondary {
   margin-bottom: 23px;
 }
 
+#content {
+  h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-title;
+  }
+  img {
+    margin-bottom: 1em;
+  }
+  .pull-quote {
+    @include font-size(32);
+    line-height: 1.35em;
+    color: $lifeboat-blue;
+    border: 1px solid #{$border-light-grey};
+    border-width: 1px 0;
+    font-weight: 100;
+    font-style: italic;
+    width: percentage($main-col-width / $internal-content-col-width);
+    margin: {
+      bottom: 35px;
+      top: 35px;
+    }
+    padding: 20px 0;
+  }
+  figure {
+    width: percentage($main-col-width / $internal-content-col-width);
+    figcaption {
+      font-weight: normal;
+      font-style: italic;
+      padding: 0 0 17px;
+      border-bottom: 1px solid #{$border-light-grey};
+      width: percentage($internal-side-col-width / $main-col-width);
+      @include font-size(13);
+      line-height: 1.6em;
+      margin-bottom: 1.6em;
+    }
+  }
+}
+
+.single .type-post {
+  .pull-quote, figure {
+    margin-left: ((($internal-side-col-width + 40px) / $internal-content-col-width) * -100%);
+  }
+}
+.page .type-page {
+  .pull-quote, figure {
+    margin-right: ((($internal-side-col-width + 40px) / $internal-content-col-width) * -100%);
+  }
+}
+
 #refs {
   color: $text-color-light-grey;
-  border-top: 1px solid #{$border-light};
-  padding: 10px 0;
+  border-top: 1px solid #{$border-light-grey};
+  padding: 20px 0 10px;
   margin: 40px 0 0;
   h3, h4, h5, .label-title {
     font-weight: 500;
     @include font-size(11);
     color: $text-color-dark-grey;
     border-bottom: none;
-    margin: 0 0 12px;
+    margin: -10px 0 12px;
   }
   ol, ul, p, li, div, dt, dl, dd {
     @include font-size(13);
@@ -358,79 +412,115 @@ nav#secondary {
   }
 }
 
-#content {
-  h2, h3, h4, h5, h6 {
-    text-transform: uppercase;
-    letter-spacing: $letter-spacing-title;
-  }
-}
-
 
 /* --------------------------------------------------
    Blog
 -----------------------------------------------------
 */
 
-.type-post {
-  a.blog-post-link {
+/* Blog Post Teaser */
+.post-teaser {
+  a.post-link {
     display: block;
     @include clearfix();
-    .post-image {
-      float: left;
-      width: percentage(400px / $main-col-width);
-      margin-right: percentage(20px / $main-col-width);
+    &:hover {
+      .post-content {
+        h2 {
+          color: $lifeboat-orange;
+        }
+        .subtitle {
+          color: darken($text-color-dark-grey, 20%);
+        }
+        .meta {
+          color: darken($text-color-light-grey, 20%)
+        }
+      }
     }
-    .post-content {
-      float: left;
-      width: percentage(340px / $main-col-width);
-      h2 {
-        margin: -4px 0 10px;
-        color: $lifeboat-yellow;
-        //font-size: ms(6); // Should be 62px
-        @include font-size(62);
+  }
+  .post-image {
+    float: left;
+    width: percentage(400px / $main-col-width);
+    //margin-right: percentage(20px / $main-col-width);
+    margin-right: 20px;
+  }
+  .post-content {
+    h2 {
+      margin: -4px 0 10px;
+      color: $lifeboat-yellow;
+      @include font-size(62);
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing-title;
+      line-height: .85em;
+    }
+    .subtitle {
+      color: $text-color-dark-grey;
+      font-weight: normal;
+      margin-top: 0;
+      @include font-size(24);
+    }
+    .meta {
+      font-style: italic;
+      color: $text-color-light-grey;
+      font-weight: 500;
+      time, div {
+        @include font-size(13);
+        display: inline-block;
+        padding: 8px 10px 8px 8px;
+        border-right: 1px solid #{$border-light-grey};
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+          border-right: none;
+        }
+      }
+      small {
+        font-size: percentage(10px/14px);
         text-transform: uppercase;
-        letter-spacing: $letter-spacing-title;
-        line-height: .85em;
-      }
-      .subtitle {
-        color: #333333;
-        font-weight: normal;
-        margin-top: 0;
+        letter-spacing: $letter-spacing-label;
+        font-style: normal;
       }
     }
-    &:hover .post-content {
-      h2 {
-        color: $lifeboat-orange;
+  }
+  &.with-image {
+    a.post-link {
+      .post-content {
+        float: left;
+        width: percentage(340px / $main-col-width);        
       }
     }
   }
 }
 
 
+
 /* Homepage Featured Blog Post */
-.home .type-post {
+.home .post-teaser {
   a#more-from-blog {
     //position: absolute;
-    top: -31px;
-    margin-left: percentage((400px + 20px) / $main-col-width);
+    //top: -31px;
+    //margin-left: percentage((400px + 20px) / $main-col-width);
   }
   .post-content {
     h2 {
-      //font-size: ms(7); // Should be 72px
       @include font-size(72);
     }
   }
 }
 
 /* Blog Index Page */
-.blog.inside {
+.blog {
   h1.page-title {
-    margin: 0 0 35px 0;
+    margin-bottom: 35px;
   }
-  .type-post {
-    padding-bottom: 50px;
-    margin-bottom: 50px;
-    border-bottom: 1px solid #{$border-light};
+}
+
+.inside {
+  .post-teaser {
+    padding-bottom: 45px;
+    margin-bottom: 45px;
+    border-bottom: 1px solid #{$border-light-grey};
   }
 }
 
@@ -440,14 +530,15 @@ nav#secondary {
     padding-right: 30px;
   }
   .subtitle, time, .credits {
-    margin-bottom: 23px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #{$border-light};
+    margin-bottom: 20px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #{$border-light-grey};
   }
   time {
     display: block;
     @include font-size(15);
     font-style: italic;
+    line-height: 1.6em;
   }
   .credits {
     @include font-size(14);
@@ -459,6 +550,68 @@ nav#secondary {
       text-transform: uppercase;
       letter-spacing: $letter-spacing-label;
       font-style: normal;
+    }
+    a {
+      color: $text-color;
+      &:hover {
+        color: $text-color-med-grey;
+        text-decoration: underline;
+      }
+    }
+  }
+  footer {
+    .categories {
+      padding: 15px 0;
+      margin-top: 30px; 
+      border: 1px solid #{$border-light-grey};
+      border-width: 1px 0;
+      @include clearfix();
+      .label-title {
+        float: left;
+        font-weight: 500;
+        margin: 7px 10px 0 0;
+      }
+      .post-categories {
+        float: left;
+        margin: 0;
+        li {
+          display: inline-block;
+          margin-right: 8px;
+          a {
+            color: $text-color-white;
+            font-weight: 500;
+            @include font-size(10);
+            letter-spacing: $letter-spacing-label;
+            @include border-radius(10px);
+            text-transform: uppercase;
+            background-color: #D9D9D9;
+            padding: 6px 10px 5px;
+            &:hover {
+              background-color: $lifeboat-blue;
+            }
+          }
+        }
+      }
+    }
+    #share-bottom {
+      padding: 50px 0;
+      h3 {
+        @include font-size(22);
+        color: $text-color-black;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      .buttons {
+        text-align: center;
+      }
+    }
+    #comments {
+      border-top: 1px solid #{$border-dark-grey};
+      h2 {
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing-title;
+        margin: 5px 0 25px;
+      }
     }
   }
 }

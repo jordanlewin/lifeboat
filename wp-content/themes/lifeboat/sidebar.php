@@ -1,6 +1,6 @@
       <section id="sidebar" class="four columns pull-fourteen" role="complementary">
         <?php if(is_front_page()) : ?>
-        <h6 class="sidebar-label-title">Become an Insider</h6>
+        <h6 class="label-title">Become an Insider</h6>
         <?php endif; ?>
         <?php if (is_active_sidebar('sidebar')) : ?>
           <?php dynamic_sidebar('sidebar'); ?>

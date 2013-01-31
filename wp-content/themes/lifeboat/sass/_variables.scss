@@ -6,16 +6,20 @@ $lifeboat-blue: $mainColor;
 $lifeboat-orange: $secondaryColor;
 $lifeboat-yellow: #FBBD26;
 
-$border-light: #E0E0E0;
+$border-light-grey: #E0E0E0;
+$border-dark-grey: #B2B2B2;
 $background-grey: #F2F2F2;
 
+$text-color: $txtColor;
+$text-color-white: $white;
 $text-color-light-grey: #8C8C8C;
 $text-color-med-grey: #666;
-$text-color-dark-grey: #262626;
+$text-color-dark-grey: #333;
+$text-color-black: $black;
 
 // Type
 $letter-spacing-title: -.02em;
-$letter-spacing-label: .08em;
+$letter-spacing-label: .09em;
 
 
 // Logo measurements
@@ -27,6 +31,8 @@ $logo-offset-top-inside: -27px;
 // Base column widths
 $left-col-width: 220px;
 $main-col-width: 760px;
+$internal-content-col-width: 543px;
+$internal-side-col-width: 177px;
 
 // Nav items
 $primary-nav-count: 5;

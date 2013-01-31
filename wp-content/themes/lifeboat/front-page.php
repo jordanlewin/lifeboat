@@ -12,28 +12,29 @@
     <div class="row">
       <section id="main" class="thirteen columns offset-by-one push-four">
         <div id="content" class="content-home">
-          <h6 class="content-label-title">From the Friend Blog</h6>
+          <h6 class="label-title">From the Friend Blog</h6>
           
           <?php global $query_string;
-                query_posts( $query_string . '&posts_per_page=1' );
+                query_posts( $query_string . '&posts_per_page=1&featured=yes' );
                 if (have_posts()) : while (have_posts()) : the_post(); ?>
           
-          <article <?php post_class('clearfix'); ?> role="article">
-            <a href="<?php the_permalink(); ?>" class="blog-post-link">
+          <article <?php (has_post_thumbnail()) ? post_class('post-teaser clearfix with-image') : post_class('post-teaser clearfix'); ?> role="article">
+            <a href="<?php the_permalink(); ?>" class="post-link">
               <div class="post-image">
                 <?php the_post_thumbnail('lifeboat-index'); ?>
               </div><!-- post-image -->
               <div class="post-content">
                 <h2><?php the_title(); ?></h2>
-                <?php if(get_field('subtitle')): ?>
+                <?php if(get_field('subtitle')) : ?>
                 <h4 class="subtitle"><?php the_field('subtitle'); ?></h4>
                 <?php endif; ?>
+                <span data-href="/friend-blog/" id="more-from-blog" class="button small">More from the Friend Blog</span>
               </div><!-- post-content -->
             </a><!-- blog-post-link -->
-            <a href="/friend-blog/" id="more-from-blog" class="button small">More from the Friend Blog</a>
+            <!-- <a href="/friend-blog/" id="more-from-blog" class="button small">More from the Friend Blog</a> -->
           </article><!-- blog-post -->
 
-          <?php endwhile; ?>
+          <?php endwhile; wp_reset_query(); ?>
           <?php else: ?>
           
           <article id="post-not-found">

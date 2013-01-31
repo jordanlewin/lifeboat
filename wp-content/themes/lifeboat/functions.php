@@ -489,7 +489,7 @@ add_action('wp_enqueue_scripts', 'foundation_js');
 function lifeboat_js(){
     //wp_register_script('wp-foundation-js', get_template_directory_uri() . '/library/js/scripts.js', 'jQuery', '1.0', true); // JL: Removed because I moved these scripts all into app-custom.js
     //wp_enqueue_script('wp-foundation-js');
-    wp_register_script('lifeboat-custom-js', get_template_directory_uri() . '/javascripts/app-custom.js', 'jQuery', '1.0', true); // JL: This file includes custom JS from Bones, WP Foundation, and Lifeboat
+    wp_register_script('lifeboat-custom-js', get_template_directory_uri() . '/javascripts/app.js', 'jQuery', '1.0', true); // JL: This file includes custom JS from Bones, WP Foundation, and Lifeboat
     wp_enqueue_script('lifeboat-custom-js');
 }
 add_action('wp_enqueue_scripts', 'lifeboat_js');

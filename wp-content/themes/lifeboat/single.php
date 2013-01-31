@@ -8,7 +8,7 @@
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				
-  		  <article id="page-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+  		  <article id="page-<?php the_ID(); ?>" <?php post_class('post-single clearfix'); ?> role="article">
   		    <?php if (has_post_thumbnail()): ?>
   		    <div id="img-vid">
     		    <?php the_post_thumbnail('lifeboat-banner'); ?>
@@ -17,24 +17,39 @@
   		    <header>
     		    <h1 class="page-title single-title"><?php the_title(); ?></h1>
   		    </header>
-  		    <div class="row">
+  		    <section class="row">
     		    <div class="five columns">
     		      <?php if(get_field('subtitle')): ?>
       		    <h3 class="subtitle"><?php the_field('subtitle'); ?></h3>
       		    <?php endif; ?>
-      		    <time datetime="2012-01-30" pubdate>January 30th, 2013</time>
+      		    <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time>
       		    <div class="credits">
-        		    <div class="words-by"><small>Words By </small>Alia McKee</div>
-        		    <div class="art-by"><small>Illustration By </small>Jane Smith</div>
-        		    <div class="views"><small>635 Views</small></div>
-      		    </div>
-      		    <!-- <p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "bonestheme"); ?> <?php the_category(', '); ?>.</p> -->
+        		    <div class="words-by"><small>Words By </small><?php the_author_posts_link(); ?></div>
+        		    <!-- <div class="art-by"><small>Illustration By </small>Jane Smith</div>
+        		    <div class="views"><small>635 Views</small></div> -->
+      		    </div><!-- credits -->
     		      <?php edit_post_link(__('Edit This Post'), '<p class="edit-links">', '</p>'); ?>
-    		    </div><!-- five columns offset-by-one -->
+    		    </div><!-- five columns -->
     		    <div id="content" class="thirteen columns">
     		      <?php the_content(); ?>
     		    </div><!-- twelve columns -->
-  		    </div><!-- row content -->
+  		    </section><!-- row content -->
+  		    <footer>
+  		      <?php if (get_the_category()) : ?>
+    		    <div class="categories">
+    		      <h4 class="label-title">Posted In:</h4>
+    		      <?php the_category(); ?>
+    		    </div><!-- categories -->
+    		    <?php endif; ?>
+    		    <div id="share-bottom">
+    		      <h3>Already shared this? No? Share it now:</h3>
+    		      <p class="panel buttons">Facebook and Twitter Share Buttons Here</p>
+    		    </div><!-- share-bottom -->
+    		    <div id="comments">
+    		      <h2>What do you think?</h2>
+    		      <p class="panel">Disqus Comments Here</p>
+    		    </div><!-- comments -->
+  		    </footer>
   		  </article><!-- content -->
   		  
   		  <?php endwhile; ?>
