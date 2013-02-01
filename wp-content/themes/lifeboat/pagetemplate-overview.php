@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Overview Page
+*/
+?>
+
 <?php get_header(); ?>
 			
 	  <!-- Begin Custom Page Markup -->
@@ -10,7 +16,7 @@
           ?>
   		  </nav><!-- secondary -->
   		  
-        <div id="main-content" class="content-page">
+        <div id="main-content" class="content-page content-page-overview">
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				
@@ -23,17 +29,14 @@
   		    <header>
     		    <h1 class="page-title"><?php the_title(); ?></h1>
   		    </header>
-  		    <section class="row">
-    		    <div id="content" class="thirteen columns">
-    		      <?php if(get_field('subtitle')): ?>
-      		    <h3 class="subtitle"><?php the_field('subtitle'); ?></h3>
-      		    <?php endif; ?>
-    		      <?php the_content(); ?>
-    		    </div><!-- twelve columns -->
-    		    <div class="five columns">
-    		      <p class="panel">Share Icons Here</p>
-    		    </div><!-- five columns offset-by-one -->
-  		    </section><!-- row content -->
+  		    <?php if (get_the_content() || get_field('subtitle')) : ?>
+  		    <section id="content"<?php if (get_the_content()) { print 'class="with-content"'; } ?>>
+  		      <?php if(get_field('subtitle')): ?>
+    		    <h3 class="subtitle"><?php the_field('subtitle'); ?></h3>
+    		    <?php endif; ?>
+  		      <?php the_content(); ?>
+  		    </section><!-- content -->
+  		    <?php endif; ?>
   		  </article><!-- type-page -->
   		  
   		  <?php endwhile; ?>
@@ -51,7 +54,32 @@
 				</article>
 				
 				<?php endif; ?>
-  		  
+				
+        <?php //global $query_string;
+          $args = array(
+            'post_type' => 'page',
+          	'post_parent'=> get_the_ID(),
+          	'orderby'    => 'menu_order',
+          	'order'    => 'ASC'
+          );
+          query_posts($args);
+          $c = 0;
+          if (have_posts()) : ?>
+				<section id="overview-grid">
+          <ul class="block-grid two-up mobile">
+            <?php while (have_posts()) : the_post(); ?>
+            <li class="<?php echo $c++&1 ? 'even' : 'odd'; ?>">
+              <a href="<?php the_permalink(); ?>">
+                <h2><?php the_title(); ?></h2>
+                <?php the_excerpt(); ?>
+              </a>
+            </li>
+            <?php endwhile; wp_reset_query(); ?>
+          </ul><!-- block-grid -->
+        </section><!-- overview-grid -->
+        <?php endif; ?>
+
+ 		  
         </div><!-- content-page -->
   		</section><!-- main -->
   	

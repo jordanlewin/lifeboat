@@ -76,13 +76,27 @@ body {
   background: $white;
 }
 
+.button {
+  border: none;
+  @include box-shadow(0 0 0);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-label;
+  &:hover, &:focus {
+    background-color: $lifeboat-yellow;
+  }
+  &.small {
+    padding: 8px 14px 7px;
+  }
+}
+
 h1.page-title {
   //font-size: ms(7); // Should be 90px
   @include font-size(90);
   text-transform: uppercase;
   letter-spacing: $letter-spacing-title;
   margin: 0 0 25px;
-  padding-bottom: 23px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #{$border-light-grey};
   line-height: .85em;
 }
@@ -304,12 +318,41 @@ nav#secondary {
   .home-buttons {
     margin: 0 auto;
     width: 465px;
+    .button, .share-label {
+      text-transform: uppercase;
+      @include font-size(12);
+      letter-spacing: $letter-spacing-label;
+      font-weight: 500;
+    }
     .button {
       float: left;
       margin-right: 45px;
     }
     .share {
       float: right;
+      background: #E9E9E9;
+      height: 24px;
+      padding: 0px 25px;
+      .share-label {
+        display: block;
+        float: left;
+        padding: 8px 5px 4px 0;
+      }
+      .icon {
+        display: inline-block;
+        @include font-size(15);
+        line-height: 0;
+        margin: -4px 0 -4px 4px;
+        padding: 7px 7px 6px;
+        border: 2px solid #E9E9E9;
+        background: $lifeboat-blue;
+        color: $white;
+        @include border-radius(30px);
+        &:hover {
+          background: $lifeboat-yellow;
+          border-color: $white;
+        }
+      }
     }
   }
 }
@@ -412,6 +455,105 @@ nav#secondary {
   }
 }
 
+
+/* --------------------------------------------------
+   Overview Page Template
+-----------------------------------------------------
+*/
+
+.content-page-overview {
+  #content {
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    &.with-content {
+      border-bottom: 1px solid #{$border-light-grey};
+    }
+  }
+  #overview-grid {
+    margin-top: 15px;
+  }
+}
+
+#overview-grid {
+  li {
+    padding: {
+      bottom: 20px;
+    }
+    a {
+      display: block;
+      padding-left: 80px;
+      line-height: 1.5em;
+      color: $text-color;
+      span {
+        color: $lifeboat-orange;
+        padding: 1px;
+      }
+      p, li, div, dl, dt, dd {
+        @include font-size(14);
+      }
+      &:hover {
+        color: lighten($text-color, 20%);
+        h2 {
+          color: $lifeboat-orange;
+        }
+        span {
+          color: $text-color-white;
+          background: $lifeboat-yellow;
+        }
+      }
+    }
+    background: {
+      image: image-url("icon-flag.svg");
+      repeat: no-repeat;
+      position: 8px 2px;
+    }
+    &.odd {
+      padding-right: 20px;
+    }
+    &.even {
+      padding-left: 28px;
+      background-position: 28px 2px;
+    }
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing-title;
+      @include font-size(34);
+      margin: 0 0 5px;
+    }
+  }
+}
+
+/* Old Styling from when the whole thing wasn't wrapped in <a> tag
+#overview-grid {
+  li {
+    padding: {
+      bottom: 20px;
+      left: 88px;
+    }
+    line-height: 1.5em;
+    * {
+      @include font-size(14);
+    }
+    background: {
+      image: image-url("icon-flag.svg");
+      repeat: no-repeat;
+      position: 8px 2px;
+    }
+    &.odd {
+      padding-right: 20px;
+    }
+    &.even {
+      padding-left: 108px;
+      background-position: 28px 2px;
+    }
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing-title;
+      @include font-size(34);
+      margin: 0 0 5px;
+    }
+  }
+}*/
 
 /* --------------------------------------------------
    Blog

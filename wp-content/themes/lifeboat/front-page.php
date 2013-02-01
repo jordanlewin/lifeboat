@@ -5,7 +5,27 @@
     <div class="row">
       <section id="home-intro" class="thirteen columns offset-by-five">
       <?php the_content(); ?>
-      </section><!-- home-intro -->
+      <div class="home-buttons">
+        <a href="/get-started/" class="button small">Start Now</a>
+        <div class="share">
+          <span class="share-label">Share Lifeboat</span>
+          <!-- <a href="" class="icon-fb" aria-hidden="true" data-icon="&#xe012;">Facebook</a>
+          <a href="" class="icon-tw">Twitter</a>
+          <a href="" class="icon-email">Email</a> -->
+          <a href="" class="icon icon-alone icon-fb">
+            <span aria-hidden="true" data-icon="&#xe016;"></span>
+            <span class="screen-reader-text">Facebook</span>
+          </a>
+          <a href="" class="icon icon-alone icon-tw">
+            <span aria-hidden="true" data-icon="&#xe018;"></span>
+            <span class="screen-reader-text">Twitter</span>
+          </a>
+          <a href="" class="icon icon-alone icon-email">
+            <span aria-hidden="true" data-icon="&#xf0e0;"></span>
+            <span class="screen-reader-text">Email</span>
+          </a>
+        </div><!-- share -->
+      </div><!-- home-buttons -->      </section><!-- home-intro -->
     </div><!-- row -->
     <?php endwhile; endif; ?>
 
@@ -15,7 +35,7 @@
           <h6 class="label-title">From the Friend Blog</h6>
           
           <?php global $query_string;
-                query_posts( $query_string . '&posts_per_page=1&featured=yes' );
+                query_posts($query_string . '&posts_per_page=1&featured=yes');
                 if (have_posts()) : while (have_posts()) : the_post(); ?>
           
           <article <?php (has_post_thumbnail()) ? post_class('post-teaser clearfix with-image') : post_class('post-teaser clearfix'); ?> role="article">

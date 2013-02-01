@@ -28,7 +28,6 @@
         		    <!-- <div class="art-by"><small>Illustration By </small>Jane Smith</div>
         		    <div class="views"><small>635 Views</small></div> -->
       		    </div><!-- credits -->
-    		      <?php edit_post_link(__('Edit This Post'), '<p class="edit-links">', '</p>'); ?>
     		    </div><!-- five columns -->
     		    <div id="content" class="thirteen columns">
     		      <?php the_content(); ?>
@@ -60,7 +59,7 @@
 				    	<h1 class="page-title">Not Found</h1>
 				    </header>
 				    <section class="post-content">
-				    	<p>Sorry, but the requested page was not found on this site.</p>
+				    	<p>Sorry, but the requested page was not found.</p>
 				    </section>
 				    <footer>
 				    </footer>
