@@ -32,7 +32,26 @@ body {
   background-color: $background-grey;
 }
 
-/* Layout & Structure */
+a {
+  color: $lifeboat-orange;
+  &:hover {
+    color: $lifeboat-blue;
+  }
+}
+
+/* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
+::-moz-selection, ::selection {
+  background: #{$lifeboat-yellow};
+  color: $text-color-white;
+  text-shadow: none;
+}
+
+
+/* --------------------------------------------------
+   Layout & Structure
+-----------------------------------------------------
+*/
+
 #main-container {
   padding: {
     bottom: 85px;
@@ -54,7 +73,12 @@ body {
   border-top: 1px solid #7F7F7F;
 }
 
-/* Common Elements */
+
+/* --------------------------------------------------
+   Common Elements
+-----------------------------------------------------
+*/
+
 .subheader {
   font-family: $bodyFontFamily;
   text-transform: none !important;
@@ -129,37 +153,11 @@ h1.page-title {
   clear: both;
 }
 
-// Alternate Method
-/*.clearfix:after {
-   content: ".";
-   display: block;
-   clear: both;
-   visibility: hidden;
-   line-height: 0;
-   height: 0;
-}
- 
-.clearfix {
-   display: inline-block;
-}
- 
-html[xmlns] .clearfix {
-   display: block;
-}
- 
-* html .clearfix {
-   height: 1%;
-   overflow: visible;
-}*/
-
-
 
 /* --------------------------------------------------
-   Navigation
+   Header & Navigation
 -----------------------------------------------------
 */
-
-/* LOGO */
 
 /* Inside Pages / General */
 #header .nav.container {
@@ -195,13 +193,12 @@ html[xmlns] .clearfix {
     top: 441px;
     background: rgba(#000, .5);
   }
-  
   #logo {
     margin-top: percentage($logo-offset-top-home / $left-col-width);
   }
 }
 
-/* PRIMARY NAV */
+/* Primary Nav */
 /* Inside Pages / General */
 nav#primary {
   #menu-primary-nav {
@@ -218,40 +215,72 @@ nav#primary {
       a {
         display: block;
         color: #fff;
-        //height: 69px;
-        padding: 42px 15px 30px;
-        @media screen and (max-width: $break-tablet-middle) {
-          padding: {
-            top: 63px;
-            // 15px 30px;
+        .link-inner {
+          //height: 69px;
+          padding: 42px 15px 25px;
+          @media screen and (max-width: $break-tablet-middle) {
+            padding: {
+              top: 63px;
+              // 15px 30px;
+            }
+          }
+          small {
+            display: block;
+            font-family: $bodyFontFamily;
+            @include opacity(.8);
+            font-size: 15px;
+            font-style: italic;
+            font-weight: bold;
+          }
+          div {
+            font-family: $headerFontFamily;
+            font-weight: bold;
+            font-size: 30px;
+            text-transform: uppercase;
           }
         }
-        &:hover {
-          background: $lifeboat-blue;
+        .link-btm {
+          height: 13px;
+          //display: block;
+          background: {
+            position: top left;
+            repeat: no-repeat;
+          }
+          @include background-size(100% 13px);
         }
-        small {
-          display: block;
-          opacity: .8;
-          font-size: 15px;
-          font-style: italic;
-          font-weight: bold;
+        &:hover .link-inner {
+          //background: $lifeboat-blue;
+          @include background-image(linear-gradient(lighten($lifeboat-yellow, 8%), $lifeboat-yellow));
         }
-        div {
-          font-family: $headerFontFamily;
-          font-weight: bold;
-          font-size: 30px;
-          text-transform: uppercase;
+        &:hover .link-btm {
+          background: {
+            image: image-url("nav-primary-triangle-hover.png");
+          }
+        }
+      }
+      &.active {
+        a {
+          .link-inner {
+            @include background-image(linear-gradient(lighten($lifeboat-blue, 12%), $lifeboat-blue));
+          }
+          .link-btm {
+            background: {
+              image: image-url("nav-primary-triangle-active.png");
+            }
+          }
         }
       }
     }
   }
 }
-.home nav#primary #menu-primary-nav li a {
-  padding-top: 7px;
+.home nav#primary #menu-primary-nav li a .link-inner {
+  padding: {
+    top: 4px;
+    bottom: 20px;
+  }
 }
 
-
-/* SECONDARY NAV */
+/* Secondary Nav */
 nav#secondary {
   ul {
     //@include clearfix();
@@ -284,6 +313,91 @@ nav#secondary {
     }
   }
 }
+
+
+/* --------------------------------------------------
+   Footer
+-----------------------------------------------------
+*/
+
+#footer {
+  font-family: $headerFontFamily;
+  @include font-size(16);
+  color: $text-color-med-grey;
+  letter-spacing: $letter-spacing-label;
+  text-transform: uppercase;
+  div {
+    text-align: center;
+  }
+  #footer-first {
+    margin: 0 0 30px;
+  }
+  span {
+    display: inline-block;
+  }
+  .lifeboat-flag {
+    img {
+      vertical-align: middle;
+    }
+  }
+  .copyright {
+    padding: 15px 17px 15px 5px;
+    margin-right: 17px;
+    border-right: 1px solid #{$border-light-grey};
+  }
+  .from {
+    padding: 4px 17px 4px 0px;
+    margin-right: 17px;
+    border-right: 1px solid #{$border-light-grey};
+    .hearts-minds {
+      padding: {
+        right: 10px;
+      }
+    }
+    .name {
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+      span {
+        display: block;
+      }
+      .first-name {
+        @include font-size(22);
+        color: $lifeboat-blue;
+        letter-spacing: $letter-spacing-label;
+        margin-bottom: 2px;
+      }
+      .last-name {
+        font-family: $bodyFontFamily;
+        @include font-size(12);
+        font-style: italic;
+        font-weight: 500;
+        letter-spacing: normal;
+        text-transform: none;
+      }
+    }
+    .plus {
+      @include font-size(29);
+      font-family: $bodyFontFamily;
+      font-weight: 100;
+      color: lighten($text-color-light-grey, 15%);
+      position: relative;
+      bottom: -3px;
+      padding: 0 2px;
+    }
+  }
+  .contact-us {
+    .button {
+      @include font-size(14);
+      padding: 7px 14px 8px;
+      background: $lifeboat-yellow;
+      &:hover {
+        background: $lifeboat-blue;
+      }
+    }
+  }
+}
+
 
 /* --------------------------------------------------
    Homepage
@@ -389,6 +503,7 @@ nav#secondary {
     border-bottom: 1px solid #DEDEDE;
   }
 }
+
 
 /* --------------------------------------------------
    Shared Inside Styles
@@ -541,38 +656,6 @@ nav#secondary {
   }
 }
 
-/* Old Styling from when the whole thing wasn't wrapped in <a> tag
-#overview-grid {
-  li {
-    padding: {
-      bottom: 20px;
-      left: 88px;
-    }
-    line-height: 1.5em;
-    * {
-      @include font-size(14);
-    }
-    background: {
-      image: image-url("icon-flag.svg");
-      repeat: no-repeat;
-      position: 8px 2px;
-    }
-    &.odd {
-      padding-right: 20px;
-    }
-    &.even {
-      padding-left: 108px;
-      background-position: 28px 2px;
-    }
-    h2 {
-      text-transform: uppercase;
-      letter-spacing: $letter-spacing-title;
-      @include font-size(34);
-      margin: 0 0 5px;
-    }
-  }
-}*/
-
 
 /* --------------------------------------------------
    Getting Started Guide
@@ -674,14 +757,17 @@ nav#secondary {
         display: block;
         text-align: center;
         position: relative;
-        top: 55px;
+        top: 50px;
         span {
           background: $lifeboat-blue;
-          padding: 7px 11px 5px;
+          padding: 9px 0px;
           @include font-size(20);
           font-weight: 900;
           border: 2px solid $background-grey;
           color: $text-color-white;
+          width: 40px;
+          height: 40px;
+          display: inline-block;
           @include border-radius(100px);
         }
       }
@@ -714,12 +800,13 @@ nav#secondary {
         @include column-count(2);
         @include column-gap(40px);
         ul {
-          padding-left: 1em;
+          padding-left: 1.1em;
         }
       }
     }
   }
 }
+
 
 /* --------------------------------------------------
    Blog
@@ -800,8 +887,6 @@ nav#secondary {
     }
   }
 }
-
-
 
 /* Homepage Featured Blog Post */
 .home .post-teaser {
@@ -935,13 +1020,6 @@ nav#secondary {
     padding-left: 30px;
   }
 }
-
-
-/* --------------------------------------------------
-   Custom Classes
------------------------------------------------------
-*/
-
 
 
 /* --------------------------------------------------

@@ -98,10 +98,10 @@ function lifeboat_primary_nav() {
       'fallback_cb' => 'lifeboat_primary_nav_fallback', /* menu fallback */
       'before' => '',                                 // before the menu
         'after' => '',                                  // after the menu
-        'link_before' => '',                            // before each link
-        'link_after' => '',                             // after each link
-        'depth' => 1,                                   // limit the depth of the nav
-      'walker' => new description_walker()
+        'link_before' => '<div class="link-inner">',                            // before each link
+        'link_after' => '</div><div class="link-btm"></div>',                             // after each link
+        'depth' => 1//,                                   // limit the depth of the nav
+      //'walker' => new description_walker()
     )
   );
 }
