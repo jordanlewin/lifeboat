@@ -70,6 +70,7 @@ body {
   margin-top: 0;
   text-transform: none !important;
   letter-spacing: normal !important;
+  
 }
 
 .panel {
@@ -404,7 +405,7 @@ nav#secondary {
   h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     letter-spacing: $letter-spacing-title;
-    line-height: $line-height-title;
+    //line-height: $line-height-title;
   }
 }
 #content {

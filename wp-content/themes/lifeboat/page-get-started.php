@@ -86,10 +86,10 @@
 				<section id="lifeboat-practices">
           <?php while (have_posts()) : the_post(); ?>
           <article id="practice-<?php print $c; ?>" class="practice">
+    		    <?php if (has_post_thumbnail()): ?>
   		      <div class="practice-top">
   		        <div class="practice-num"><span><?php print $c; ?></span></div>
   		      </div><!-- practice-top -->
-    		    <?php if (has_post_thumbnail()): ?>
     		    <div class="practice-banner">
       		    <?php the_post_thumbnail('lifeboat-banner'); ?>
     		    </div><!-- practice-banner -->
