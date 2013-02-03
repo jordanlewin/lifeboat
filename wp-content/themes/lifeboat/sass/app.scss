@@ -64,7 +64,7 @@ body {
 .subtitle {
   //@extend .subheader;
   font-family: $bodyFontFamily;
-  @include font-size(32);
+  @include font-size(30);
   font-weight: 100;
   color: $lifeboat-orange;
   margin-top: 0;
@@ -90,6 +90,19 @@ body {
   }
 }
 
+blockquote {
+  color: $lifeboat-blue;
+  p {
+    color: $lifeboat-blue;
+    margin-bottom: 10px;
+  }
+  .attribute {
+    color: $text-color;
+    font-weight: 500;
+    font-style: italic;
+  }
+}
+
 h1.page-title {
   //font-size: ms(7); // Should be 90px
   @include font-size(90);
@@ -98,7 +111,7 @@ h1.page-title {
   margin: 0 0 25px;
   padding-bottom: 20px;
   border-bottom: 1px solid #{$border-light-grey};
-  line-height: .85em;
+  line-height: $line-height-title;
 }
 
 /* Clearfix */
@@ -363,6 +376,7 @@ nav#secondary {
     color: $text-color-black;
     font-family: $bodyFontFamily;
     @include font-size(12);
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: $letter-spacing-label;
   }
@@ -386,11 +400,14 @@ nav#secondary {
   margin-bottom: 23px;
 }
 
-#content {
+#content, .content {
   h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     letter-spacing: $letter-spacing-title;
+    line-height: $line-height-title;
   }
+}
+#content {
   img {
     margin-bottom: 1em;
   }
@@ -461,7 +478,7 @@ nav#secondary {
 -----------------------------------------------------
 */
 
-.content-page-overview {
+.template-overview {
   #content {
     padding-bottom: 10px;
     margin-bottom: 15px;
@@ -555,6 +572,154 @@ nav#secondary {
   }
 }*/
 
+
+/* --------------------------------------------------
+   Getting Started Guide
+-----------------------------------------------------
+*/
+
+.getting-started-guide {
+  .type-page {
+    background: $white;
+    padding: 20px;
+    h1.page-title {
+      //@include font-size(96);
+    }
+    .subtitle {
+      @include font-size(32);
+      margin-bottom: 20px;
+    }
+    blockquote {
+      padding: 0;
+      border: none;
+      padding-top: 20px;
+      border-top: 1px solid #{$border-light-grey};
+      p {
+        @include font-size(18);
+        font-style: italic;
+        font-weight: 100;
+      }
+      .attribute {
+        @include font-size(16);
+        font-weight: 500;
+      }
+    }
+    #practice-thumbs-grid {
+      margin-top: 25px;
+      border-top: 1px solid #{$border-light-grey};
+      .label-title {
+        margin: 12px 0;
+        @include font-size(11);
+      }
+      .practice-thumb {
+        a {
+          position: relative;
+          display: block;
+          h2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            padding: 10px;
+            overflow: hidden;
+            background: rgba($lifeboat-yellow, .95);
+            color: $text-color-white;
+            text-transform: uppercase;
+            @include font-size(30);
+            line-height: $line-height-title;
+            letter-spacing: $letter-spacing-title;
+            @include text-shadow(rgba($text-color-black, 0.2) 0 -1px 0);
+            @include transition(opacity .2s);
+            @include opacity(0);
+          }
+          &:hover h2 {
+            @include opacity(1);
+          }
+          img {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .practice-bottom {
+    height: 68px;
+    background: {
+      image: image-url("triangle-bottom-white.png");
+      repeat: no-repeat;
+      position: top left;
+    }
+    @include background-size(100% 100%);
+  }
+}
+
+#lifeboat-practices {
+  .practice {
+    position: relative;
+    background: $white;
+    .practice-top {
+      position: absolute;
+      height: 68px;
+      width: 100%;
+      background: {
+        image: image-url("triangle-top-grey.png");
+        repeat: no-repeat;
+        position: top left;
+      }
+      @include background-size(100% 100%);
+      .practice-num {
+        display: block;
+        text-align: center;
+        position: relative;
+        top: 55px;
+        span {
+          background: $lifeboat-blue;
+          padding: 7px 11px 5px;
+          @include font-size(20);
+          font-weight: 900;
+          border: 2px solid $background-grey;
+          color: $text-color-white;
+          @include border-radius(100px);
+        }
+      }
+    }
+    .practice-banner {
+      img {
+        display: block;
+      }
+    }
+    .practice-content {
+      padding: 20px 20px 20px;
+      h2, h3, h4, h5 {
+        text-align: center;
+        background: {
+          image: image-url("line-repeat-light-grey.png");
+          repeat: repeat-x;
+          position: 0 50%;
+        }
+        @include background-size(1px 1px);
+        span {
+          background: $white;
+          padding: 0 12px;
+        }
+      }
+      .practice-title {
+        @include font-size(62);
+        margin: 0 0 25px;
+      }
+      .content-inner {
+        @include column-count(2);
+        @include column-gap(40px);
+        ul {
+          padding-left: 1em;
+        }
+      }
+    }
+  }
+}
+
 /* --------------------------------------------------
    Blog
 -----------------------------------------------------
@@ -592,7 +757,7 @@ nav#secondary {
       @include font-size(62);
       text-transform: uppercase;
       letter-spacing: $letter-spacing-title;
-      line-height: .85em;
+      line-height: $line-height-title;
     }
     .subtitle {
       color: $text-color-dark-grey;

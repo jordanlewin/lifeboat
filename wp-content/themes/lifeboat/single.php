@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 			
-	  <!-- Begin Custom Post Markup -->
 	  <div class="row">
   		<section id="main" class="thirteen columns offset-by-one push-four">
 
@@ -58,7 +57,7 @@
 				    <header>
 				    	<h1 class="page-title">Not Found</h1>
 				    </header>
-				    <section class="post-content">
+				    <section class="content">
 				    	<p>Sorry, but the requested page was not found.</p>
 				    </section>
 				    <footer>
@@ -73,6 +72,5 @@
   		<?php get_sidebar(); ?>
   		
 	  </div><!-- row -->
-	  <!-- End Custom Post Markup -->
 
 <?php get_footer(); ?>

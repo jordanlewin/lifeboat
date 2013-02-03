@@ -1,6 +1,5 @@
 <?php get_header(); ?>
       
-    <!-- Begin Custom Homepage Markup -->
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div class="row">
       <section id="home-intro" class="thirteen columns offset-by-five">
@@ -21,7 +20,7 @@
             <span class="screen-reader-text">Twitter</span>
           </a>
           <a href="" class="icon icon-alone icon-email">
-            <span aria-hidden="true" data-icon="&#xf0e0;"></span>
+            <span aria-hidden="true" data-icon="&#xe028;"></span>
             <span class="screen-reader-text">Email</span>
           </a>
         </div><!-- share -->
@@ -76,6 +75,5 @@
       <?php get_sidebar(); ?>
     
     </div><!-- row -->
-    <!-- End Custom Homepage Markup -->
 
 <?php get_footer(); ?>

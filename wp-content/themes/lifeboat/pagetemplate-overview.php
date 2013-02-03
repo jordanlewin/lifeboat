@@ -6,17 +6,12 @@ Template Name: Overview Page
 
 <?php get_header(); ?>
 			
-	  <!-- Begin Custom Page Markup -->
 	  <div class="row">
   		<section id="main" class="thirteen columns offset-by-one push-four">
-  		  <nav id="secondary">
-  		    <?php
-          $subpages = ($post->post_parent) ? wp_list_pages('title_li=&child_of='.$post->post_parent.'&depth=1&echo=0') : wp_list_pages('title_li=&child_of='.$post->ID.'&depth=1&echo=0');
-          if($subpages) { echo('<ul class="clearfix">'.$subpages.'</ul>'); }
-          ?>
-  		  </nav><!-- secondary -->
+
+  		  <?php get_template_part( 'nav', 'secondary' ); ?>
   		  
-        <div id="main-content" class="content-page content-page-overview">
+        <div id="main-content" class="content-page template-overview">
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				
@@ -86,6 +81,5 @@ Template Name: Overview Page
   		<?php get_sidebar(); ?>
   		
 	  </div><!-- row -->
-	  <!-- End Custom Page Markup -->
 
 <?php get_footer(); ?>

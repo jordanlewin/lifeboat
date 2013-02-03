@@ -8,5 +8,8 @@ $(document).ready(function() {
     var figMargin = figHeight+17;
     $(this).parent('figure').css("margin-bottom",-figMargin);
   });
+  
+  // Add span tag for styling line on titles in Lifeboat Practices in the Getting Started Guide
+  $("#lifeboat-practices .content-inner h2, #lifeboat-practices .content-inner h3, #lifeboat-practices .content-inner h4, #lifeboat-practices .content-inner h5").wrapInner("<span></span>");
 
 });

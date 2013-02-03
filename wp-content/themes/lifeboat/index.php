@@ -1,9 +1,9 @@
 <?php get_header(); ?>
       
-    <!-- Begin Custom Blog Index Markup -->
     <div class="row">
       <section id="main" class="thirteen columns offset-by-one push-four">
-        <div id="content" class="content-index">
+        
+        <div id="main-content" class="content-index">
           
           <?php if (is_home()) : ?>
           <header>
@@ -68,6 +68,5 @@
       <?php get_sidebar(); ?>
     
     </div><!-- row -->
-    <!-- End Custom Blog Index Markup -->
 
 <?php get_footer(); ?>
