@@ -29,7 +29,7 @@
 */
 
 body {
-  background-color: $background-grey;
+  background-color: $background-page-grey;
 }
 
 a {
@@ -46,6 +46,23 @@ a {
   text-shadow: none;
 }
 
+/*	j.mp/webkit-tap-highlight-color */
+a:link {
+  -webkit-tap-highlight-color: #fcd700;
+}
+
+ins {
+  background-color: $lifeboat-yellow;
+  color: $text-color-black;
+  text-decoration: none;
+}
+mark {
+  background-color: $lifeboat-yellow;
+  color: $text-color-black;
+  font-style: italic;
+  font-weight: bold;
+}
+
 
 /* --------------------------------------------------
    Layout & Structure
@@ -54,7 +71,7 @@ a {
 
 #main-container {
   padding: {
-    bottom: 85px;
+    bottom: 45px;
   }
   border-bottom: 1px solid #7F7F7F;
 }
@@ -63,8 +80,7 @@ a {
 }
 
 .inside #sidebar {
- //padding-top: percentage(186px / $left-col-width);
- margin-top: 155px;
+ margin-top: 165px;
 }
 
 #footer-container {
@@ -102,16 +118,93 @@ a {
 }
 
 .button {
-  border: none;
-  @include box-shadow(0 0 0);
+  border: none !important;
+  padding: 9px 25px 8px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: $letter-spacing-label;
+  @include transition(background-color 0s);
+  @include background(image-url("button-arrow-right.png") no-repeat 100% 50%, image-url("button-flap-left.png") no-repeat 0 50%);
+  @include background-size(auto 100%);
+  background-color: $lifeboat-blue;
+  &, &:hover, &:focus, &:active, &:visited {
+    @include box-shadow(0 0 0);
+    line-height: 1em;
+  }
   &:hover, &:focus {
     background-color: $lifeboat-yellow;
   }
   &.small {
-    padding: 8px 14px 7px;
+    padding: 7px 20px 5px;
+  }
+  &.tiny {
+    font-weight: bold;
+    @include font-size(10);
+    padding: 6px 17px 5px;
+    letter-spacing: $letter-spacing-label * 2;
+  }
+  &.highlight {
+    background-color: $lifeboat-yellow;
+    &:hover, &:focus {
+      background-color: $lifeboat-blue;
+    }
+  }
+  &.alert {
+    background-color: $lifeboat-orange;
+    &:hover, &:focus {
+     background-color: $lifeboat-blue;
+    }
+  }
+  &.secondary {
+    color: $text-color-white;
+    background-color: lighten($background-dark-grey, 2%); // 18% grey
+    &:hover, &:focus {
+     background-color: $lifeboat-blue;
+    }
+  }
+}
+
+/* Share Icons */
+.share {
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  @include background(image-url("button-flap-right.png") no-repeat 100% 50%, image-url("button-flap-left.png") no-repeat 0 50%);
+  @include background-size(auto 100%);
+  background-color: $white;
+  padding: 4px 20px;
+  .share-label {
+    text-transform: uppercase;
+    @include font-size(12);
+    letter-spacing: $letter-spacing-label;
+    font-weight: 500;
+    display: inline-block;
+    color: $text-color-black;
+    margin-right: 4px;
+  }
+  .share-icons {
+    display: inline-block;
+    .icon {
+      display: block;
+      float: left;
+      margin: -8px 5px -11px 0;
+      @include font-size(15);
+      //padding: 7px 7px 6px;
+      line-height: 1em;
+      height: 31px;
+      width: 31px;
+      padding: 6px 0px;
+      border: 2px solid #{$white};
+      background: $lifeboat-yellow;
+      color: $white;
+      @include border-radius(100px);
+      &:hover {
+        background: $lifeboat-blue;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 }
 
@@ -282,6 +375,7 @@ nav#primary {
 
 /* Secondary Nav */
 nav#secondary {
+  margin-top: -9px;
   ul {
     //@include clearfix();
     margin: 0;
@@ -322,7 +416,6 @@ nav#secondary {
 
 #footer {
   font-family: $headerFontFamily;
-  @include font-size(16);
   color: $text-color-med-grey;
   letter-spacing: $letter-spacing-label;
   text-transform: uppercase;
@@ -334,6 +427,7 @@ nav#secondary {
   }
   span {
     display: inline-block;
+    @include font-size(16);
   }
   .lifeboat-flag {
     img {
@@ -389,10 +483,10 @@ nav#secondary {
   .contact-us {
     .button {
       @include font-size(14);
-      padding: 7px 14px 8px;
-      background: $lifeboat-yellow;
+      padding: 5px 20px 6px;
+      background-color: $lifeboat-yellow;
       &:hover {
-        background: $lifeboat-blue;
+        background-color: $lifeboat-blue;
       }
     }
   }
@@ -444,41 +538,27 @@ nav#secondary {
     color: $black;
   }
   .home-buttons {
-    margin: 0 auto;
-    width: 465px;
-    .button, .share-label {
-      text-transform: uppercase;
-      @include font-size(12);
-      letter-spacing: $letter-spacing-label;
-      font-weight: 500;
-    }
+    text-align: center;
     .button {
-      float: left;
       margin-right: 45px;
+      padding: 6px 20px 4px;
     }
     .share {
-      float: right;
-      background: #E9E9E9;
-      height: 24px;
-      padding: 0px 25px;
-      .share-label {
-        display: block;
-        float: left;
-        padding: 8px 5px 4px 0;
-      }
-      .icon {
-        display: inline-block;
-        @include font-size(15);
-        line-height: 0;
-        margin: -4px 0 -4px 4px;
-        padding: 7px 7px 6px;
-        border: 2px solid #E9E9E9;
-        background: $lifeboat-blue;
-        color: $white;
-        @include border-radius(30px);
-        &:hover {
-          background: $lifeboat-yellow;
-          border-color: $white;
+      background-color: $background-light-grey;
+      padding: 5px 20px 5px;
+      .share-icons {
+        .icon {
+          border-color: $background-light-grey;
+          background: $lifeboat-blue;
+          line-height: 1em;
+          height: 34px;
+          width: 35px;
+          padding: 8px 0px;
+          margin: -11px 5px -13px 0;
+          &:hover {
+            background: $lifeboat-yellow;
+            border-color: $white;
+          }
         }
       }
     }
@@ -561,10 +641,20 @@ nav#secondary {
   .pull-quote, figure {
     margin-left: ((($internal-side-col-width + 40px) / $internal-content-col-width) * -100%);
   }
+  .share {
+    margin: 7px -8% 0;
+    padding: 4px 10px;
+    width: 116%;
+  }
 }
 .page .type-page {
   .pull-quote, figure {
     margin-right: ((($internal-side-col-width + 40px) / $internal-content-col-width) * -100%);
+  }
+  .share {
+    margin: 0 0 0 -10%;
+    padding: 4px 10px;
+    width: 110%;
   }
 }
 
@@ -763,7 +853,7 @@ nav#secondary {
           padding: 9px 0px;
           @include font-size(20);
           font-weight: 900;
-          border: 2px solid $background-grey;
+          border: 2px solid $background-page-grey;
           color: $text-color-white;
           width: 40px;
           height: 40px;
@@ -890,10 +980,7 @@ nav#secondary {
 
 /* Homepage Featured Blog Post */
 .home .post-teaser {
-  a#more-from-blog {
-    //position: absolute;
-    //top: -31px;
-    //margin-left: percentage((400px + 20px) / $main-col-width);
+  .button#more-from-blog {
   }
   .post-content {
     h2 {
@@ -1018,6 +1105,85 @@ nav#secondary {
 .page .type-page {
   .five.columns {
     padding-left: 30px;
+  }
+}
+
+
+/* --------------------------------------------------
+   Sidebar + Widgets
+-----------------------------------------------------
+*/
+
+#sidebar {
+  .widget {
+    margin-bottom: 45px;
+    text-align: center;
+    padding: 5px 5px 8px;
+    p {
+      font-style: normal;
+      font-weight: normal;
+      @include font-size(15);
+    }
+    .button {
+      display: block;
+      margin: 0 -20px;
+      font-family: $headerFontFamily;
+      @include font-size(26);
+      letter-spacing: 0;
+      padding: 6px 25px 7px;
+      @include text-shadow(rgba($text-color-black, 0.15) 0 -1px 0);
+      @include background(image-url("button-flap-right.png") no-repeat 100% 50%, image-url("button-flap-left.png") no-repeat 0 50%);
+      @include background-size(auto 100%);
+    }
+  }
+  #widget-text-2 {
+    background: $white;
+    border-top: 3px solid $lifeboat-orange;
+    background: {
+      image: image-url("tim-alia@2x.png");
+      repeat: no-repeat;
+      position: 30% 100%;
+    }
+    @include background-size(130%);
+    .widget-title {
+      @include font-size(18);
+      color: $lifeboat-orange;
+      font-style: italic;
+      line-height: 1.1em;
+      font-family: $bodyFontFamily;
+      //letter-spacing: $letter-spacing-title;
+      font-weight: normal;
+      margin: 10px 0;
+    }
+    hr {
+      border-color: $border-light-grey;
+      width: 45%;
+      margin: 8px auto;
+    }
+    .button {
+      margin-top: 107px;
+      background-color: $lifeboat-orange;
+      &:hover {
+        background-color: $lifeboat-blue;
+      }
+    }
+  }
+  #widget-text-3 {
+    background: {
+      image: image-url("share-manifesto@2x.jpg");
+      repeat: no-repeat;
+      position: 50% 0;
+    }
+    @include background-size(150%);
+    p {
+      margin: 85px 0 5px;
+    }
+    .button {
+      background-color: $lifeboat-yellow;
+      &:hover {
+        background-color: $lifeboat-blue;
+      }
+    }
   }
 }
 

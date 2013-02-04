@@ -3,28 +3,28 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div class="row">
       <section id="home-intro" class="thirteen columns offset-by-five">
-      <?php the_content(); ?>
-      <div class="home-buttons">
-        <a href="/get-started/" class="button small">Start Now</a>
-        <div class="share">
-          <span class="share-label">Share Lifeboat</span>
-          <!-- <a href="" class="icon-fb" aria-hidden="true" data-icon="&#xe012;">Facebook</a>
-          <a href="" class="icon-tw">Twitter</a>
-          <a href="" class="icon-email">Email</a> -->
-          <a href="" class="icon icon-alone icon-fb">
-            <span aria-hidden="true" data-icon="&#xe016;"></span>
-            <span class="screen-reader-text">Facebook</span>
-          </a>
-          <a href="" class="icon icon-alone icon-tw">
-            <span aria-hidden="true" data-icon="&#xe018;"></span>
-            <span class="screen-reader-text">Twitter</span>
-          </a>
-          <a href="" class="icon icon-alone icon-email">
-            <span aria-hidden="true" data-icon="&#xe028;"></span>
-            <span class="screen-reader-text">Email</span>
-          </a>
-        </div><!-- share -->
-      </div><!-- home-buttons -->      </section><!-- home-intro -->
+        <?php the_content(); ?>
+        <div class="home-buttons">
+          <a href="/get-started/" class="button small start-now">Start Now</a>
+          <div class="share">
+            <span class="share-label">Share Lifeboat</span>
+            <span class="share-icons">
+              <a href="" class="icon icon-alone icon-fb">
+                <span aria-hidden="true" data-icon="&#xe016;"></span>
+                <span class="screen-reader-text">Facebook</span>
+              </a>
+              <a href="" class="icon icon-alone icon-tw">
+                <span aria-hidden="true" data-icon="&#xe018;"></span>
+                <span class="screen-reader-text">Twitter</span>
+              </a>
+              <a href="" class="icon icon-alone icon-email">
+                <span aria-hidden="true" data-icon="&#xe028;"></span>
+                <span class="screen-reader-text">Email</span>
+              </a>
+            </span><!-- share-icons -->
+          </div><!-- share -->
+        </div><!-- home-buttons -->
+      </section><!-- home-intro -->
     </div><!-- row -->
     <?php endwhile; endif; ?>
 
@@ -47,7 +47,7 @@
                 <?php if(get_field('subtitle')) : ?>
                 <h4 class="subtitle"><?php the_field('subtitle'); ?></h4>
                 <?php endif; ?>
-                <span data-href="/friend-blog/" id="more-from-blog" class="button small">More from the Friend Blog</span>
+                <span data-href="/friend-blog/" id="more-from-blog" class="button tiny secondary">More from the Friend Blog</span>
               </div><!-- post-content -->
             </a><!-- blog-post-link -->
             <!-- <a href="/friend-blog/" id="more-from-blog" class="button small">More from the Friend Blog</a> -->

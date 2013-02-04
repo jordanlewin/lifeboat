@@ -26,7 +26,8 @@
     		      <?php the_content(); ?>
     		    </div><!-- twelve columns -->
     		    <div class="five columns">
-    		      <p class="panel">Share Icons Here</p>
+    		      <!-- <p class="panel">Share Icons Here</p> -->
+    		      <?php get_template_part( 'share-icons', 'inside' ); ?>
     		    </div><!-- five columns offset-by-one -->
   		    </section><!-- row content -->
   		  </article><!-- type-page -->

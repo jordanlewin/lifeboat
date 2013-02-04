@@ -27,6 +27,7 @@
         		    <!-- <div class="art-by"><small>Illustration By </small>Jane Smith</div>
         		    <div class="views"><small>635 Views</small></div> -->
       		    </div><!-- credits -->
+      		    <?php get_template_part( 'share-icons', 'inside' ); ?>
     		    </div><!-- five columns -->
     		    <div id="content" class="thirteen columns">
     		      <?php the_content(); ?>

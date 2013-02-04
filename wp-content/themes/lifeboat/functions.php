@@ -419,7 +419,7 @@ function lifeboat_register_sidebars() {
       'id' => 'sidebar',
       'name' => 'Main Sidebar',
       'description' => 'Standard sidebar for Lifeboat.',
-      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'before_widget' => '<aside id="widget-%1$s" class="widget %2$s">',
       'after_widget' => '</aside>',
       'before_title' => '<h4 class="widget-title">',
       'after_title' => '</h4>',

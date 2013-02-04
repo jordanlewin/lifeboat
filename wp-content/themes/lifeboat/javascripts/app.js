@@ -2,6 +2,12 @@
 // as the page loads, call these scripts
 $(document).ready(function() {
   
+  // Make #more-from-blog span on homepage act as link
+  $(".home #more-from-blog").click(function() {
+    window.location.assign($(this).attr('data-href'));
+    return false;
+  });
+  
   // Fix figure and figcaption height so body content snugs up against photo
   $("#content figure figcaption").each(function() {
     var figHeight = $(this).height();

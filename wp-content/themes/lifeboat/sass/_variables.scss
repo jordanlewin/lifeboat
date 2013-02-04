@@ -3,12 +3,16 @@
 // VARIABLES
 // Colors
 $lifeboat-blue: $mainColor;
-$lifeboat-orange: $secondaryColor;
+$lifeboat-orange: #E9722B;
 $lifeboat-yellow: #FBBD26;
 
 $border-light-grey: #E0E0E0;
 $border-dark-grey: #B2B2B2;
-$background-grey: #F2F2F2;
+
+$background-page-grey: #F2F2F2; // 5% grey
+$background-light-grey: #E5E5E5; // 10% grey
+$background-med-grey: #D9D9D9; // 15% grey
+$background-dark-grey: #CCCCCC; // 20% grey
 
 $text-color: $txtColor;
 $text-color-white: $white;
