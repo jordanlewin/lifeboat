@@ -23,19 +23,16 @@ RewriteRule . /index.php [L]
   # RewriteCond %{REQUEST_URI} !ignore-this-directory
   # RewriteCond %{REQUEST_URI} !and-ignore-this-directory-too
   
-  RewriteCond %{REQUEST_URI} !images
+  #RewriteCond %{REQUEST_URI} !wp-content/themes/lifeboat/images
 
   # don't apply the AI behaviour to images inside AI's cache folder:
-  RewriteCond %{REQUEST_URI} !ai-cache
+  #RewriteCond %{REQUEST_URI} !wp-content/ai-cache
     
   # Send any GIF, JPG, or PNG request that IS NOT stored inside one of the above directories
   # to adaptive-images.php so we can select appropriately sized versions
   
-  RewriteRule \.(?:jpe?g|gif|png)$ wp-content/themes/lifeboat/adaptive-images.php
+  #RewriteRule \.(?:jpe?g|gif|png)$ wp-content/themes/lifeboat/adaptive-images.php
 
   # END Adaptive-Images -------------------------------------------------------------------------------
 
 </IfModule>
-
-
-
