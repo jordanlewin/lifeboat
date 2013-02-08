@@ -463,7 +463,7 @@ if( $test_url !== false ) { // test if the URL exists
 
 /* load modernizr from foundation */
 function modernize_it(){
-    wp_register_script('modernizr', get_template_directory_uri() . '/javascripts/foundation/modernizr.foundation.js'); 
+    wp_register_script('modernizr', get_template_directory_uri() . '/javascripts/foundation/modernizr.foundation.js');
     wp_enqueue_script('modernizr');
 }
 add_action('wp_enqueue_scripts', 'modernize_it');

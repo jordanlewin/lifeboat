@@ -40,13 +40,24 @@
     		      <?php the_category(); ?>
     		    </div><!-- categories -->
     		    <?php endif; ?>
-    		    <!--<div id="share-bottom">
+    		    <div id="share-bottom">
     		      <h3>Already shared this? No? Share it now:</h3>
-    		      <p class="panel buttons">Facebook and Twitter Share Buttons Here</p>
-    		    </div> share-bottom -->
+    		      <div class="share-bottom-buttons">
+                <span class="button st_facebook_custom" displayText="">
+                  <span class="icon" aria-hidden="true" data-icon="&#xe016;"></span>
+                  <span class="button-text">Facebook</span>
+                </span>
+                <span class="button st_twitter_custom" displayText="">
+                  <span class="icon" aria-hidden="true" data-icon="&#xe018;"></span>
+                  <span class="button-text">Twitter</span>
+                </span>
+    		      </div><!-- share-bottom-buttons -->
+            </div><!-- share-bottom -->
     		    <div id="comments">
     		      <h2>What do you think?</h2>
-    		      <p class="panel">Disqus Comments Here</p>
+    		      <div class="disqus-comments">
+      		      <?php comments_template(); ?>
+    		      </div><!-- disqus-comments -->
     		    </div><!-- comments -->
   		    </footer>
   		  </article><!-- content -->

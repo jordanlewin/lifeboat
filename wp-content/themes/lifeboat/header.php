@@ -43,7 +43,7 @@
   
   <script type="text/javascript">var switchTo5x=true;</script>
   <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-  <script type="text/javascript">stLight.options({publisher: "1d920bac-d920-4f3a-91a1-1d2010576b01", doNotHash: true, doNotCopy: true, hashAddressBar: false,shorten: false});</script>
+  <script type="text/javascript">stLight.options({publisher: "1d920bac-d920-4f3a-91a1-1d2010576b01", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
   
   <!-- wordpress head functions -->
   <?php wp_head(); ?>
