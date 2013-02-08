@@ -28,7 +28,7 @@
                 <div class="meta">
           		    <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('F jS, Y'); ?></time>
           		    <div class="words-by"><small>By </small><?php the_author(); ?></div>
-          		    <div class="views"><small>635 Views</small></div>
+          		    <!-- <div class="views"><small>635 Views</small></div> -->
                 </div><!-- meta -->
               </div><!-- post-content -->
             </a><!-- blog-post-link -->

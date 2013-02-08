@@ -6,12 +6,14 @@
           <?php dynamic_sidebar('sidebar'); ?>
         <?php else : ?>
         <!-- This content shows up if there are no widgets defined in the backend. -->
-        <aside id="become-insider" class="widget">
-          <p class="panel">Become an Insider Here</p>
-        </aside><!-- become-insider -->
-        <aside id="share-manifesto" class="widget">
-          <p class="panel">Share the Manifesto Here</p>
-        </aside><!-- share-manifesto -->
+        <aside id="widget-text-2" class="widget widget_text">
+          <h4 class="widget-title">Join us on a journey to better friendship.</h4>
+          <div class="textwidget">
+            <hr>
+            <p>Get fresh friend advice.</p>
+            <a href="/become-an-insider/" class="button">Become an Insider</a>
+          </div>
+        </aside>
         <?php endif; ?>
       </section><!-- sidebar -->
     </div><!-- row -->

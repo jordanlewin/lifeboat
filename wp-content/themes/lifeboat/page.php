@@ -10,12 +10,12 @@
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				
   		  <article id="page-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-  		    <?php if (has_post_thumbnail()): ?>
-  		    <div id="img-vid">
-    		    <?php the_post_thumbnail('lifeboat-banner'); ?>
-  		    </div><!-- img-vid -->
-  		    <?php endif; ?>
   		    <header>
+    		    <?php if (has_post_thumbnail()): ?>
+    		    <div id="img-vid">
+      		    <?php the_post_thumbnail('lifeboat-banner'); ?>
+    		    </div><!-- img-vid -->
+    		    <?php endif; ?>
     		    <h1 class="page-title"><?php the_title(); ?></h1>
   		    </header>
   		    <section class="row">
@@ -27,24 +27,15 @@
     		    </div><!-- twelve columns -->
     		    <div class="five columns">
     		      <!-- <p class="panel">Share Icons Here</p> -->
-    		      <?php get_template_part( 'share-icons', 'inside' ); ?>
-    		    </div><!-- five columns offset-by-one -->
+    		      <?php get_template_part('share-icons'); ?>
+    		    </div><!-- five columns -->
   		    </section><!-- row content -->
   		  </article><!-- type-page -->
   		  
   		  <?php endwhile; ?>
 				<?php else: ?>
 				
-				<article id="post-not-found">
-				    <header>
-				    	<h1 class="page-title">Not Found</h1>
-				    </header>
-				    <section class="post-content">
-				    	<p>Sorry, but the requested page was not found.</p>
-				    </section>
-				    <footer>
-				    </footer>
-				</article>
+				<?php get_template_part('post-not-found'); ?>
 				
 				<?php endif; ?>
   		  

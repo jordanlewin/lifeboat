@@ -6,23 +6,7 @@
         <?php the_content(); ?>
         <div class="home-buttons">
           <a href="/get-started/" class="button small start-now">Start Now</a>
-          <div class="share">
-            <span class="share-label">Share Lifeboat</span>
-            <span class="share-icons">
-              <a href="" class="icon icon-alone icon-fb">
-                <span aria-hidden="true" data-icon="&#xe016;"></span>
-                <span class="screen-reader-text">Facebook</span>
-              </a>
-              <a href="" class="icon icon-alone icon-tw">
-                <span aria-hidden="true" data-icon="&#xe018;"></span>
-                <span class="screen-reader-text">Twitter</span>
-              </a>
-              <a href="" class="icon icon-alone icon-email">
-                <span aria-hidden="true" data-icon="&#xe028;"></span>
-                <span class="screen-reader-text">Email</span>
-              </a>
-            </span><!-- share-icons -->
-          </div><!-- share -->
+          <?php get_template_part('share-icons'); ?>
         </div><!-- home-buttons -->
       </section><!-- home-intro -->
     </div><!-- row -->
@@ -56,16 +40,7 @@
           <?php endwhile; wp_reset_query(); ?>
           <?php else: ?>
           
-          <article id="post-not-found">
-              <header>
-                <h1 class="page-title">Not Found</h1>
-              </header>
-              <section class="post-content">
-                <p>Sorry, but the requested post was not found on this site.</p>
-              </section>
-              <footer>
-              </footer>
-          </article>
+				<?php get_template_part('post-not-found'); ?>
           
           <?php endif; ?>
 

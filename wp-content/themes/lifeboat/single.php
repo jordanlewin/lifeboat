@@ -8,13 +8,13 @@
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				
   		  <article id="page-<?php the_ID(); ?>" <?php post_class('post-single clearfix'); ?> role="article">
-  		    <?php if (has_post_thumbnail()): ?>
-  		    <div id="img-vid">
-    		    <?php the_post_thumbnail('lifeboat-banner'); ?>
-  		    </div><!-- img-vid -->
-  		    <?php endif; ?>
   		    <header>
-    		    <h1 class="page-title single-title"><?php the_title(); ?></h1>
+    		    <?php if (has_post_thumbnail()): ?>
+    		    <div id="img-vid">
+      		    <?php the_post_thumbnail('lifeboat-banner'); ?>
+    		    </div><!-- img-vid -->
+    		    <?php endif; ?>
+    		    <h1 class="page-title"><?php the_title(); ?></h1>
   		    </header>
   		    <section class="row">
     		    <div class="five columns">
@@ -27,7 +27,7 @@
         		    <!-- <div class="art-by"><small>Illustration By </small>Jane Smith</div>
         		    <div class="views"><small>635 Views</small></div> -->
       		    </div><!-- credits -->
-      		    <?php get_template_part( 'share-icons', 'inside' ); ?>
+      		    <?php get_template_part('share-icons'); ?>
     		    </div><!-- five columns -->
     		    <div id="content" class="thirteen columns">
     		      <?php the_content(); ?>
@@ -40,10 +40,10 @@
     		      <?php the_category(); ?>
     		    </div><!-- categories -->
     		    <?php endif; ?>
-    		    <div id="share-bottom">
+    		    <!--<div id="share-bottom">
     		      <h3>Already shared this? No? Share it now:</h3>
     		      <p class="panel buttons">Facebook and Twitter Share Buttons Here</p>
-    		    </div><!-- share-bottom -->
+    		    </div> share-bottom -->
     		    <div id="comments">
     		      <h2>What do you think?</h2>
     		      <p class="panel">Disqus Comments Here</p>
@@ -54,16 +54,7 @@
   		  <?php endwhile; ?>
 				<?php else: ?>
 				
-				<article id="post-not-found">
-				    <header>
-				    	<h1 class="page-title">Not Found</h1>
-				    </header>
-				    <section class="content">
-				    	<p>Sorry, but the requested page was not found.</p>
-				    </section>
-				    <footer>
-				    </footer>
-				</article>
+				<?php get_template_part('post-not-found'); ?>
 				
 				<?php endif; ?>
   		  

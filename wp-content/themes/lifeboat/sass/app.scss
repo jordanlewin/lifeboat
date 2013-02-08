@@ -39,9 +39,13 @@ a {
   }
 }
 
+/*h1, h2, h3, h4, h5, h6 {
+  letter-spacing: $letter-spacing-title;
+}*/
+
 /* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
 ::-moz-selection, ::selection {
-  background: #{$lifeboat-yellow};
+  background: $lifeboat-yellow;
   color: $text-color-white;
   text-shadow: none;
 }
@@ -149,6 +153,23 @@ mark {
       background-color: $lifeboat-blue;
     }
   }
+  &.action {
+    background-image: none;
+    background-color: $lifeboat-orange;
+    @include background-image(linear-gradient(#F0822E, #E39117 17%, #E77236 62%, #CA6229));
+    @include border-radius(4px);
+    border: 1px solid #C96927 !important;
+    font-family: $headerFontFamily;
+    @include font-size(27);
+    letter-spacing: $letter-spacing-title;
+    padding: 8px 10px 9px !important;
+    @include text-shadow(rgba($text-color-black, 0.2) 0 1px 0);
+    @include box-shadow(rgba($black, .2) 0px 2px 8px);
+    &:hover, &:focus {
+     @include box-shadow(rgba(darken($lifeboat-orange, 10%), .8) 0px 2px 8px, rgba($lifeboat-yellow, .5) 0 0 15px inset);
+     @include text-shadow(rgba($black, .2) 0px 2px 8px, rgba($white, .5) 0 0 15px);
+    }
+  }
   &.alert {
     background-color: $lifeboat-orange;
     &:hover, &:focus {
@@ -163,6 +184,50 @@ mark {
     }
   }
 }
+
+/* Tabs */
+.tabs {
+  border: 1px solid #{$border-extra-dark-grey};
+  border-width: 1px 0;
+  height: 30px;
+  dd {
+    &, &.active {
+      border: none;
+      margin: -9px -1% 0;
+      padding: 0 3% 17px;
+      a, a:hover, a:focus {
+        font-weight: 500;
+        color: $black;
+      }
+    }
+    &.active {
+      @include background(image-url("tab-arrow-yellow@2x.png") no-repeat 50% 100%);
+      @include background-size(100% 17px);
+      a {
+        border: none;
+        background-color: $lifeboat-yellow;
+      }
+    }
+    a {
+      @include font-size(11);
+      letter-spacing: $letter-spacing-label;
+      text-transform: uppercase;
+      height: 48px;
+      line-height: 50px;
+      padding: 0 10px;
+      &:hover {
+        //color: lighten($black, 25%);
+        color: $lifeboat-orange;
+      }
+    }
+  }
+}
+ul.tabs-content {
+  clear: both;
+  padding: 20px 0 0;
+  margin: 0;
+}
+
 
 /* Share Icons */
 .share {
@@ -185,6 +250,7 @@ mark {
   .share-icons {
     display: inline-block;
     .icon {
+      cursor: pointer;
       display: block;
       float: left;
       margin: -8px 5px -11px 0;
@@ -294,6 +360,7 @@ h1.page-title {
 /* Primary Nav */
 /* Inside Pages / General */
 nav#primary {
+  z-index: 100;
   #menu-primary-nav {
     //margin: 0 0 0 ((15px / $main-col-width) * -100%);
     margin: 0 0 0 -15px;
@@ -590,10 +657,19 @@ nav#secondary {
 -----------------------------------------------------
 */
 
+article {
+  header {
+    position: relative;
+  }
+}
+
 #img-vid {
   max-height: 325px;
   overflow: hidden;
-  margin-bottom: 23px;
+  margin-bottom: 25px;
+  img {
+    display: block;
+  }
 }
 
 #content, .content {
@@ -656,6 +732,11 @@ nav#secondary {
     padding: 4px 10px;
     width: 110%;
   }
+}
+
+/* Bottom Tabs */
+#bottom-tabs {
+  margin: 42px 0 0;
 }
 
 #refs {
@@ -743,6 +824,157 @@ nav#secondary {
       @include font-size(34);
       margin: 0 0 5px;
     }
+  }
+}
+
+
+/* --------------------------------------------------
+   Landing Page Template
+-----------------------------------------------------
+*/
+
+.template-landing {
+  header {
+    &.with-banner-title {
+      margin-bottom: 42px;
+    }
+    .banner-title {
+      position: absolute;
+      line-height: $line-height-title;
+      bottom: 20px;
+      right: -12px;
+      @include font-size(60);
+      //letter-spacing: $letter-spacing-title;
+      padding: 0 0 0 30px;
+      margin: 0;
+      color: $text-color-white;
+      text-align: right;
+      text-transform: uppercase;
+      background: {
+        image: image-url("banner-title-flag-left@2x.png");
+        repeat: no-repeat;
+        position: 0 50%;
+      }
+      @include background-size(30px 100%);
+      @include box-shadow(rgba($black, .2) 0px 4px 8px);
+      .title-inner {
+        display: block;
+        background-color: $lifeboat-blue;
+        @include background(linear-gradient(top left, $lifeboat-blue, lighten($lifeboat-blue, 8%)));
+        padding: 14px 35px 14px 18px;
+      }
+      .corner-flap {
+        display: block;
+        position: absolute;
+        right: 0px;
+        bottom: -11px;
+        width: 12px;
+        height: 11px;
+        @include background(image-url("banner-title-flap-right@2x.png") no-repeat);
+        @include background-size(100%);
+        /*background: {
+          image: image-url("banner-title-flap-right@2x.png");
+          repeat: no-repeat;
+        }*/
+      }
+    }
+  }
+  #content {
+    &.nine {
+      padding-right: percentage(30px / $main-col-width);
+    }
+    .subtitle {
+      @include font-size(32);
+    }
+  }
+  #landing-action {
+    position: relative;
+    &.nine {
+      padding-left: percentage(30px / $main-col-width);
+    }
+    .landing-action-arrow {
+      @include cssTriangle(24px, $lifeboat-yellow, right);
+      position: absolute;
+      left: -17px;
+      top: 25px;
+    }
+    .landing-action-content {
+      background-color: $lifeboat-yellow;
+      padding: 25px;
+      h2, h3, h4, h5 {
+        margin: 0 0 15px;
+        color: $text-color-white;
+        letter-spacing: $letter-spacing-title;
+        line-height: $line-height-title;
+        text-transform: uppercase;
+      }
+      p {
+        @include font-size(16);
+        line-height: 1.2em;
+        //font-weight: 500;
+        margin-bottom: 10px;
+        &.privacy {
+          text-align: center;
+        }
+        small {
+          font-size: percentage(12px / 16px);
+          color: $text-color-white;
+          a {
+            text-decoration: underline;
+            color: $text-color-white;
+            &:hover {
+              text-decoration: none;
+              color: $text-color-white;
+            }
+          }
+        }
+      }
+      form {
+        margin-bottom: 5px;
+        .button.action {
+          width: 100%;
+        }
+      }
+      .tabs {
+        height: 25px;
+        dd {
+          &, &.active {
+            margin: -7px -2% 0;
+            padding: 0 3% 13px;
+            a, a:hover, a:focus {
+              color: $black;
+            }
+          }
+          &.active {
+            @include background(image-url("tab-arrow-white@2x.png") no-repeat 50% 100%);
+            @include background-size(100% 13px);
+            a {
+              background-color: $white;
+            }
+          }
+          a {
+            @include font-size(10);
+            height: 37px;
+            line-height: 40px;
+            &:hover {
+              color: $text-color-white;
+            }
+          }
+        }
+      }
+      .tabs-content {
+        clear: both;
+      }
+    }
+  }
+}
+
+/* Become an Insider */
+.page-id-166 {
+  #img-vid {
+    //margin-top: -40px;
+    margin-top: -28px;
+    //z-index: 0;
   }
 }
 

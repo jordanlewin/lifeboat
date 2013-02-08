@@ -50,19 +50,19 @@ $bodyFontFamily: "MuseoSlab", MuseoSlab, serif;
 
 // Form Settings
 
-// $formSpacing: 12px;
+$formSpacing: 18px;
 // $labelFontWeight: 500;
 // $labelFontColor: lighten(#000, 30%);
 // $labelBtmMargin: 3px;
 // $inputFontColor: rgba(0,0,0,0.75);
-// $inputFontSize: 14px;
+$inputFontSize: 16px;
 // $inputBgColor: #fff;
 // $inputFocusBgColor: darken(#fff, 2%);
-// $inputBorderColor: darken(#fff, 20%);
-// $inputFocusBorderColor: darken(#fff, 30%);
+$inputBorderColor: lighten($alertColor, 10%); // $inputBorderColor: darken(#fff, 20%);
+$inputFocusBorderColor: $mainColor; // $inputFocusBorderColor: darken(#fff, 30%);
 // $inputBorderStyle: solid;
 // $inputBorderWidth: 1px;
-// $inputBorderRadius: 2px;
+$inputBorderRadius: 4px;
 // $fieldsetBorderRadius: 3px;
 
 // Custom Form Settings

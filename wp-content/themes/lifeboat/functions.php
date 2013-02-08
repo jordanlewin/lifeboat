@@ -479,6 +479,8 @@ function foundation_js(){
     wp_enqueue_script('foundation-placeholder');
     wp_register_script('foundation-tooltips', get_template_directory_uri() . '/javascripts/foundation/jquery.foundation.tooltips.js', 'jQuery', '2.0.2', true);
     wp_enqueue_script('foundation-tooltips');
+    wp_register_script('foundation-tabs', get_template_directory_uri() . '/javascripts/foundation/jquery.foundation.tabs.js', 'jQuery', '1.0', true);
+    wp_enqueue_script('foundation-tabs');
     wp_register_script('foundation-app', get_template_directory_uri() . '/javascripts/foundation/app.js', 'jQuery', '1.0', true);
     wp_enqueue_script('foundation-app');
     wp_register_script('foundation-off-canvas', get_template_directory_uri() . '/javascripts/foundation/jquery.offcanvas.js', 'jQuery', '1.0', true);
