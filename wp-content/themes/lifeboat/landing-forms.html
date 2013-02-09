@@ -1,20 +1,43 @@
 <!-- Request a Friendly Speaker -->
-<form>
-  <input type="text" placeholder="Your Name" />
-  <input type="text" placeholder="Your Email" />
-  <input type="text" placeholder="Your Organization" />
-  <textarea placeholder="Tell Us About Your Event"></textarea>
-  <input type="submit" class="button action" value="Request A Speaker" />
+<form method="post" action="http://www.tfaforms.com/responses/processor" >
+  <div class="field">
+    <input type="text" name="tfa_1" placeholder="Your Name" class="required">
+  </div>
+  <div class="field">
+    <input type="text" name="tfa_2" placeholder="Your Email" class="required-email">
+  </div>
+  <div class="field">
+    <input type="text" name="tfa_3" placeholder="Your Organization" class="required">
+  </div>
+  <div class="field">
+    <textarea name="tfa_4" placeholder="Tell Us About Your Event"></textarea>
+  </div>
+  <input type="submit" class="button action" value="Request A Speaker">
 </form>
 
 
 <!-- Become an Insider -->
 <!-- Email -->
 <p>Get our updates in your inbox.</p>
-<form>
-  <input type="text" placeholder="First Name" />
-  <input type="text" placeholder="Last Email" />
-  <input type="email" placeholder="Email Address" />
-  <input type="submit" class="button action" value="I Want to Become an Insider!" />
+<form method="post" action="http://www.tfaforms.com/responses/processor" >
+  <div class="field">
+    <input type="text" name="tfa_1" placeholder="First Name" class="required">
+  </div>
+  <div class="field">
+    <input type="text" name="tfa_2" placeholder="Last Email" class="required">
+  </div>
+  <div class="field">
+    <input type="email" name="tfa_3" placeholder="Email Address" class="required-email">
+  </div>
+  <input type="submit" class="button action" value="I Want to Become an Insider!">
 </form>
 <p class="privacy"><small>We’ll keep this between us: <a href="" target="_blank">Privacy Policy</a></small></p>
+
+
+<!-- Example Checkbox -->
+<div class="field">
+  <label for="tfa_1"><input type="checkbox" name="tfa_1" value="Value1">Lorem Ipsum</label>
+</div>
+<div class="field">
+  <label for="tfa_2"><input type="checkbox" name="tfa_2" value="Value2">Dolor Sit Amet</label>
+</div>

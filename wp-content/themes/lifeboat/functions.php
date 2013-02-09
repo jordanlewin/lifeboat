@@ -488,6 +488,18 @@ function foundation_js(){
 }
 add_action('wp_enqueue_scripts', 'foundation_js');
 
+function formassembly_js(){
+    wp_register_script('formassembly-wforms', 'http://www.tfaforms.com/wForms/3.5/js/wforms.js');
+    wp_enqueue_script('formassembly-wforms');
+    wp_register_script('formassembly-wforms-prefill', 'http://www.tfaforms.com/wForms/3.5/js/wforms_prefill.js');
+    wp_enqueue_script('formassembly-wforms-prefill');
+    wp_register_script('formassembly-main', get_template_directory_uri() . '/javascripts/formassembly/jquery.main.js', 'jQuery');
+    wp_enqueue_script('formassembly-main');
+    wp_register_script('formassembly-googlecampaign', get_template_directory_uri() . '/javascripts/formassembly/googlecampaign.js');
+    wp_enqueue_script('formassembly-googlecampaign');
+}
+add_action('wp_enqueue_scripts', 'formassembly_js');
+
 function lifeboat_js(){
     //wp_register_script('wp-foundation-js', get_template_directory_uri() . '/library/js/scripts.js', 'jQuery', '1.0', true); // JL: Removed because I moved these scripts all into app-custom.js
     //wp_enqueue_script('wp-foundation-js');
