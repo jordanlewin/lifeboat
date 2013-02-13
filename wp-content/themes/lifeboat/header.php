@@ -58,13 +58,14 @@
   <!-- Begin Custom Header Markup -->
   <header id="header">
     <?php if (is_front_page()) : ?>
-    <div class="slider container">
-      <div id="home-slider">
-        <div class="slides">
-          <div class="slide">
-            <img src="/wp-content/themes/lifeboat/images/samples/home-slider-1.jpg" alt="Test Slider Image 1">
-          </div><!-- slide -->
-        </div><!-- slides -->
+    <div id="home-slider" class="container">
+      <div class="slider">
+        <div class="slide" style="background-image: url(/wp-content/themes/lifeboat/images/samples/home-slider-1.jpg);">
+        </div><!-- slide -->
+        <div class="slide" style="background-image: url(/wp-content/themes/lifeboat/images/samples/home-slider-2.jpg);">
+        </div><!-- slide -->
+        <div class="slide" style="background-image: url(/wp-content/themes/lifeboat/images/samples/home-slider-3.jpg);">
+        </div><!-- slide -->
       </div><!-- home-slider -->
     </div><!-- slider container -->
     <? endif; ?>

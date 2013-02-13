@@ -14,13 +14,13 @@
     		    <h1 class="page-title"><?php the_title(); ?></h1>
   		    </header>
   		    <section class="row">
-    		    <div class="nine columns">
+    		    <div class="six columns">
     		      <?php if(get_field('subtitle')): ?>
       		    <h3 class="subtitle"><?php the_field('subtitle'); ?></h3>
       		    <?php endif; ?>
     		      <?php the_excerpt(); ?>
     		    </div><!-- nine columns -->
-    		    <div id="content" class="nine columns">
+    		    <div id="content" class="twelve columns">
     		      <?php the_content(); ?>
     		    </div><!-- nine columns -->
   		    </section><!-- row content -->
