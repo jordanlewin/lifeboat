@@ -448,14 +448,14 @@ $test_url = @fopen($url,'r'); // test parameters
 if( $test_url !== false ) { // test if the URL exists  
     function load_external_jQuery() { // load external file  
         wp_deregister_script('jquery'); // deregisters the default WordPress jQuery  
-        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js', 'jQuery', '1.8.1', true); // register the external file  
+        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js', 'jQuery', '1.8.1'); // register the external file  
         wp_enqueue_script('jquery'); // enqueue the external file  
     }  
     add_action('wp_enqueue_scripts', 'load_external_jQuery'); // initiate the function  
 } else {  
     function load_local_jQuery() {  
         wp_deregister_script('jquery'); // initiate the function  
-        wp_register_script('jquery', get_template_directory_uri() . '/javascripts/foundation/jquery.js', 'jQuery', '1.8.1', true); // register the local file  
+        wp_register_script('jquery', get_template_directory_uri() . '/javascripts/foundation/jquery.js', 'jQuery', '1.8.1'); // register the local file  
         wp_enqueue_script('jquery'); // enqueue the local file  
     }  
     add_action('wp_enqueue_scripts', 'load_local_jQuery'); // initiate the function  
