@@ -35,12 +35,7 @@ Template Name: Overview Page
   		  </article><!-- type-page -->
   		  
   		  <?php endwhile; ?>
-				<?php else: ?>
-				
-				<?php get_template_part('post-not-found'); ?>
-				
-				<?php endif; ?>
-				
+
         <?php //global $query_string;
           $args = array(
             'post_type' => 'page',
@@ -65,8 +60,15 @@ Template Name: Overview Page
         </section><!-- overview-grid -->
         <?php endif; ?>
 
+        <?php get_template_part('references'); ?>
  		  
-        </div><!-- content-page -->
+				<?php else: ?>
+				
+				<?php get_template_part('post-not-found'); ?>
+				
+				<?php endif; ?>
+				
+        </div><!-- main-content content-page -->
   		</section><!-- main -->
   	
   		<?php get_sidebar(); ?>

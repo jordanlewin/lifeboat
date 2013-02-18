@@ -22,7 +22,7 @@ $(document).ready(function() {
 
 $(window).load(function() {
   $("#home-slider .slider").orbit({
-    animation: 'fade',                  // fade, horizontal-slide, vertical-slide, horizontal-push
+    //animation: 'fade',                  // fade, horizontal-slide, vertical-slide, horizontal-push
     //animationSpeed: 800,                // how fast animtions are
     //timer: true,                        // true or false to have the timer
     //resetTimerOnClick: false,           // true resets the timer instead of pausing slideshow progress

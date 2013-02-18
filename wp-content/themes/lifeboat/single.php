@@ -59,6 +59,9 @@
       		      <?php comments_template(); ?>
     		      </div><!-- disqus-comments -->
     		    </div><!-- comments -->
+
+            <?php get_template_part('references'); ?>
+            
   		    </footer>
   		  </article><!-- content -->
   		  
