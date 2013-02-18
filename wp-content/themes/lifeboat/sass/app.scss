@@ -1350,14 +1350,18 @@ article {
   }
   .credits {
     @include font-size(14);
-    line-height: 1.3em;
+    line-height: 1.1em;
     font-style: italic;
-    small {
-      color: $text-color-med-grey;
-      font-size: percentage(10px/14px);
-      text-transform: uppercase;
-      letter-spacing: $letter-spacing-label;
-      font-style: normal;
+    padding-bottom: 15px;
+    .by {
+      margin-bottom: 5px;
+      small {
+        color: $text-color-med-grey;
+        font-size: percentage(10px/14px);
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing-label;
+        font-style: normal;
+      }
     }
     a {
       color: $text-color;
