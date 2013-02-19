@@ -97,27 +97,32 @@ function lifeboat_primary_nav() {
       'theme_location' => 'primary_nav', /* where in the theme it's assigned */
       'fallback_cb' => 'lifeboat_primary_nav_fallback', /* menu fallback */
       'before' => '',                                 // before the menu
-        'after' => '',                                  // after the menu
-        'link_before' => '<div class="link-inner">',                            // before each link
-        'link_after' => '</div><div class="link-btm"></div>',                             // after each link
-        'depth' => 1//,                                   // limit the depth of the nav
+      'after' => '',                                  // after the menu
+      'link_before' => '<div class="link-inner">',                            // before each link
+      'link_after' => '</div><div class="link-btm"></div>',                             // after each link
+      'depth' => 1//,                                   // limit the depth of the nav
       //'walker' => new description_walker()
     )
   );
 }
 
-function bones_mobile_nav() {
-  // display the wp3 menu if available
-    wp_nav_menu( 
-      array( 
-        'menu' => 'mobile_nav', /* menu name */
-        'menu_class' => 'side-nav tabs vertical',
-        'theme_location' => 'primary_nav', /* where in the theme it's assigned */
-        'container_class' => 'mobile-nav-container', /* container tag */
-        'fallback_cb' => 'lifeboat_primary_nav_fallback', /* menu fallback */
-        'depth' => '1'
-      )
-    );
+function lifeboat_mobile_primary_nav() {
+  wp_nav_menu( 
+    array( 
+      'container' => false, // remove nav container
+      'container_class' => 'menu clearfix', // class of container (should you choose to use it)
+      'menu' => 'primary_nav', /* menu name */
+      'menu_class' => 'mobile-primary-nav',
+      'theme_location' => 'primary_nav', /* where in the theme it's assigned */
+      'fallback_cb' => 'lifeboat_primary_nav_fallback', /* menu fallback */
+      'before' => '',                                 // before the menu
+      'after' => '',                                  // after the menu
+      'link_before' => '',                            // before each link
+      'link_after' => '',                             // after each link
+      'depth' => 1//,                                   // limit the depth of the nav
+      //'walker' => new description_walker()
+    )
+  );
 }
 
 function bones_footer_links() { 

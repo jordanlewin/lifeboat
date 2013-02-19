@@ -78,10 +78,30 @@ mark {
 }
 .inside #main-container {
   padding-top: 156px;
+  @include breakpoint(tablet-down) {
+    padding-top: 220px;
+  }
 }
 
 .inside #sidebar {
- margin-top: 165px;
+ @include breakpoint(min, 768px) {
+   margin-top: 70px;
+ }
+ @include breakpoint(min, 800px) {
+   margin-top: 90px;
+ }
+ @include breakpoint(min, 900px) {
+   margin-top: 115px;
+ }
+ @include breakpoint(min, 950px) {
+   margin-top: 135px;
+ }
+ @include breakpoint(min, 1000px) {
+   margin-top: 150px;
+ }
+ @include breakpoint(desktop-up) {
+   margin-top: 165px;
+ }
 }
 
 #footer-container {
@@ -270,6 +290,12 @@ ul.tabs-content {
     }
   }
 }
+@include breakpoint(desktop-down) {
+  .five.columns .share .share-label {
+    display: none;    
+  }
+}
+
 
 blockquote {
   color: $lifeboat-blue;
@@ -324,7 +350,11 @@ h1.page-title {
     image: image-url("header-bg@2x.png");
     repeat: repeat-x;
   }
-  @include background-size(100px 97px);
+  @include background-size(auto 97px);
+  @include breakpoint(tablet-down) {
+    height: 107px;
+    @include background-size(auto 106px);
+  }
   //z-index: 100;
 }
 #logo {
@@ -333,34 +363,48 @@ h1.page-title {
     top: percentage($logo-offset-top-inside / $left-col-width);
   }
   width: percentage($logo-width / $left-col-width);
-  z-index: 10;
-  @media screen and (max-width: ($break-tablet - 1px)) {
-    width: 217px;
+  //z-index: 10;
+  @include breakpoint(tablet-down) {
+    width: 211px;
     margin: {
-      left: -17px;
-      top: -17px;
+      left: -30px;
+      top: -18px;
     }
+    float: left;
   }
 }
 
 /* Home Page */
 .home {
   #header .nav.container {
-    height: 59px;
-    top: 441px;
+    height: $home-nav-lg;
+    top: $home-slider-lg - $home-nav-lg;
     background: rgba(#000, .5);
+    @include breakpoint(desktop-down) {
+      height: $home-nav-med;
+      top: ($home-slider-med - $home-nav-med);
+    }
+    @include breakpoint(tablet-down) {
+      height: $home-nav-sm;
+      top: ($home-slider-med - $home-nav-sm);
+    }
+    @include breakpoint(phone) {
+      height: $home-nav-sm;
+      top: ($home-slider-sm - $home-nav-sm);
+    }
   }
   #logo {
     margin-top: percentage($logo-offset-top-home / $left-col-width);
+    @include breakpoint(tablet-down) {
+      margin-top: -84px;
+    }
   }
 }
 
 /* Primary Nav */
 /* Inside Pages / General */
 nav#primary {
-  z-index: 100;
-  #menu-primary-nav {
-    //margin: 0 0 0 ((15px / $main-col-width) * -100%);
+  ul {
     margin: 0 0 0 -15px;
     li {
       float: left;
@@ -374,12 +418,24 @@ nav#primary {
         display: block;
         color: #fff;
         .link-inner {
-          //height: 69px;
           padding: 42px 15px 25px;
-          @media screen and (max-width: $break-tablet-middle) {
+          /* Breakpoints to shrink full nav in */
+          @include breakpoint(max, 1095px) {
             padding: {
-              top: 63px;
-              // 15px 30px;
+              left: 12px;
+              right: 12px;
+            }
+          }
+          @include breakpoint(max, 1055px) {
+            padding: {
+              left: 10px;
+              right: 10px;
+            }
+          }
+          @include breakpoint(desktop-down) {
+            padding: 63px 20px 25px;
+            span, small {
+              display: none !important;
             }
           }
           small {
@@ -401,7 +457,7 @@ nav#primary {
           height: 13px;
           //display: block;
           background: {
-            position: top left;
+            position: center top;
             repeat: no-repeat;
           }
           @include background-size(100% 13px);
@@ -411,9 +467,7 @@ nav#primary {
           @include background-image(linear-gradient(lighten($lifeboat-yellow, 8%), $lifeboat-yellow));
         }
         &:hover .link-btm {
-          background: {
-            image: image-url("nav-primary-triangle-hover.png");
-          }
+          background-image: image-url("nav-primary-triangle-hover.png");
         }
       }
       &.active {
@@ -422,25 +476,119 @@ nav#primary {
             @include background-image(linear-gradient(lighten($lifeboat-blue, 12%), $lifeboat-blue));
           }
           .link-btm {
-            background: {
-              image: image-url("nav-primary-triangle-active.png");
-            }
+            background-image: image-url("nav-primary-triangle-active.png");
           }
         }
       }
     }
   }
 }
-.home nav#primary #menu-primary-nav li a .link-inner {
+.home nav#primary ul li a .link-inner {
   padding: {
     top: 4px;
     bottom: 20px;
+  }
+  @include breakpoint(desktop-down) {
+    padding: {
+      top: 15px;
+      bottom: 24px;
+    }
+  }
+}
+
+/* Mobile Primary Nav */
+nav#mobile-primary {
+  cursor: pointer;
+  position: relative;
+  float: right;
+  top: 66px;
+  .mobile-primary-inner {
+    //@include background-image(linear-gradient(lighten($lifeboat-blue, 12%), $lifeboat-blue));
+    background-color: $lifeboat-blue;
+    @include background(image-url("nav-mobile-icon.png") 50% 50% no-repeat);
+    @include background(image-url("nav-mobile-icon.png") 50% 50% no-repeat, linear-gradient(lighten($lifeboat-blue, 12%), $lifeboat-blue));
+    @include background-size(36px 17px, 100%);
+    width: 66px;
+    height: 45px;
+  }
+  .mobile-primary-btm {
+    background-image: image-url("nav-primary-triangle-active.png");
+    height: 9px;
+    background: {
+      position: center top;
+      repeat: no-repeat;
+    }
+    @include background-size(100% 9px);
+  }
+  ul {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 210px;
+    border: 1px solid $white;
+    border-width: 1px 0;
+    z-index: 100;
+    margin: 0;
+    background-color: $lifeboat-blue;
+    @include box-shadow(rgba($black, .15) 0px 3px 8px);
+    li {
+      list-style: none;
+      border-bottom: 1px solid rgba($white, .4);
+      a {
+        display: block;
+        padding: 15px 15px 13px;
+        text-align: right;
+        @include font-size(12);
+        text-transform: uppercase;
+        color: $text-color-white;
+        letter-spacing: $letter-spacing-label;
+        line-height: 1em;
+        div {
+          font-weight: 900;
+        }
+        small, span, div {
+          font-size: 1em;
+          display: inline;
+        }
+      }
+      &:last-child {
+        border-bottom: none;
+        span {
+          display: none;
+        }
+      }
+      &.active {
+        a {
+          background-color: darken($lifeboat-blue, 7%);
+        }
+      }
+      & a:hover, &.active a:hover {
+        background-color: $lifeboat-yellow;
+      }
+
+    }
+  }
+  &.active ul {
+    display: block;
+  }
+}
+
+.home nav#mobile-primary {
+  top: 0;
+  .mobile-primary-inner {
+    height: 48px;
+  }
+  ul {
+    top: $home-nav-sm;
   }
 }
 
 /* Secondary Nav */
 nav#secondary {
-  margin-top: -9px;
+  @include breakpoint(tablet-up) {
+    margin-top: -9px;
+  }
   ul {
     //@include clearfix();
     margin: 0;
@@ -566,10 +714,16 @@ nav#secondary {
 /* Home Slider */
 #home-slider {
   width: 100%;
-  height: 500px;
+  height: $home-slider-lg;
   position: relative;
   overflow: hidden;
   z-index: 0;
+  @include breakpoint(desktop-down) {
+    height: $home-slider-med;
+  }
+  @include breakpoint(phone) {
+    height: $home-slider-sm;
+  }
   .slider {
     .slide {
       height: 500px;
@@ -581,7 +735,7 @@ nav#secondary {
       }
       text-align: center;
       .button {
-        margin-top: 340px;
+        margin-top: ($home-slider-lg - $home-slider-btn-offset);
         background-color: transparent;
         @include background(image-url("home-slider-button-arrow-right-yellow.png") no-repeat 100% 50%, image-url("home-slider-button-flap-left-yellow.png") no-repeat 0 50%);
         @include background-size(12px 100%);
@@ -591,6 +745,7 @@ nav#secondary {
         @include font-size(22);
         color: $text-color-white;
         @include text-shadow(rgba($text-color-black, 0.2) 0 1px 0);
+        @include opacity(0.95);
         .button-inner {
           background-color: $lifeboat-yellow;
           display: inline-block;
@@ -609,13 +764,21 @@ nav#secondary {
           margin: -34px 12px;
         }
         &:hover {
-          @include opacity(0.95);
+          @include opacity(1);
           @include text-shadow(rgba($text-color-black, 0.3) 0 1px 0);
           .button-inner {
           }
           .icon {
             @include box-shadow(rgba($black, .3) 0px 0px 8px);
           }
+        }
+        @include breakpoint(desktop-down) {
+          //margin-top: 190px;
+          margin-top: ($home-slider-med - $home-slider-btn-offset);
+        }
+        @include breakpoint(phone) {
+          //margin-top: 140px;
+          margin-top: ($home-slider-sm - $home-slider-btn-offset);
         }
       }
       .button.blue {
@@ -665,20 +828,44 @@ nav#secondary {
     top: 15px;
     bottom: 35px;
   }
+  @include breakpoint(tablet-down) {
+    margin-top: 90px;
+  }
   .subheader {
     font-weight: normal;
     text-align: center;
     color: $black;
+    @include breakpoint(tablet) {
+      @include font-size(20);
+    }
+    @include breakpoint(tablet-down) {
+      @include font-size(22);
+    }
+    @include breakpoint(phone) {
+      @include font-size(18);
+    }
   }
   .home-buttons {
     text-align: center;
     .button {
       margin-right: 45px;
       padding: 6px 20px 4px;
+      @include breakpoint(tablet-down) {
+        margin: 5px auto 25px;
+        padding: 8px 20px 6px;
+        width: 50%;
+      }
     }
     .share {
       background-color: $background-light-grey;
       padding: 5px 20px 5px;
+      .share-label {
+        @include breakpoint(phone-sm) {
+          span {
+            display: none;
+          }
+        }
+      }
       .share-icons {
         .icon {
           border-color: $background-light-grey;
@@ -757,7 +944,10 @@ article {
     border-width: 1px 0;
     font-weight: 100;
     font-style: italic;
-    width: percentage($main-col-width / $internal-content-col-width);
+    //width: percentage($main-col-width / $internal-content-col-width);
+    @include breakpoint(tablet-up) {
+      width: percentage($main-col-width / $internal-content-col-width);
+    }
     margin: {
       bottom: 35px;
       top: 35px;
@@ -765,13 +955,17 @@ article {
     padding: 20px 0;
   }
   figure {
-    width: percentage($main-col-width / $internal-content-col-width);
+    @include breakpoint(tablet-up) {
+      width: percentage($main-col-width / $internal-content-col-width);
+    }
     figcaption {
       font-weight: normal;
       font-style: italic;
       padding: 0 0 17px;
       border-bottom: 1px solid #{$border-light-grey};
-      width: percentage($internal-side-col-width / $main-col-width);
+      @include breakpoint(tablet-up) {
+        width: percentage($internal-side-col-width / $main-col-width);
+      }
       @include font-size(13);
       line-height: 1.6em;
       margin-bottom: 1.6em;
@@ -781,7 +975,9 @@ article {
 
 .single .type-post {
   .pull-quote, figure {
-    margin-left: ((($internal-side-col-width + 40px) / $internal-content-col-width) * -100%);
+    @include breakpoint(tablet-up) {
+      margin-left: ((($internal-side-col-width + 40px) / $internal-content-col-width) * -100%);
+    }
   }
   .share {
     margin: 7px -8% 0;
@@ -791,7 +987,9 @@ article {
 }
 .page .type-page {
   .pull-quote, figure {
-    margin-right: ((($internal-side-col-width + 40px) / $internal-content-col-width) * -100%);
+    @include breakpoint(tablet-up) {
+      margin-right: ((($internal-side-col-width + 40px) / $internal-content-col-width) * -100%);
+    }
   }
   .share {
     margin: 0 0 0 -10%;
@@ -832,7 +1030,8 @@ article {
     text-transform: uppercase;
     @include font-size(11);
     //letter-spacing: $letter-spacing-label;
-    color: $text-color-light-grey;
+    //color: $text-color-light-grey;
+    color: lighten($text-color-light-grey, 10%);
     .icon {
       @include font-size(10);
       color: lighten($text-color-light-grey, 20%);
@@ -1253,8 +1452,7 @@ article {
   .post-image {
     float: left;
     width: percentage(400px / $main-col-width);
-    //margin-right: percentage(20px / $main-col-width);
-    margin-right: 20px;
+    margin-right: percentage(20px / $main-col-width);
   }
   .post-content {
     h2 {
@@ -1304,6 +1502,17 @@ article {
       }
     }
   }
+  @include breakpoint(desktop-down) {
+    .post-image {
+      float: none;
+      width: 100%;
+      margin-right: 0;
+    }
+    .post-content, &.with-image a.post-link .post-content {
+      float: none;
+      width: 100%;
+    }
+  }
 }
 
 /* Homepage Featured Blog Post */
@@ -1335,7 +1544,9 @@ article {
 /* Single Blog Posts */
 .single .type-post {
   .five.columns {
-    padding-right: 30px;
+    @include breakpoint(tablet-up) {
+      padding-right: 30px;
+    }
   }
   .subtitle, time, .credits {
     margin-bottom: 20px;
@@ -1496,7 +1707,9 @@ article {
 
 .page .type-page {
   .five.columns {
-    padding-left: 30px;
+    @include breakpoint(tablet-up) {
+      padding-left: 30px;
+    }
   }
 }
 
@@ -1584,30 +1797,3 @@ article {
    Main Media Queries
 -----------------------------------------------------
 */
-
-@media screen and (max-width: $break-tablet-middle) {
-//@include breakpoint($break-tablet-middle) {
-  #home-slider {
-    height: 350px;
-  }
-  .home #header .nav.container {
-    top: (350px - 59px);
-  }
-
-  /* Hide parts of nav at a breakpoint */
-  nav#primary {
-    span, small {
-      display: none !important;
-    }
-  }
-}
-
-@media screen and (max-width: $break-phone) {
-//@include breakpoint($break-phone) {
-  #home-slider {
-    height: 300px;
-  }
-  .home #header .nav.container {
-    top: (300px - 59px);
-  }
-}

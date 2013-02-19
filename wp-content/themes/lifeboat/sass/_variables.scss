@@ -50,26 +50,52 @@ $primary-nav-count: 5;
 $imgdir: "../images/";
 
 // Breakpoints
+$break-phone-sm: 320px;
 $break-phone: 480px;
 $break-tablet: 768px;
-$break-tablet-middle: 900px;
 $break-desktop: 1024px;
-$break-desktop-large: 1200px;
+$break-desktop-lg: 1200px;
+
+// Home Slider dimensions
+$home-slider-lg: 500px;
+$home-slider-med: 350px;
+$home-slider-sm: 300px;
+$home-slider-btn-offset: 160px;
+
+// Homepage nav bar dimensions
+$home-nav-lg: 59px;
+$home-nav-med: 50px;
+$home-nav-sm: 42px;
 
 // MIXINS
 // Media Queries
 @mixin breakpoint($media, $value: false) {
-  @if $media == phone {
+  @if $media == phone-sm {
+    @media only screen and (max-width: $break-phone-sm) { @content; }
+  }
+  @else if $media == phone {
     @media only screen and (max-width: $break-phone) { @content; }
+  }
+  @else if $media == tablet-down {
+    @media only screen and (max-width: ($break-tablet - 1px)) { @content; }
   }
   @else if $media == tablet {
     @media only screen and (min-width: $break-tablet) and (max-width: $break-desktop) { @content; }
   }
+  @else if $media == tablet-up {
+    @media only screen and (min-width: $break-tablet) { @content; }
+  }
+  @else if $media == desktop-down {
+    @media only screen and (max-width: ($break-desktop - 1px)) { @content; }
+  }
   @else if $media == desktop {
     @media only screen and (min-width: $break-desktop) and (max-width: $break-desktop-large) { @content; }
   }
+  @else if $media == desktop-up {
+    @media only screen and (min-width: $break-desktop) { @content; }
+  }
   @else if $media == desktop-large {
-    @media only screen and (min-width: $break-desktop-large) { @content; }
+    @media only screen and (min-width: $break-desktop-lg) { @content; }
   }
   @else if $media == min {
     @media only screen and (min-width: $value) { @content; }

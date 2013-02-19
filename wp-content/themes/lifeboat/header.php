@@ -54,58 +54,18 @@
   <!-- Begin Custom Header Markup -->
   <header id="header"><a id="top"></a>
     <?php if (is_front_page()) : ?>
-    <div id="home-slider" class="container">
-      <div class="slider">
-        <div class="slide" style="background-image: url(/wp-content/uploads/2013/02/home-slider-1.jpg);">
-          <div class="row">
-            <div class="four columns"></div>
-            <div class="thirteen columns offset-by-one">
-              <a href="" class="button feature">
-                <span class="button-inner">
-                  <span class="button-text">Turn on Your Friends</span>
-                  <span class="icon" style="background-image: url(/wp-content/themes/lifeboat/images/icon-flag.svg);"></span>
-                  <span class="button-text">Share the Manifesto</span>
-                </span>
-              </a>
-            </div><!-- thirteen columns -->
-          </div><!-- row -->
-        </div><!-- slide -->
-        <div class="slide" style="background-image: url(/wp-content/uploads/2013/02/home-slider-2.jpg);">
-          <div class="row">
-            <div class="four columns"></div>
-            <div class="thirteen columns offset-by-one">
-              <a href="" class="button feature">
-                <span class="button-inner">
-                  <span class="button-text">What is Lifeboat?</span>
-                  <span class="icon" style="background-image: url(/wp-content/themes/lifeboat/images/icon-flag.svg);"></span>
-                  <span class="button-text">Watch the Video</span>
-                </span>
-              </a>
-            </div><!-- thirteen columns -->
-          </div><!-- row -->
-        </div><!-- slide -->
-        <div class="slide" style="background-image: url(/wp-content/uploads/2013/02/home-slider-3.jpg);">
-          <div class="row">
-            <div class="four columns"></div>
-            <div class="thirteen columns offset-by-one">
-              <a href="" class="button feature">
-                <span class="button-inner">
-                  <span class="button-text">Lorem Ipsum Dolor</span>
-                  <span class="icon" style="background-image: url(/wp-content/themes/lifeboat/images/icon-flag.svg);"></span>
-                  <span class="button-text">Sit Amet Adelfus</span>
-                </span>
-              </a>
-            </div><!-- thirteen columns -->
-          </div><!-- row -->
-        </div><!-- slide -->
-      </div><!-- home-slider -->
-    </div><!-- slider container -->
+    <?php get_template_part('slider', 'home'); ?>
     <? endif; ?>
     <div class="nav container">
       <div class="row">
         <div class="four columns">
           <div id="logo"><a href="<?php echo get_bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/lifeboat-logo@2x.png" alt="<?php bloginfo('name'); ?> // <?php echo get_bloginfo ( 'description' ); ?>"></a></div>
-          <nav id="mobile-primary" class="show-for-small">Mobile nav here.</nav>
+          <nav id="mobile-primary" class="show-for-small">
+            <div class="mobile-primary-inner">
+              <?php lifeboat_mobile_primary_nav(); ?>
+            </div><!-- mobile-primary-inner -->
+            <div class="mobile-primary-btm"></div>
+          </nav>
         </div><!-- four columns -->
         <div class="thirteen columns offset-by-one hide-for-small">
           <nav id="primary">

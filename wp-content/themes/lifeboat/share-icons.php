@@ -1,5 +1,5 @@
 <div class="share">
-  <span class="share-label">Share<?php print (is_front_page()) ? ' Lifeboat' : ''; ?></span>
+  <span class="share-label">Share<?php print (is_front_page()) ? '<span> Lifeboat</span>' : ''; ?></span>
   <span class="share-icons">
     <a href="http://www.facebook.com/sharer.php?u=<?php if (is_front_page()) { print home_url(); } else { the_permalink(); } ?>" target="_blank" class="icon icon-alone icon-fb content-share">
       <span aria-hidden="true" data-icon="&#xe016;"></span>
