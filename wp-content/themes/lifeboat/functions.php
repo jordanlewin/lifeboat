@@ -5,6 +5,12 @@ Author for Lifeboat: Jordan Lewin
 URL: htp://digitalsparks.com
 */
 
+
+/****************** INITIALIZATION & SETTINGS **************************/
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
+
 // Adding Translation Option
 load_theme_textdomain('bonestheme', TEMPLATEPATH.'/languages');
 $locale = get_locale();

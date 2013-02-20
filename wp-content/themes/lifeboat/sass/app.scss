@@ -208,7 +208,7 @@ mark {
   border-width: 1px 0;
   height: 30px;
   dd {
-    &, &.active {
+    &, &.active, &:first-child {
       border: none;
       margin: -9px -1% 0;
       padding: 0 3% 17px;
@@ -508,7 +508,7 @@ nav#mobile-primary {
     //@include background-image(linear-gradient(lighten($lifeboat-blue, 12%), $lifeboat-blue));
     background-color: $lifeboat-blue;
     @include background(image-url("nav-mobile-icon.png") 50% 50% no-repeat);
-    @include background(image-url("nav-mobile-icon.png") 50% 50% no-repeat, linear-gradient(lighten($lifeboat-blue, 12%), $lifeboat-blue));
+    @include background(image-url("nav-mobile-icon.png") 50% 45% no-repeat, linear-gradient(lighten($lifeboat-blue, 12%), $lifeboat-blue));
     @include background-size(36px 17px, 100%);
     width: 66px;
     height: 45px;
@@ -757,11 +757,11 @@ nav#secondary {
   .slider {
     .slide {
       height: 500px;
-      background-position: 50% 25%;
+      background-position: 50% 5%;
       background-repeat: no-repeat;
       @include background-size(100%);
-      @media screen and (max-width: 960px) {
-        @include background-size(960px auto);
+      @media screen and (max-width: 860px) {
+        @include background-size(860px auto);
       }
       text-align: center;
       .button {
@@ -803,12 +803,34 @@ nav#secondary {
           }
         }
         @include breakpoint(desktop-down) {
-          //margin-top: 190px;
           margin-top: ($home-slider-med-height - $home-slider-btn-offset);
         }
         @include breakpoint(phone) {
-          //margin-top: 140px;
-          margin-top: ($home-slider-sm-height - $home-slider-btn-offset);
+          margin-top: ($home-slider-sm-height - $home-slider-btn-offset - 30px);
+          padding: 0 0 0 21px;
+          @include background-size(21px 100%);
+          @include font-size(20);
+        }
+        @include breakpoint(between, $break-tablet, 860px) {
+          @include font-size(20);
+        }
+        @include breakpoint(tablet-down) {
+          display: block;
+          text-align: right;
+          margin-right: -10px;
+          padding: 0 0 0 18px;
+          float: right;
+          width: 50%;
+          @include background-size(18px 100%);
+          .icon {
+            display: none;
+          }
+          .button-text {
+            display: inline;
+            &:first-child:after {
+              content: ": ";
+            }
+          }
         }
       }
       .button.blue {
@@ -935,6 +957,9 @@ nav#secondary {
   .label-title {
     padding-bottom: 4px;
     border-bottom: 1px solid #DEDEDE;
+    @include breakpoint(tablet-down) {
+      margin-top: 0;
+    }
   }
 }
 
@@ -1049,9 +1074,18 @@ article {
     }
   }
   .share {
-    margin: 0 0 0 -10%;
     padding: 4px 10px;
-    width: 110%;
+    margin: 7px auto 20px;
+    width: 100%;
+    @include breakpoint(tablet-up) {
+      margin: 7px 0 0 -16%;
+      width: 116%;
+    }
+    @include breakpoint(tablet-down) {
+      .share-label {
+        display: inline-block !important;
+      }
+    }
   }
 }
 
@@ -1064,7 +1098,7 @@ article {
   color: $text-color-med-grey;
   border-top: 1px solid #{$border-light-grey};
   padding: 20px 0 10px;
-  margin: 40px 0 0;
+  margin: 50px 0 0;
   position: relative;
   .label-title {
     font-weight: 500;
@@ -1106,6 +1140,9 @@ article {
   }
   li {
     margin-bottom: 10px;
+  }
+  @include breakpoint(tablet-down) {
+    margin-top: 60px 0 0;
   }
 }
 
@@ -1231,11 +1268,32 @@ article {
           repeat: no-repeat;
         }*/
       }
+      @include breakpoint(max, $break-tablet) {
+        @include font-size(46);
+        bottom: 15px;
+      }
+      @include breakpoint(phone) {
+        @include font-size(36);
+        bottom: 11px;
+        right: -8px;
+        padding-left: 15px;
+        @include background-size(15px 100%);
+        .title-inner {
+          padding: 7px 14px 7px 8px;
+        }
+        .corner-flap {
+          bottom: -7px;
+          width: 8px;
+          height: 7px;
+        }
+      }
     }
   }
   #content {
-    &.nine {
-      padding-right: percentage(30px / $main-col-width);
+    @include breakpoint(tablet-up) {
+      &.nine {
+        padding-right: percentage(30px / $main-col-width);
+      }
     }
     .subtitle {
       @include font-size(32);
@@ -1243,14 +1301,18 @@ article {
   }
   #landing-action {
     position: relative;
-    &.nine {
-      padding-left: percentage(30px / $main-col-width);
-    }
-    .landing-action-arrow {
-      @include cssTriangle(24px, $lifeboat-yellow, right);
-      position: absolute;
-      left: -17px;
-      top: 25px;
+    margin: 10px 0 15px;
+    @include breakpoint(tablet-up) {
+      margin: 0;
+      &.nine {
+        padding-left: percentage(30px / $main-col-width);
+      }
+      .landing-action-arrow {
+        @include cssTriangle(24px, $lifeboat-yellow, right);
+        position: absolute;
+        left: -17px;
+        top: 25px;
+      }
     }
     .landing-action-content {
       background-color: $lifeboat-yellow;
@@ -1287,6 +1349,12 @@ article {
         margin-bottom: 5px;
         .button.action {
           width: 100%;
+          @include breakpoint(tablet) {
+            @include font-size(20);
+          }
+          @include breakpoint(max, 350px) {
+            @include font-size(22);
+          }
         }
       }
       .tabs {
@@ -1327,7 +1395,7 @@ article {
 .page-id-166 {
   #img-vid {
     //margin-top: -40px;
-    margin-top: -28px;
+    margin-top: -26px;
     //z-index: 0;
   }
 }
@@ -1364,7 +1432,7 @@ article {
         font-weight: 500;
       }
       @include breakpoint(tablet-down) {
-        padding-bottom: 15px;
+        padding-bottom: 5px;
         border-bottom: 1px solid #{$border-light-grey};
       }
     }
@@ -1392,12 +1460,20 @@ article {
             background: rgba($lifeboat-yellow, .95);
             color: $text-color-white;
             text-transform: uppercase;
-            @include font-size(30);
             line-height: $line-height-title;
             letter-spacing: $letter-spacing-title;
             @include text-shadow(rgba($text-color-black, 0.2) 0 -1px 0);
             @include transition(opacity .2s);
             @include opacity(0);
+            @include font-size(30);
+            @include breakpoint(tablet) {
+              @include font-size(24);
+              padding: 6px;
+            }
+            @include breakpoint(phone-sm) {
+              @include font-size(18);
+              padding: 4px;
+            }
           }
           &:hover h2 {
             @include opacity(1);
@@ -1410,83 +1486,112 @@ article {
     }
   }
   .practice-bottom {
-    height: 68px;
+    height: 60px;
     background: {
       image: image-url("triangle-bottom-white.png");
       repeat: no-repeat;
       position: top left;
     }
     @include background-size(100% 100%);
+    @include breakpoint(phone) {
+      height: 40px;
+    }
+    @include breakpoint(phone-sm) {
+      height: 30px;
+    }
+  }
+  #lifeboat-practices {
+    .practice {
+      position: relative;
+      background: $white;
+      .practice-top {
+        position: absolute;
+        height: 60px;
+        width: 100%;
+        background: {
+          image: image-url("triangle-top-grey.png");
+          repeat: no-repeat;
+          position: top left;
+        }
+        @include background-size(100% 100%);
+        @include breakpoint(phone) {
+          height: 40px;
+        }
+        @include breakpoint(phone-sm) {
+          height: 30px;
+        }
+        .practice-num {
+          display: block;
+          text-align: center;
+          position: relative;
+          top: 40px;
+          @include breakpoint(phone) {
+            top: 20px;
+          }
+          @include breakpoint(phone-sm) {
+            top: 10px;
+          }
+          span {
+            background: $lifeboat-blue;
+            padding: 9px 0px;
+            @include font-size(20);
+            font-weight: 900;
+            border: 2px solid $background-page-grey;
+            color: $text-color-white;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            @include border-radius(100px);
+          }
+        }
+      }
+      .practice-banner {
+        img {
+          display: block;
+        }
+      }
+      .practice-content {
+        padding: 20px 20px 20px;
+        h2, h3, h4, h5 {
+          text-align: center;
+          background: {
+            image: image-url("line-repeat-light-grey.png");
+            repeat: repeat-x;
+            position: 0 50%;
+          }
+          @include background-size(1px 1px);
+          span {
+            background: $white;
+            padding: 0 12px;
+          }
+        }
+        .practice-title {
+          margin: 0 0 25px;
+          @include font-size(62);
+          @include breakpoint(phone) {
+            @include font-size(50);
+            background: none;
+            margin-bottom: 15px;
+            span {
+              background: transparent;
+              padding: 0;
+            }
+          }
+        }
+        .content-inner {
+          @include breakpoint(min, 850px) {
+            @include column-count(2);
+            @include column-gap(40px);
+          }
+          ul {
+            padding-left: 1.1em;
+          }
+        }
+      }
+    }
   }
 }
 
-#lifeboat-practices {
-  .practice {
-    position: relative;
-    background: $white;
-    .practice-top {
-      position: absolute;
-      height: 68px;
-      width: 100%;
-      background: {
-        image: image-url("triangle-top-grey.png");
-        repeat: no-repeat;
-        position: top left;
-      }
-      @include background-size(100% 100%);
-      .practice-num {
-        display: block;
-        text-align: center;
-        position: relative;
-        top: 50px;
-        span {
-          background: $lifeboat-blue;
-          padding: 9px 0px;
-          @include font-size(20);
-          font-weight: 900;
-          border: 2px solid $background-page-grey;
-          color: $text-color-white;
-          width: 40px;
-          height: 40px;
-          display: inline-block;
-          @include border-radius(100px);
-        }
-      }
-    }
-    .practice-banner {
-      img {
-        display: block;
-      }
-    }
-    .practice-content {
-      padding: 20px 20px 20px;
-      h2, h3, h4, h5 {
-        text-align: center;
-        background: {
-          image: image-url("line-repeat-light-grey.png");
-          repeat: repeat-x;
-          position: 0 50%;
-        }
-        @include background-size(1px 1px);
-        span {
-          background: $white;
-          padding: 0 12px;
-        }
-      }
-      .practice-title {
-        @include font-size(62);
-        margin: 0 0 25px;
-      }
-      .content-inner {
-        @include column-count(2);
-        @include column-gap(40px);
-        ul {
-          padding-left: 1.1em;
-        }
-      }
-    }
-  }
-}
 
 
 /* --------------------------------------------------
@@ -1514,15 +1619,16 @@ article {
     }
   }
   .post-image {
+    img {
+      display: block;
+    }
     float: left;
     width: percentage(400px / $main-col-width);
     margin-right: percentage(20px / $main-col-width);
   }
   .post-content {
     h2 {
-      @include breakpoint(desktop-up) {
-        margin: -4px 0 10px;
-      }
+      margin-top: 0;
       color: $lifeboat-yellow;
       @include font-size(62);
       text-transform: uppercase;
@@ -1567,7 +1673,13 @@ article {
     a.post-link {
       .post-content {
         float: left;
-        width: percentage(340px / $main-col-width);        
+        width: percentage(340px / $main-col-width);
+        h2 {
+          margin-top: 15px;
+          @include breakpoint(desktop-up) {
+            margin: -4px 0 10px;
+          }
+        }
       }
     }
   }
@@ -1814,10 +1926,26 @@ article {
 */
 
 #sidebar {
+  @include breakpoint(tablet-down) {
+    margin-top: 30px;
+    padding-top: 45px;
+    border-top: 1px solid #{$border-dark-grey};
+  }
   .widget {
     margin-bottom: 45px;
     text-align: center;
     padding: 5px 5px 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .widget-title {
+      @include font-size(18);
+      font-style: italic;
+      line-height: 1.1em;
+      font-family: $bodyFontFamily;
+      font-weight: normal;
+      margin: 10px 0;
+    }
     p {
       font-style: normal;
       font-weight: normal;
@@ -1825,17 +1953,32 @@ article {
     }
     .button {
       display: block;
-      margin: 0 -20px;
       font-family: $headerFontFamily;
+      margin: 0 -15px;
+      padding: 6px 25px 7px;
       @include font-size(26);
       letter-spacing: 0;
-      padding: 6px 25px 7px;
       @include text-shadow(rgba($text-color-black, 0.15) 0 -1px 0);
       @include background(image-url("button-flap-right.png") no-repeat 100% 50%, image-url("button-flap-left.png") no-repeat 0 50%);
       @include background-size(auto 100%);
     }
+    @include breakpoint(between, $break-tablet, 1070px) {
+      padding-bottom: 0;
+      .widget-title {
+        @include font-size(16);
+      }
+      p {
+        @include font-size(12);
+      }
+      .button {
+        //margin-bottom: -10px;
+        padding: 6px 15px 7px;
+        @include font-size(20);
+        @include background-size(10px 100%);
+      }
+    }
   }
-  #widget-text-2 {
+  #widget-text-2 { // Become an Insider
     background: $white;
     border-top: 3px solid $lifeboat-orange;
     background: {
@@ -1845,14 +1988,7 @@ article {
     }
     @include background-size(130%);
     .widget-title {
-      @include font-size(18);
       color: $lifeboat-orange;
-      font-style: italic;
-      line-height: 1.1em;
-      font-family: $bodyFontFamily;
-      //letter-spacing: $letter-spacing-title;
-      font-weight: normal;
-      margin: 10px 0;
     }
     hr {
       border-color: $border-light-grey;
@@ -1866,8 +2002,24 @@ article {
         background-color: $lifeboat-blue;
       }
     }
+    @include breakpoint(between, $break-tablet, 900px) {
+      @include background-size(212px auto);
+      .button {
+        margin-top: 90px;
+      }
+    }
+    @include breakpoint(tablet-down) {
+      @include background-size(360px auto);
+      background-position: 50% 100%;
+      .button {
+        margin-top: 155px;
+      }
+    }
+    @include breakpoint(phone-sm) {
+      background-position: 30% 100%;
+    }
   }
-  #widget-text-3 {
+  #widget-text-3 { // Share the Manifesto
     background: {
       image: image-url("share-manifesto@2x.jpg");
       repeat: no-repeat;
@@ -1883,6 +2035,12 @@ article {
         background-color: $lifeboat-blue;
       }
     }
+  }
+}
+
+.home #sidebar {
+  @include breakpoint(tablet-down) {
+    margin-top: 50px;
   }
 }
 
