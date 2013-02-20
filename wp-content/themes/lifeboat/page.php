@@ -28,7 +28,7 @@
             </div><!-- twelve columns -->
             <div class="five columns">
               <!-- <p class="panel">Share Icons Here</p> -->
-              <?php get_template_part('share-icons'); ?>
+              <?php get_template_part('share', 'icons'); ?>
             </div><!-- five columns -->
           </section><!-- row content -->
           

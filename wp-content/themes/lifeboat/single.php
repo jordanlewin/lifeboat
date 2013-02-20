@@ -33,7 +33,7 @@
                 <?php endif; ?>
                 <!-- <div class="views"><small>635 Views</small></div> -->
               </div><!-- credits -->
-              <?php get_template_part('share-icons'); ?>
+              <?php get_template_part('share', 'icons'); ?>
             </div><!-- five columns -->
             <div id="content" class="thirteen columns">
               <?php the_content(); ?>
@@ -48,16 +48,7 @@
             <?php endif; ?>
             <div id="share-bottom">
               <h3>Already shared this? No? Share it now:</h3>
-              <div class="share-bottom-buttons">
-                <span class="button st_facebook_custom" displayText="">
-                  <span class="icon" aria-hidden="true" data-icon="&#xe016;"></span>
-                  <span class="button-text">Facebook</span>
-                </span>
-                <span class="button st_twitter_custom" displayText="">
-                  <span class="icon" aria-hidden="true" data-icon="&#xe018;"></span>
-                  <span class="button-text">Twitter</span>
-                </span>
-              </div><!-- share-bottom-buttons -->
+              <?php get_template_part('share', 'buttons'); ?>
             </div><!-- share-bottom -->
             <div id="comments">
               <h2>What do you think?</h2>

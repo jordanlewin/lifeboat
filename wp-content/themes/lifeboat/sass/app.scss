@@ -311,7 +311,6 @@ blockquote {
 }
 
 h1.page-title {
-  //font-size: ms(7); // Should be 90px
   @include font-size(90);
   text-transform: uppercase;
   letter-spacing: $letter-spacing-title;
@@ -319,6 +318,9 @@ h1.page-title {
   padding-bottom: 20px;
   border-bottom: 1px solid #{$border-light-grey};
   line-height: $line-height-title;
+  @include breakpoint(phone) {
+    @include font-size(72);
+  }
 }
 
 /* Clearfix */
@@ -377,20 +379,20 @@ h1.page-title {
 /* Home Page */
 .home {
   #header .nav.container {
-    height: $home-nav-lg;
-    top: $home-slider-lg - $home-nav-lg;
+    height: $home-nav-lg-height;
+    top: $home-slider-lg-height - $home-nav-lg-height;
     background: rgba(#000, .5);
     @include breakpoint(desktop-down) {
-      height: $home-nav-med;
-      top: ($home-slider-med - $home-nav-med);
+      height: $home-nav-med-height;
+      top: ($home-slider-med-height - $home-nav-med-height);
     }
     @include breakpoint(tablet-down) {
-      height: $home-nav-sm;
-      top: ($home-slider-med - $home-nav-sm);
+      height: $home-nav-sm-height;
+      top: ($home-slider-med-height - $home-nav-sm-height);
     }
     @include breakpoint(phone) {
-      height: $home-nav-sm;
-      top: ($home-slider-sm - $home-nav-sm);
+      height: $home-nav-sm-height;
+      top: ($home-slider-sm-height - $home-nav-sm-height);
     }
   }
   #logo {
@@ -580,7 +582,7 @@ nav#mobile-primary {
     height: 48px;
   }
   ul {
-    top: $home-nav-sm;
+    top: $home-nav-sm-height;
   }
 }
 
@@ -646,11 +648,21 @@ nav#secondary {
     img {
       vertical-align: middle;
     }
+    @include breakpoint(max, 925px) {
+      display: block;
+      margin-bottom: 20px;
+    }
   }
   .copyright {
     padding: 15px 17px 15px 5px;
     margin-right: 17px;
     border-right: 1px solid #{$border-light-grey};
+    @include breakpoint(max, 475px) {
+      display: block;
+      padding: 10px 0px 5px 0px;
+      margin-right: 0;
+      border: none;
+    }
   }
   .from {
     padding: 4px 17px 4px 0px;
@@ -659,6 +671,10 @@ nav#secondary {
     .hearts-minds {
       padding: {
         right: 10px;
+      }
+      @include breakpoint(max, 375px) {
+        display: block;
+        padding: 4px 0px 7px 0px;
       }
     }
     .name {
@@ -692,6 +708,11 @@ nav#secondary {
       bottom: -3px;
       padding: 0 2px;
     }
+    @include breakpoint(max, 600px) {
+      padding: 4px 0px 7px 0px;
+      margin-right: 0;
+      border: none;
+    }
   }
   .contact-us {
     .button {
@@ -702,6 +723,15 @@ nav#secondary {
         background-color: $lifeboat-blue;
       }
     }
+    @include breakpoint(max, 600px) {
+      display: block;
+      .button {
+        display: inline-block;
+      }
+    }
+  }
+  #footer-second {
+    line-height: 1.5em;
   }
 }
 
@@ -714,15 +744,15 @@ nav#secondary {
 /* Home Slider */
 #home-slider {
   width: 100%;
-  height: $home-slider-lg;
+  height: $home-slider-lg-height;
   position: relative;
   overflow: hidden;
   z-index: 0;
   @include breakpoint(desktop-down) {
-    height: $home-slider-med;
+    height: $home-slider-med-height;
   }
   @include breakpoint(phone) {
-    height: $home-slider-sm;
+    height: $home-slider-sm-height;
   }
   .slider {
     .slide {
@@ -735,7 +765,7 @@ nav#secondary {
       }
       text-align: center;
       .button {
-        margin-top: ($home-slider-lg - $home-slider-btn-offset);
+        margin-top: ($home-slider-lg-height - $home-slider-btn-offset);
         background-color: transparent;
         @include background(image-url("home-slider-button-arrow-right-yellow.png") no-repeat 100% 50%, image-url("home-slider-button-flap-left-yellow.png") no-repeat 0 50%);
         @include background-size(12px 100%);
@@ -774,11 +804,11 @@ nav#secondary {
         }
         @include breakpoint(desktop-down) {
           //margin-top: 190px;
-          margin-top: ($home-slider-med - $home-slider-btn-offset);
+          margin-top: ($home-slider-med-height - $home-slider-btn-offset);
         }
         @include breakpoint(phone) {
           //margin-top: 140px;
-          margin-top: ($home-slider-sm - $home-slider-btn-offset);
+          margin-top: ($home-slider-sm-height - $home-slider-btn-offset);
         }
       }
       .button.blue {
@@ -849,11 +879,15 @@ nav#secondary {
     text-align: center;
     .button {
       margin-right: 45px;
-      padding: 6px 20px 4px;
+      padding: 7px 20px 5px;
       @include breakpoint(tablet-down) {
+        display: inline-block;
+        margin: 5px 45px 25px 0;
+        //padding: 8px 20px 6px;
+        //width: 50%;
+      }
+      @include breakpoint(phone) {
         margin: 5px auto 25px;
-        padding: 8px 20px 6px;
-        width: 50%;
       }
     }
     .share {
@@ -937,7 +971,7 @@ article {
     margin-bottom: 1em;
   }
   .pull-quote {
-    @include font-size(32);
+    @include font-size(28);
     line-height: 1.35em;
     color: $lifeboat-blue;
     border: 1px solid #{$border-light-grey};
@@ -945,14 +979,20 @@ article {
     font-weight: 100;
     font-style: italic;
     //width: percentage($main-col-width / $internal-content-col-width);
+    margin: {
+      bottom: 20px;
+      top: 20px;
+    }
+    padding: 15px 0;
     @include breakpoint(tablet-up) {
+      @include font-size(32);
+      margin: {
+        bottom: 35px;
+        top: 35px;
+      }
+      padding: 20px 0;
       width: percentage($main-col-width / $internal-content-col-width);
     }
-    margin: {
-      bottom: 35px;
-      top: 35px;
-    }
-    padding: 20px 0;
   }
   figure {
     @include breakpoint(tablet-up) {
@@ -961,14 +1001,22 @@ article {
     figcaption {
       font-weight: normal;
       font-style: italic;
-      padding: 0 0 17px;
+      padding: 0 0 1em;
       border-bottom: 1px solid #{$border-light-grey};
-      @include breakpoint(tablet-up) {
+      /*@include breakpoint(tablet-up) {
         width: percentage($internal-side-col-width / $main-col-width);
-      }
+      }*/
       @include font-size(13);
       line-height: 1.6em;
       margin-bottom: 1.6em;
+    }
+  }
+  @include breakpoint(tablet-down) {
+    .button {
+      display: inline-block;
+    }
+    ul {
+      padding-left: 1.1em;
     }
   }
 }
@@ -980,9 +1028,18 @@ article {
     }
   }
   .share {
-    margin: 7px -8% 0;
     padding: 4px 10px;
-    width: 116%;
+    margin: 7px auto 20px;
+    width: 100%;
+    @include breakpoint(tablet-up) {
+      margin: 7px -8% 0;
+      width: 116%;
+    }
+    @include breakpoint(tablet-down) {
+      .share-label {
+        display: inline-block !important;
+      }
+    }
   }
 }
 .page .type-page {
@@ -1105,12 +1162,14 @@ article {
       repeat: no-repeat;
       position: 8px 2px;
     }
-    &.odd {
-      padding-right: 20px;
-    }
-    &.even {
-      padding-left: 28px;
-      background-position: 28px 2px;
+    @include breakpoint(tablet-up) {
+      &.odd {
+        padding-right: 20px;
+      }
+      &.even {
+        padding-left: 28px;
+        background-position: 28px 2px;
+      }
     }
     h2 {
       text-transform: uppercase;
@@ -1304,6 +1363,10 @@ article {
         @include font-size(16);
         font-weight: 500;
       }
+      @include breakpoint(tablet-down) {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #{$border-light-grey};
+      }
     }
     #practice-thumbs-grid {
       margin-top: 25px;
@@ -1313,6 +1376,7 @@ article {
         @include font-size(11);
       }
       .practice-thumb {
+        padding-bottom: 16px;
         a {
           position: relative;
           display: block;
@@ -1456,12 +1520,17 @@ article {
   }
   .post-content {
     h2 {
-      margin: -4px 0 10px;
+      @include breakpoint(desktop-up) {
+        margin: -4px 0 10px;
+      }
       color: $lifeboat-yellow;
       @include font-size(62);
       text-transform: uppercase;
       letter-spacing: $letter-spacing-title;
       line-height: $line-height-title;
+      @include breakpoint(phone) {
+        @include font-size(54);
+      }
     }
     .subtitle {
       color: $text-color-dark-grey;
@@ -1512,12 +1581,23 @@ article {
       float: none;
       width: 100%;
     }
+    &.with-image a.post-link .post-content {
+      text-align: center;
+    }
+    .button {
+      display: inline-block;
+    }
   }
 }
 
 /* Homepage Featured Blog Post */
 .home .post-teaser {
   .button#more-from-blog {
+  }
+  .post-image {
+    img {
+      margin-bottom: 0 !important;
+    }
   }
   .post-content {
     h2 {
@@ -1535,7 +1615,7 @@ article {
 
 .inside {
   .post-teaser {
-    padding-bottom: 45px;
+    padding-bottom: 37px;
     margin-bottom: 45px;
     border-bottom: 1px solid #{$border-light-grey};
   }
@@ -1583,9 +1663,9 @@ article {
     }
   }
   footer {
+    margin-top: 20px;
     .categories {
       padding: 15px 0;
-      margin-top: 30px; 
       border: 1px solid #{$border-light-grey};
       border-width: 1px 0;
       @include clearfix();
@@ -1617,37 +1697,41 @@ article {
       }
     }
     #share-bottom {
-      padding: 50px 0;
+      padding: 50px 0 35px;
       h3 {
         @include font-size(22);
         color: $text-color-black;
         text-transform: uppercase;
         text-align: center;
-        margin-bottom: 35px;
+        margin-bottom: 30px;
       }
       .share-bottom-buttons {
         text-align: center;
         .button {
           font-family: $headerFontFamily;
           @include font-size(28);
-          padding: 0px 40px 8px;
+          padding: 8px 40px;
+          margin: 0 12px 35px;
           @include text-shadow(rgba($text-color-black, 0.2) 0 -1px 0);
+          display: inline-block;
           .icon {
-            margin: -10px 5px -13px 0;
+            display: inline-block;
+            margin: -37px 5px -29px 0;
             @include font-size(38);
-            line-height: 1em;
+            line-height: 0em;
             height: 70px;
             width: 70px;
-            padding: 12px 11px 6px 11px;
+            padding: 11px;
+            vertical-align: middle;
             border: 5px solid;
             background-color: $white;
             @include border-radius(100px);
+            @include box-shadow(rgba($black, .2) 0px 0px 8px);
             @include text-shadow(none);
-            .button-text {
-              //float: left;
-              display: inline-block;
-              
-            }
+          }
+          .button-text {
+            display: inline-block;
+            
           }
           &:hover {
             background-color: $lifeboat-yellow;
@@ -1656,16 +1740,26 @@ article {
               border-color: $lifeboat-yellow;
             }
           }
+          @include breakpoint(phone) {
+            @include font-size(26);
+            padding: 8px 34px;
+            .icon {
+              @include font-size(34);
+              //margin: -37px 5px -29px 0;
+              height: 66px;
+              width: 66px;
+              padding: 11px;
+            }
+          }
         }
-        .st_facebook_custom {
+        .btn-facebook {
           background-color: $color-facebook;
-          margin-right: 25px;
           .icon {
             color: $color-facebook;
             border-color: $color-facebook;
           }
         }
-        .st_twitter_custom {
+        .btn-twitter {
           background-color: $color-twitter;
           .icon {
             color: $color-twitter;

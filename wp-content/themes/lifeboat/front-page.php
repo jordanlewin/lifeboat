@@ -6,7 +6,7 @@
         <?php the_content(); ?>
         <div class="home-buttons">
           <a href="/get-started/" class="button small start-now">Start Now</a>
-          <?php get_template_part('share-icons'); ?>
+          <?php get_template_part('share', 'icons'); ?>
         </div><!-- home-buttons -->
       </section><!-- home-intro -->
     </div><!-- row -->
