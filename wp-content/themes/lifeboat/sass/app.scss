@@ -435,9 +435,15 @@ nav#primary {
             }
           }
           @include breakpoint(desktop-down) {
-            padding: 63px 20px 25px;
+            padding: 63px 28px 25px;
             span, small {
               display: none !important;
+            }
+          }
+          @include breakpoint(max, 900px) {
+            padding: {
+              left: 20px;
+              right: 20px;
             }
           }
           small {
@@ -507,7 +513,7 @@ nav#mobile-primary {
   .mobile-primary-inner {
     //@include background-image(linear-gradient(lighten($lifeboat-blue, 12%), $lifeboat-blue));
     background-color: $lifeboat-blue;
-    @include background(image-url("nav-mobile-icon.png") 50% 50% no-repeat);
+    @include background(image-url("nav-mobile-icon.png") 50% 45% no-repeat);
     @include background(image-url("nav-mobile-icon.png") 50% 45% no-repeat, linear-gradient(lighten($lifeboat-blue, 12%), $lifeboat-blue));
     @include background-size(36px 17px, 100%);
     width: 66px;
@@ -2045,9 +2051,3 @@ article {
     margin-top: 50px;
   }
 }
-
-
-/* --------------------------------------------------
-   Main Media Queries
------------------------------------------------------
-*/
