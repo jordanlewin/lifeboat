@@ -14,7 +14,7 @@ $totalColumns: 18;
 
 $mainColor: #00AEEF;
 $secondaryColor: #CCCCCC;
-$alertColor: #E9722B;
+$alertColor: #c60f13;
 // $successColor: #5da423;
 $txtColor: #111111;
 $highlightColor: #FBBD26;
@@ -58,7 +58,7 @@ $formSpacing: 18px;
 $inputFontSize: 16px;
 // $inputBgColor: #fff;
 // $inputFocusBgColor: darken(#fff, 2%);
-$inputBorderColor: lighten($alertColor, 10%); // $inputBorderColor: darken(#fff, 20%);
+$inputBorderColor: lighten(#E9722B, 10%); // $inputBorderColor: darken(#fff, 20%);
 $inputFocusBorderColor: $mainColor; // $inputFocusBorderColor: darken(#fff, 30%);
 // $inputBorderStyle: solid;
 // $inputBorderWidth: 1px;

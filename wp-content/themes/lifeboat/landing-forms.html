@@ -19,19 +19,43 @@
 <!-- Become an Insider -->
 <!-- Email -->
 <p>Get our updates in your inbox.</p>
-<form method="post" action="http://www.tfaforms.com/responses/processor" >
-  <div class="field">
-    <input type="text" name="tfa_1" placeholder="First Name" class="required">
-  </div>
-  <div class="field">
-    <input type="text" name="tfa_2" placeholder="Last Email" class="required">
-  </div>
-  <div class="field">
-    <input type="email" name="tfa_3" placeholder="Email Address" class="required-email">
-  </div>
-  <input type="submit" class="button action" value="I Want to Become an Insider!">
-</form>
-<p class="privacy"><small>We’ll keep this between us: <a href="" target="_blank">Privacy Policy</a></small></p>
+<div class="loop-form">
+  <form method="post" action="http://www.tfaforms.com/responses/processor">
+    <!-- CampaignID -->
+    <input type="hidden" name="tfa_5" value="70160000000Y73c"> 
+    <!-- Redirect -->
+    <input type="hidden" name="tfa_13" value="http://getlifeboat.com/insider-success"> 
+    <!-- FormType -->
+    <input type="hidden" name="tfa_14" value="Insider"> 
+    
+    <!-- First Name -->
+    <div class="field">
+      <input type="text" name="tfa_1" placeholder="First Name*" class="required">
+    </div>
+    <!-- Last Name -->
+   <div class="field">
+      <input type="text" name="tfa_2" placeholder="Last Name*" class="required">
+    </div>
+    <!-- Email -->
+    <div class="field">
+      <input type="text" id="email" name="tfa_3" placeholder="Your Email*" class="required-email">
+    </div>
+    
+    <input type="submit" class="button action" value="I Want To Be An Insider">
+    <p class="privacy"><small>We'll keep this between us: <a href="" target="_blank">Privacy Policy</a></small></p>
+    
+    <input type="hidden" id="tfa_8" name="tfa_8" value="" class="calc-GOOGLESOURCE">
+    <input type="hidden" id="tfa_9" name="tfa_9" value="" class="calc-GOOGLECAMPAIGN">
+    <input type="hidden" id="tfa_10" name="tfa_10" value="" class="calc-GOOGLEMEDIUM">
+    <input type="hidden" id="tfa_11" name="tfa_11" value="" class="calc-GOOGLEKEYWORD">
+    <input type="hidden" id="tfa_12" name="tfa_12" value="" class="calc-GOOGLEADCONTENT">
+    
+    <input type="hidden" value="261860" name="tfa_dbFormId" id="tfa_dbFormId">
+    <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
+    <input type="hidden" value="0e235e4e6d991c03b96deac3f09685cd" name="tfa_dbControl" id="tfa_dbControl">
+    <input type="hidden" value="6" name="tfa_dbVersionId" id="tfa_dbVersionId">
+  </form>
+</div>
 
 
 <!-- Example Checkbox -->
@@ -40,4 +64,52 @@
 </div>
 <div class="field">
   <label for="tfa_2"><input type="checkbox" name="tfa_2" value="Value2">Dolor Sit Amet</label>
+</div>
+
+
+<!-- Contact Form -->
+<div class="loop-form">
+  <form method="post" action="http://www.tfaforms.com/responses/processor">
+    <!-- CampaignID -->
+    <input type="hidden" name="tfa_5" value="70160000000YC1S"> 
+    <!-- Redirect -->
+    <input type="hidden" name="tfa_13" value="http://getlifeboat.com/contact-success"> 
+    <!-- FormType -->
+    <input type="hidden" name="tfa_14" value="Contact"> 
+    
+    <!-- First Name -->
+    <div class="field">
+      <input type="text" name="tfa_1" placeholder="First Name*" class="required">
+    </div>
+    <!-- Last Name -->
+   <div class="field">
+      <input type="text" name="tfa_2" placeholder="Last Name*" class="required">
+    </div>
+    <!-- Email -->
+    <div class="field">
+      <input type="text" id="email" name="tfa_3" placeholder="Your Email*" class="required-email">
+    </div>
+    <!-- Message -->
+    <div class="field">
+      <textarea name="tfa_15" placeholder="Type Your Message Here*" class="required"></textarea>
+    </div>
+    <!-- Insider Checkbox -->  
+    <div class="field">
+      <input type="checkbox" name="tfa_19" checked>Send me fresh friend advice (weekly)</checkbox>
+    </div>
+    <!-- button -->
+    <input type="submit" class="button action" value="Send My Message!">
+    <p class="privacy"><small>We'll keep this between us and all your info private.</small></p>
+    
+    <input type="hidden" id="tfa_8" name="tfa_8" value="" class="calc-GOOGLESOURCE">
+    <input type="hidden" id="tfa_9" name="tfa_9" value="" class="calc-GOOGLECAMPAIGN">
+    <input type="hidden" id="tfa_10" name="tfa_10" value="" class="calc-GOOGLEMEDIUM">
+    <input type="hidden" id="tfa_11" name="tfa_11" value="" class="calc-GOOGLEKEYWORD">
+    <input type="hidden" id="tfa_12" name="tfa_12" value="" class="calc-GOOGLEADCONTENT">  
+    
+    <input type="hidden" value="261860" name="tfa_dbFormId" id="tfa_dbFormId">
+    <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
+    <input type="hidden" value="0e235e4e6d991c03b96deac3f09685cd" name="tfa_dbControl" id="tfa_dbControl">
+    <input type="hidden" value="6" name="tfa_dbVersionId" id="tfa_dbVersionId">
+  </form>
 </div>
