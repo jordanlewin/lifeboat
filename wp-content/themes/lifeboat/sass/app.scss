@@ -1414,6 +1414,9 @@ article {
       .tabs-content {
         clear: both;
       }
+      .fb-like-box {
+        background: $white;
+      }
     }
   }
 }
@@ -2076,11 +2079,11 @@ form {
   }
   #widget-text-3 { // Share the Manifesto
     background: {
-      image: image-url("share-manifesto@2x.jpg");
+      image: image-url("manifesto-sidebar.jpg");
       repeat: no-repeat;
       position: 50% 0;
     }
-    @include background-size(150%);
+    @include background-size(120%);
     p {
       margin: 85px 0 5px;
     }

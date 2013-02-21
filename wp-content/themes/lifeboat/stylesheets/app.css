@@ -8099,20 +8099,24 @@ article header {
 .template-landing #landing-action .landing-action-content .tabs-content {
   clear: both;
 }
+/* line 1417, ../sass/app.scss */
+.template-landing #landing-action .landing-action-content .fb-like-box {
+  background: white;
+}
 
 /* Error Messages on Forms */
-/* line 1423, ../sass/app.scss */
+/* line 1426, ../sass/app.scss */
 form .errMsg {
   display: none;
 }
-/* line 1426, ../sass/app.scss */
+/* line 1429, ../sass/app.scss */
 form .error input, form input.error, form .error textarea, form textarea.error {
   background-color: rgba(255, 255, 255, 0.7);
   border-width: 2px;
 }
 
 /* Become an Insider */
-/* line 1434, ../sass/app.scss */
+/* line 1437, ../sass/app.scss */
 .page-id-166 #img-vid {
   margin-top: -26px;
 }
@@ -8121,65 +8125,65 @@ form .error input, form input.error, form .error textarea, form textarea.error {
    Getting Started Guide
 -----------------------------------------------------
 */
-/* line 1448, ../sass/app.scss */
+/* line 1451, ../sass/app.scss */
 .getting-started-guide .type-page {
   background: white;
   padding: 20px;
 }
-/* line 1454, ../sass/app.scss */
+/* line 1457, ../sass/app.scss */
 .getting-started-guide .type-page .subtitle {
   font-size: 32px;
   font-size: 3.2rem;
   margin-bottom: 20px;
 }
-/* line 1458, ../sass/app.scss */
+/* line 1461, ../sass/app.scss */
 .getting-started-guide .type-page blockquote {
   padding: 0;
   border: none;
   padding-top: 20px;
   border-top: 1px solid #e0e0e0;
 }
-/* line 1463, ../sass/app.scss */
+/* line 1466, ../sass/app.scss */
 .getting-started-guide .type-page blockquote p {
   font-size: 18px;
   font-size: 1.8rem;
   font-style: italic;
   font-weight: 100;
 }
-/* line 1468, ../sass/app.scss */
+/* line 1471, ../sass/app.scss */
 .getting-started-guide .type-page blockquote .attribute {
   font-size: 16px;
   font-size: 1.6rem;
   font-weight: 500;
 }
 @media only screen and (max-width: 767px) {
-  /* line 1458, ../sass/app.scss */
+  /* line 1461, ../sass/app.scss */
   .getting-started-guide .type-page blockquote {
     padding-bottom: 5px;
     border-bottom: 1px solid #e0e0e0;
   }
 }
-/* line 1477, ../sass/app.scss */
+/* line 1480, ../sass/app.scss */
 .getting-started-guide .type-page #practice-thumbs-grid {
   margin-top: 25px;
   border-top: 1px solid #e0e0e0;
 }
-/* line 1480, ../sass/app.scss */
+/* line 1483, ../sass/app.scss */
 .getting-started-guide .type-page #practice-thumbs-grid .label-title {
   margin: 12px 0;
   font-size: 11px;
   font-size: 1.1rem;
 }
-/* line 1484, ../sass/app.scss */
+/* line 1487, ../sass/app.scss */
 .getting-started-guide .type-page #practice-thumbs-grid .practice-thumb {
   padding-bottom: 16px;
 }
-/* line 1486, ../sass/app.scss */
+/* line 1489, ../sass/app.scss */
 .getting-started-guide .type-page #practice-thumbs-grid .practice-thumb a {
   position: relative;
   display: block;
 }
-/* line 1489, ../sass/app.scss */
+/* line 1492, ../sass/app.scss */
 .getting-started-guide .type-page #practice-thumbs-grid .practice-thumb a h2 {
   position: absolute;
   top: 0;
@@ -8205,7 +8209,7 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   font-size: 3rem;
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-  /* line 1489, ../sass/app.scss */
+  /* line 1492, ../sass/app.scss */
   .getting-started-guide .type-page #practice-thumbs-grid .practice-thumb a h2 {
     font-size: 24px;
     font-size: 2.4rem;
@@ -8213,23 +8217,23 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   }
 }
 @media only screen and (max-width: 320px) {
-  /* line 1489, ../sass/app.scss */
+  /* line 1492, ../sass/app.scss */
   .getting-started-guide .type-page #practice-thumbs-grid .practice-thumb a h2 {
     font-size: 18px;
     font-size: 1.8rem;
     padding: 4px;
   }
 }
-/* line 1516, ../sass/app.scss */
+/* line 1519, ../sass/app.scss */
 .getting-started-guide .type-page #practice-thumbs-grid .practice-thumb a:hover h2 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 1519, ../sass/app.scss */
+/* line 1522, ../sass/app.scss */
 .getting-started-guide .type-page #practice-thumbs-grid .practice-thumb a img {
   display: block;
 }
-/* line 1526, ../sass/app.scss */
+/* line 1529, ../sass/app.scss */
 .getting-started-guide .practice-bottom {
   height: 60px;
   background-image: url('../images/triangle-bottom-white.png?1359857917');
@@ -8241,23 +8245,23 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   background-size: 100% 100%;
 }
 @media only screen and (max-width: 480px) {
-  /* line 1526, ../sass/app.scss */
+  /* line 1529, ../sass/app.scss */
   .getting-started-guide .practice-bottom {
     height: 40px;
   }
 }
 @media only screen and (max-width: 320px) {
-  /* line 1526, ../sass/app.scss */
+  /* line 1529, ../sass/app.scss */
   .getting-started-guide .practice-bottom {
     height: 30px;
   }
 }
-/* line 1542, ../sass/app.scss */
+/* line 1545, ../sass/app.scss */
 .getting-started-guide #lifeboat-practices .practice {
   position: relative;
   background: white;
 }
-/* line 1545, ../sass/app.scss */
+/* line 1548, ../sass/app.scss */
 .getting-started-guide #lifeboat-practices .practice .practice-top {
   position: absolute;
   height: 60px;
@@ -8271,18 +8275,18 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   background-size: 100% 100%;
 }
 @media only screen and (max-width: 480px) {
-  /* line 1545, ../sass/app.scss */
+  /* line 1548, ../sass/app.scss */
   .getting-started-guide #lifeboat-practices .practice .practice-top {
     height: 40px;
   }
 }
 @media only screen and (max-width: 320px) {
-  /* line 1545, ../sass/app.scss */
+  /* line 1548, ../sass/app.scss */
   .getting-started-guide #lifeboat-practices .practice .practice-top {
     height: 30px;
   }
 }
-/* line 1561, ../sass/app.scss */
+/* line 1564, ../sass/app.scss */
 .getting-started-guide #lifeboat-practices .practice .practice-top .practice-num {
   display: block;
   text-align: center;
@@ -8290,18 +8294,18 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   top: 40px;
 }
 @media only screen and (max-width: 480px) {
-  /* line 1561, ../sass/app.scss */
+  /* line 1564, ../sass/app.scss */
   .getting-started-guide #lifeboat-practices .practice .practice-top .practice-num {
     top: 20px;
   }
 }
 @media only screen and (max-width: 320px) {
-  /* line 1561, ../sass/app.scss */
+  /* line 1564, ../sass/app.scss */
   .getting-started-guide #lifeboat-practices .practice .practice-top .practice-num {
     top: 10px;
   }
 }
-/* line 1572, ../sass/app.scss */
+/* line 1575, ../sass/app.scss */
 .getting-started-guide #lifeboat-practices .practice .practice-top .practice-num span {
   background: #00aeef;
   padding: 9px 0px;
@@ -8319,15 +8323,15 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   -o-border-radius: 100px;
   border-radius: 100px;
 }
-/* line 1587, ../sass/app.scss */
+/* line 1590, ../sass/app.scss */
 .getting-started-guide #lifeboat-practices .practice .practice-banner img {
   display: block;
 }
-/* line 1591, ../sass/app.scss */
+/* line 1594, ../sass/app.scss */
 .getting-started-guide #lifeboat-practices .practice .practice-content {
   padding: 20px 20px 20px;
 }
-/* line 1593, ../sass/app.scss */
+/* line 1596, ../sass/app.scss */
 .getting-started-guide #lifeboat-practices .practice .practice-content h2, .getting-started-guide #lifeboat-practices .practice .practice-content h3, .getting-started-guide #lifeboat-practices .practice .practice-content h4, .getting-started-guide #lifeboat-practices .practice .practice-content h5 {
   text-align: center;
   background-image: url('../images/line-repeat-light-grey.png?1359862018');
@@ -8338,33 +8342,33 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   -o-background-size: 1px 1px;
   background-size: 1px 1px;
 }
-/* line 1601, ../sass/app.scss */
+/* line 1604, ../sass/app.scss */
 .getting-started-guide #lifeboat-practices .practice .practice-content h2 span, .getting-started-guide #lifeboat-practices .practice .practice-content h3 span, .getting-started-guide #lifeboat-practices .practice .practice-content h4 span, .getting-started-guide #lifeboat-practices .practice .practice-content h5 span {
   background: white;
   padding: 0 12px;
 }
-/* line 1606, ../sass/app.scss */
+/* line 1609, ../sass/app.scss */
 .getting-started-guide #lifeboat-practices .practice .practice-content .practice-title {
   margin: 0 0 25px;
   font-size: 62px;
   font-size: 6.2rem;
 }
 @media only screen and (max-width: 480px) {
-  /* line 1606, ../sass/app.scss */
+  /* line 1609, ../sass/app.scss */
   .getting-started-guide #lifeboat-practices .practice .practice-content .practice-title {
     font-size: 50px;
     font-size: 5rem;
     background: none;
     margin-bottom: 15px;
   }
-  /* line 1613, ../sass/app.scss */
+  /* line 1616, ../sass/app.scss */
   .getting-started-guide #lifeboat-practices .practice .practice-content .practice-title span {
     background: transparent;
     padding: 0;
   }
 }
 @media only screen and (min-width: 850px) {
-  /* line 1619, ../sass/app.scss */
+  /* line 1622, ../sass/app.scss */
   .getting-started-guide #lifeboat-practices .practice .practice-content .content-inner {
     -webkit-column-count: 2;
     -moz-column-count: 2;
@@ -8378,7 +8382,7 @@ form .error input, form input.error, form .error textarea, form textarea.error {
     column-gap: 40px;
   }
 }
-/* line 1624, ../sass/app.scss */
+/* line 1627, ../sass/app.scss */
 .getting-started-guide #lifeboat-practices .practice .practice-content .content-inner ul {
   padding-left: 1.1em;
 }
@@ -8388,7 +8392,7 @@ form .error input, form input.error, form .error textarea, form textarea.error {
 -----------------------------------------------------
 */
 /* Crew Page */
-/* line 1641, ../sass/app.scss */
+/* line 1644, ../sass/app.scss */
 #crew .crew-member {
   margin-bottom: 15px;
 }
@@ -8398,35 +8402,35 @@ form .error input, form input.error, form .error textarea, form textarea.error {
 -----------------------------------------------------
 */
 /* Blog Post Teaser */
-/* line 1654, ../sass/app.scss */
+/* line 1657, ../sass/app.scss */
 .post-teaser a.post-link {
   display: block;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 1659, ../sass/app.scss */
+/* line 1662, ../sass/app.scss */
 .post-teaser a.post-link:hover .post-content h2 {
   color: #e9722b;
 }
-/* line 1662, ../sass/app.scss */
+/* line 1665, ../sass/app.scss */
 .post-teaser a.post-link:hover .post-content .subtitle {
   color: black;
 }
-/* line 1665, ../sass/app.scss */
+/* line 1668, ../sass/app.scss */
 .post-teaser a.post-link:hover .post-content .meta {
   color: #595959;
 }
-/* line 1671, ../sass/app.scss */
+/* line 1674, ../sass/app.scss */
 .post-teaser .post-image {
   float: left;
   width: 52.63158%;
   margin-right: 2.63158%;
 }
-/* line 1672, ../sass/app.scss */
+/* line 1675, ../sass/app.scss */
 .post-teaser .post-image img {
   display: block;
 }
-/* line 1680, ../sass/app.scss */
+/* line 1683, ../sass/app.scss */
 .post-teaser .post-content h2 {
   margin-top: 0;
   color: #fbbd26;
@@ -8437,13 +8441,13 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   line-height: 0.85em;
 }
 @media only screen and (max-width: 480px) {
-  /* line 1680, ../sass/app.scss */
+  /* line 1683, ../sass/app.scss */
   .post-teaser .post-content h2 {
     font-size: 54px;
     font-size: 5.4rem;
   }
 }
-/* line 1691, ../sass/app.scss */
+/* line 1694, ../sass/app.scss */
 .post-teaser .post-content .subtitle {
   color: #333333;
   font-weight: normal;
@@ -8451,13 +8455,13 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   font-size: 24px;
   font-size: 2.4rem;
 }
-/* line 1697, ../sass/app.scss */
+/* line 1700, ../sass/app.scss */
 .post-teaser .post-content .meta {
   font-style: italic;
   color: #8c8c8c;
   font-weight: 500;
 }
-/* line 1701, ../sass/app.scss */
+/* line 1704, ../sass/app.scss */
 .post-teaser .post-content .meta time, .post-teaser .post-content .meta div {
   font-size: 13px;
   font-size: 1.3rem;
@@ -8465,83 +8469,83 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   padding: 8px 10px 8px 8px;
   border-right: 1px solid #e0e0e0;
 }
-/* line 1706, ../sass/app.scss */
+/* line 1709, ../sass/app.scss */
 .post-teaser .post-content .meta time:first-child, .post-teaser .post-content .meta div:first-child {
   padding-left: 0;
 }
-/* line 1709, ../sass/app.scss */
+/* line 1712, ../sass/app.scss */
 .post-teaser .post-content .meta time:last-child, .post-teaser .post-content .meta div:last-child {
   padding-right: 0;
   border-right: none;
 }
-/* line 1714, ../sass/app.scss */
+/* line 1717, ../sass/app.scss */
 .post-teaser .post-content .meta small {
   font-size: 71.42857%;
   text-transform: uppercase;
   letter-spacing: 0.09em;
   font-style: normal;
 }
-/* line 1724, ../sass/app.scss */
+/* line 1727, ../sass/app.scss */
 .post-teaser.with-image a.post-link .post-content {
   float: left;
   width: 44.73684%;
 }
-/* line 1727, ../sass/app.scss */
+/* line 1730, ../sass/app.scss */
 .post-teaser.with-image a.post-link .post-content h2 {
   margin-top: 15px;
 }
 @media only screen and (min-width: 1024px) {
-  /* line 1727, ../sass/app.scss */
+  /* line 1730, ../sass/app.scss */
   .post-teaser.with-image a.post-link .post-content h2 {
     margin: -4px 0 10px;
   }
 }
 @media only screen and (max-width: 1023px) {
-  /* line 1737, ../sass/app.scss */
+  /* line 1740, ../sass/app.scss */
   .post-teaser .post-image {
     float: none;
     width: 100%;
     margin-right: 0;
   }
-  /* line 1742, ../sass/app.scss */
+  /* line 1745, ../sass/app.scss */
   .post-teaser .post-content, .post-teaser.with-image a.post-link .post-content {
     float: none;
     width: 100%;
   }
-  /* line 1746, ../sass/app.scss */
+  /* line 1749, ../sass/app.scss */
   .post-teaser.with-image a.post-link .post-content {
     text-align: center;
   }
-  /* line 1749, ../sass/app.scss */
+  /* line 1752, ../sass/app.scss */
   .post-teaser .button {
     display: inline-block;
   }
 }
 
 /* Homepage Featured Blog Post */
-/* line 1760, ../sass/app.scss */
+/* line 1763, ../sass/app.scss */
 .home .post-teaser .post-image img {
   margin-bottom: 0 !important;
 }
-/* line 1765, ../sass/app.scss */
+/* line 1768, ../sass/app.scss */
 .home .post-teaser .post-content h2 {
   font-size: 72px;
   font-size: 7.2rem;
 }
 
 /* Blog Index Page */
-/* line 1773, ../sass/app.scss */
+/* line 1776, ../sass/app.scss */
 .blog h1.page-title {
   margin-bottom: 35px;
 }
-/* line 1776, ../sass/app.scss */
+/* line 1779, ../sass/app.scss */
 .blog #content {
   margin-bottom: 35px;
   padding-bottom: 15px;
   border-bottom: 1px solid #e0e0e0;
 }
 
-/* line 1784, ../sass/app.scss */
+/* line 1787, ../sass/app.scss */
 .inside .post-teaser {
   padding-bottom: 37px;
   margin-bottom: 45px;
@@ -8550,18 +8554,18 @@ form .error input, form input.error, form .error textarea, form textarea.error {
 
 /* Single Blog Posts */
 @media only screen and (min-width: 768px) {
-  /* line 1793, ../sass/app.scss */
+  /* line 1796, ../sass/app.scss */
   .single .type-post .five.columns, .single .type-post .row .columns.five, .row .single .type-post .columns.five {
     padding-right: 30px;
   }
 }
-/* line 1798, ../sass/app.scss */
+/* line 1801, ../sass/app.scss */
 .single .type-post .subtitle, .single .type-post time, .single .type-post .credits {
   margin-bottom: 20px;
   padding-bottom: 17px;
   border-bottom: 1px solid #e0e0e0;
 }
-/* line 1803, ../sass/app.scss */
+/* line 1806, ../sass/app.scss */
 .single .type-post time {
   display: block;
   font-size: 15px;
@@ -8569,7 +8573,7 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   font-style: italic;
   line-height: 1.6em;
 }
-/* line 1809, ../sass/app.scss */
+/* line 1812, ../sass/app.scss */
 .single .type-post .credits {
   font-size: 14px;
   font-size: 1.4rem;
@@ -8577,11 +8581,11 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   font-style: italic;
   padding-bottom: 15px;
 }
-/* line 1814, ../sass/app.scss */
+/* line 1817, ../sass/app.scss */
 .single .type-post .credits .by {
   margin-bottom: 5px;
 }
-/* line 1816, ../sass/app.scss */
+/* line 1819, ../sass/app.scss */
 .single .type-post .credits .by small {
   color: #666666;
   font-size: 71.42857%;
@@ -8589,20 +8593,20 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   letter-spacing: 0.09em;
   font-style: normal;
 }
-/* line 1824, ../sass/app.scss */
+/* line 1827, ../sass/app.scss */
 .single .type-post .credits a {
   color: #111111;
 }
-/* line 1826, ../sass/app.scss */
+/* line 1829, ../sass/app.scss */
 .single .type-post .credits a:hover {
   color: #666666;
   text-decoration: underline;
 }
-/* line 1832, ../sass/app.scss */
+/* line 1835, ../sass/app.scss */
 .single .type-post footer {
   margin-top: 20px;
 }
-/* line 1834, ../sass/app.scss */
+/* line 1837, ../sass/app.scss */
 .single .type-post footer .categories {
   padding: 15px 0;
   border: 1px solid #e0e0e0;
@@ -8610,23 +8614,23 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 1839, ../sass/app.scss */
+/* line 1842, ../sass/app.scss */
 .single .type-post footer .categories .label-title {
   float: left;
   font-weight: 500;
   margin: 7px 10px 0 0;
 }
-/* line 1844, ../sass/app.scss */
+/* line 1847, ../sass/app.scss */
 .single .type-post footer .categories .post-categories {
   float: left;
   margin: 0;
 }
-/* line 1847, ../sass/app.scss */
+/* line 1850, ../sass/app.scss */
 .single .type-post footer .categories .post-categories li {
   display: inline-block;
   margin-right: 8px;
 }
-/* line 1850, ../sass/app.scss */
+/* line 1853, ../sass/app.scss */
 .single .type-post footer .categories .post-categories li a {
   color: white;
   font-weight: 500;
@@ -8642,15 +8646,15 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   background-color: #D9D9D9;
   padding: 6px 10px 5px;
 }
-/* line 1859, ../sass/app.scss */
+/* line 1862, ../sass/app.scss */
 .single .type-post footer .categories .post-categories li a:hover {
   background-color: #00aeef;
 }
-/* line 1866, ../sass/app.scss */
+/* line 1869, ../sass/app.scss */
 .single .type-post footer #share-bottom {
   padding: 50px 0 35px;
 }
-/* line 1868, ../sass/app.scss */
+/* line 1871, ../sass/app.scss */
 .single .type-post footer #share-bottom h3 {
   font-size: 22px;
   font-size: 2.2rem;
@@ -8659,11 +8663,11 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   text-align: center;
   margin-bottom: 30px;
 }
-/* line 1875, ../sass/app.scss */
+/* line 1878, ../sass/app.scss */
 .single .type-post footer #share-bottom .share-bottom-buttons {
   text-align: center;
 }
-/* line 1877, ../sass/app.scss */
+/* line 1880, ../sass/app.scss */
 .single .type-post footer #share-bottom .share-bottom-buttons .button {
   font-family: "Solano Gothic MVB", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 28px;
@@ -8673,7 +8677,7 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   text-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0;
   display: inline-block;
 }
-/* line 1884, ../sass/app.scss */
+/* line 1887, ../sass/app.scss */
 .single .type-post footer #share-bottom .share-bottom-buttons .button .icon {
   display: inline-block;
   margin: -37px 5px -29px 0;
@@ -8696,27 +8700,27 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
   text-shadow: none;
 }
-/* line 1899, ../sass/app.scss */
+/* line 1902, ../sass/app.scss */
 .single .type-post footer #share-bottom .share-bottom-buttons .button .button-text {
   display: inline-block;
 }
-/* line 1903, ../sass/app.scss */
+/* line 1906, ../sass/app.scss */
 .single .type-post footer #share-bottom .share-bottom-buttons .button:hover {
   background-color: #fbbd26;
 }
-/* line 1905, ../sass/app.scss */
+/* line 1908, ../sass/app.scss */
 .single .type-post footer #share-bottom .share-bottom-buttons .button:hover .icon {
   color: #fbbd26;
   border-color: #fbbd26;
 }
 @media only screen and (max-width: 480px) {
-  /* line 1877, ../sass/app.scss */
+  /* line 1880, ../sass/app.scss */
   .single .type-post footer #share-bottom .share-bottom-buttons .button {
     font-size: 26px;
     font-size: 2.6rem;
     padding: 8px 34px;
   }
-  /* line 1913, ../sass/app.scss */
+  /* line 1916, ../sass/app.scss */
   .single .type-post footer #share-bottom .share-bottom-buttons .button .icon {
     font-size: 34px;
     font-size: 3.4rem;
@@ -8725,43 +8729,43 @@ form .error input, form input.error, form .error textarea, form textarea.error {
     padding: 11px;
   }
 }
-/* line 1922, ../sass/app.scss */
+/* line 1925, ../sass/app.scss */
 .single .type-post footer #share-bottom .share-bottom-buttons .btn-facebook {
   background-color: #3d5ca4;
 }
-/* line 1924, ../sass/app.scss */
+/* line 1927, ../sass/app.scss */
 .single .type-post footer #share-bottom .share-bottom-buttons .btn-facebook .icon {
   color: #3d5ca4;
   border-color: #3d5ca4;
 }
-/* line 1929, ../sass/app.scss */
+/* line 1932, ../sass/app.scss */
 .single .type-post footer #share-bottom .share-bottom-buttons .btn-twitter {
   background-color: #00b9f7;
 }
-/* line 1931, ../sass/app.scss */
+/* line 1934, ../sass/app.scss */
 .single .type-post footer #share-bottom .share-bottom-buttons .btn-twitter .icon {
   color: #00b9f7;
   border-color: #00b9f7;
 }
 
 /* Disqus Comments */
-/* line 1943, ../sass/app.scss */
+/* line 1946, ../sass/app.scss */
 #comments {
   border-top: 1px solid #b2b2b2;
 }
-/* line 1945, ../sass/app.scss */
+/* line 1948, ../sass/app.scss */
 #comments h2 {
   text-transform: uppercase;
   letter-spacing: -0.02em;
   margin: 5px 0 35px;
 }
-/* line 1950, ../sass/app.scss */
+/* line 1953, ../sass/app.scss */
 #comments .disqus-comments {
   background-color: white;
   padding: 40px;
   position: relative;
 }
-/* line 1954, ../sass/app.scss */
+/* line 1957, ../sass/app.scss */
 #comments .disqus-comments:before {
   position: absolute;
   top: -48px;
@@ -8779,7 +8783,7 @@ form .error input, form input.error, form .error textarea, form textarea.error {
 -----------------------------------------------------
 */
 @media only screen and (min-width: 768px) {
-  /* line 1970, ../sass/app.scss */
+  /* line 1973, ../sass/app.scss */
   .page .type-page .five.columns, .page .type-page .row .columns.five, .row .page .type-page .columns.five {
     padding-left: 30px;
   }
@@ -8790,24 +8794,24 @@ form .error input, form input.error, form .error textarea, form textarea.error {
 -----------------------------------------------------
 */
 @media only screen and (max-width: 767px) {
-  /* line 1983, ../sass/app.scss */
+  /* line 1986, ../sass/app.scss */
   #sidebar {
     margin-top: 30px;
     padding-top: 45px;
     border-top: 1px solid #b2b2b2;
   }
 }
-/* line 1989, ../sass/app.scss */
+/* line 1992, ../sass/app.scss */
 #sidebar .widget {
   margin-bottom: 45px;
   text-align: center;
   padding: 5px 5px 8px;
 }
-/* line 1993, ../sass/app.scss */
+/* line 1996, ../sass/app.scss */
 #sidebar .widget:last-child {
   margin-bottom: 0;
 }
-/* line 1996, ../sass/app.scss */
+/* line 1999, ../sass/app.scss */
 #sidebar .widget .widget-title {
   font-size: 18px;
   font-size: 1.8rem;
@@ -8817,14 +8821,14 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   font-weight: normal;
   margin: 10px 0;
 }
-/* line 2004, ../sass/app.scss */
+/* line 2007, ../sass/app.scss */
 #sidebar .widget p {
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
   font-size: 1.5rem;
 }
-/* line 2009, ../sass/app.scss */
+/* line 2012, ../sass/app.scss */
 #sidebar .widget .button {
   display: block;
   font-family: "Solano Gothic MVB", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -8841,21 +8845,21 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   background-size: auto 100%;
 }
 @media only screen and (min-width: 768px) and (max-width: 1070px) {
-  /* line 1989, ../sass/app.scss */
+  /* line 1992, ../sass/app.scss */
   #sidebar .widget {
     padding-bottom: 0;
   }
-  /* line 2022, ../sass/app.scss */
+  /* line 2025, ../sass/app.scss */
   #sidebar .widget .widget-title {
     font-size: 16px;
     font-size: 1.6rem;
   }
-  /* line 2025, ../sass/app.scss */
+  /* line 2028, ../sass/app.scss */
   #sidebar .widget p {
     font-size: 12px;
     font-size: 1.2rem;
   }
-  /* line 2028, ../sass/app.scss */
+  /* line 2031, ../sass/app.scss */
   #sidebar .widget .button {
     padding: 6px 15px 7px;
     font-size: 20px;
@@ -8866,7 +8870,7 @@ form .error input, form input.error, form .error textarea, form textarea.error {
     background-size: 10px 100%;
   }
 }
-/* line 2036, ../sass/app.scss */
+/* line 2039, ../sass/app.scss */
 #sidebar #widget-text-2 {
   background: white;
   border-top: 3px solid #e9722b;
@@ -8878,40 +8882,40 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   -o-background-size: 130%;
   background-size: 130%;
 }
-/* line 2045, ../sass/app.scss */
+/* line 2048, ../sass/app.scss */
 #sidebar #widget-text-2 .widget-title {
   color: #e9722b;
 }
-/* line 2048, ../sass/app.scss */
+/* line 2051, ../sass/app.scss */
 #sidebar #widget-text-2 hr {
   border-color: #e0e0e0;
   width: 45%;
   margin: 8px auto;
 }
-/* line 2053, ../sass/app.scss */
+/* line 2056, ../sass/app.scss */
 #sidebar #widget-text-2 .button {
   margin-top: 107px;
   background-color: #e9722b;
 }
-/* line 2056, ../sass/app.scss */
+/* line 2059, ../sass/app.scss */
 #sidebar #widget-text-2 .button:hover {
   background-color: #00aeef;
 }
 @media only screen and (min-width: 768px) and (max-width: 900px) {
-  /* line 2036, ../sass/app.scss */
+  /* line 2039, ../sass/app.scss */
   #sidebar #widget-text-2 {
     -webkit-background-size: 212px auto;
     -moz-background-size: 212px auto;
     -o-background-size: 212px auto;
     background-size: 212px auto;
   }
-  /* line 2062, ../sass/app.scss */
+  /* line 2065, ../sass/app.scss */
   #sidebar #widget-text-2 .button {
     margin-top: 90px;
   }
 }
 @media only screen and (max-width: 767px) {
-  /* line 2036, ../sass/app.scss */
+  /* line 2039, ../sass/app.scss */
   #sidebar #widget-text-2 {
     -webkit-background-size: 360px auto;
     -moz-background-size: 360px auto;
@@ -8919,49 +8923,49 @@ form .error input, form input.error, form .error textarea, form textarea.error {
     background-size: 360px auto;
     background-position: 50% 100%;
   }
-  /* line 2069, ../sass/app.scss */
+  /* line 2072, ../sass/app.scss */
   #sidebar #widget-text-2 .button {
     margin-top: 155px;
   }
 }
 @media only screen and (max-width: 320px) {
-  /* line 2036, ../sass/app.scss */
+  /* line 2039, ../sass/app.scss */
   #sidebar #widget-text-2 {
     background-position: 30% 100%;
   }
 }
-/* line 2077, ../sass/app.scss */
+/* line 2080, ../sass/app.scss */
 #sidebar #widget-text-3 {
-  background-image: url('../images/share-manifesto@2x.jpg?1359925045');
+  background-image: url('../images/manifesto-sidebar.jpg?1361434908');
   background-repeat: no-repeat;
   background-position: 50% 0;
-  -webkit-background-size: 150%;
-  -moz-background-size: 150%;
-  -o-background-size: 150%;
-  background-size: 150%;
+  -webkit-background-size: 120%;
+  -moz-background-size: 120%;
+  -o-background-size: 120%;
+  background-size: 120%;
 }
-/* line 2084, ../sass/app.scss */
+/* line 2087, ../sass/app.scss */
 #sidebar #widget-text-3 p {
   margin: 85px 0 5px;
 }
-/* line 2087, ../sass/app.scss */
+/* line 2090, ../sass/app.scss */
 #sidebar #widget-text-3 .button {
   background-color: #fbbd26;
 }
-/* line 2089, ../sass/app.scss */
+/* line 2092, ../sass/app.scss */
 #sidebar #widget-text-3 .button:hover {
   background-color: #00aeef;
 }
 
 @media only screen and (max-width: 767px) {
-  /* line 2096, ../sass/app.scss */
+  /* line 2099, ../sass/app.scss */
   .home #sidebar {
     margin-top: 50px;
   }
 }
 
 /* Hide Sidebar Widgets on Landing Pages (For now) */
-/* line 2105, ../sass/app.scss */
+/* line 2108, ../sass/app.scss */
 .page-template-pagetemplate-landing-php #sidebar .widget {
   display: none;
 }
