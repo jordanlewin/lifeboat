@@ -5,8 +5,9 @@ Plugin URI: http://www.torounit.com
 Description:  Add post archives of custom post type and customizable permalinks.
 Author: Toro_Unit
 Author URI: http://www.torounit.com/plugins/custom-post-type-permalinks/
-Version: 0.8.7.1
+Version: 0.8.7.5
 Text Domain: cptp
+License: GPL2 or later
 Domain Path: /
 */
 
@@ -28,17 +29,17 @@ Domain Path: /
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-/* This plugin don't support Multisite yet.*/
+
 
 /**
  *
- * Custom Permalink Class
+ * Custom Post Type Permalinks
  *
  *
  */
 class Custom_Post_Type_Permalinks {
 
-	public $version = "0.8.7.1";
+	public $version = "0.8.7.5";
 	public $default_structure = '/%postname%/';
 
 	/**
@@ -55,12 +56,14 @@ class Custom_Post_Type_Permalinks {
 		add_action( 'wp_loaded', array(&$this,'set_rewrite'), 100 );
 		add_action( 'wp_loaded', array(&$this,'add_tax_rewrite') );
 
+
 		if(get_option( "permalink_structure") != "") {
 			add_filter( 'post_type_link', array(&$this,'set_permalink'), 10, 3 );
 			add_filter( 'getarchives_join', array(&$this,'get_archives_join'), 10, 2 ); // [steve]
 			add_filter( 'getarchives_where', array(&$this,'get_archives_where'), 10 , 2 );
 			add_filter( 'get_archives_link', array(&$this,'get_archives_link'), 20, 1 );
 			add_filter( 'term_link', array(&$this,'set_term_link'), 10, 3 );
+			add_filter( 'attachment_link', array(&$this, 'attachment_link'), 20 , 2);
 		}
 
 		add_action( 'init', array(&$this,'load_textdomain') );
@@ -160,7 +163,7 @@ class Custom_Post_Type_Permalinks {
 	 *
 	 * Add Rewrite rule for single posts.
 	 * @version 2.0
-	 * 
+	 *
 	 *
 	 */
 	public function set_rewrite() {
@@ -171,7 +174,7 @@ class Custom_Post_Type_Permalinks {
 			$permalink = get_option( $post_type.'_structure' );
 
 			if( !$permalink ) {
-				$permalink = $this->default_structure;				
+				$permalink = $this->default_structure;
 			}
 
 			$permalink = str_replace( '%postname%', '%'.$post_type.'%', $permalink );
@@ -180,13 +183,13 @@ class Custom_Post_Type_Permalinks {
 			$slug = get_post_type_object($post_type)->rewrite['slug'];
 
 			if( !$slug ) {
-				$slug = $post_type;				
+				$slug = $post_type;
 			}
 
 			$permalink = '/'.$slug.'/'.$permalink;
-			
+
 			if( strpos( $permalink , '%'.$post_type.'%' ) === false ) {
-				$permalink = $permalink.'/%'.$post_type.'_page%';	
+				$permalink = $permalink.'/%'.$post_type.'_page%';
 			}
 
 			$permalink = str_replace( '//', '/', $permalink );
@@ -218,16 +221,42 @@ class Custom_Post_Type_Permalinks {
 	}
 
 
+	/**
+	 *
+	 * fix attachment output
+	 *
+	 * @version 1
+	 * @since 0.8.2
+	 *
+	 */
+
+
+	public function attachment_link( $link , $postID ) {
+		$post = get_post( $postID );
+		$post_parent = get_post( $post->post_parent );
+		$permalink = get_option( $post_parent->post_type.'_structure' );
+		$post_type = get_post_type_object( $post_parent->post_type );
+
+		if( $post_type->_builtin == false ) {
+			if(strpos( $permalink, "%postname%" ) < strrpos( $permalink, "%post_id%" )){
+				$link = str_replace($post->post_name , "attachment/".$post->post_name, $link);
+			}
+		}
+
+		return $link;
+	}
+
+
 
 	/**
 	 *
 	 * Fix permalinks output.
 	 *
-	 * @param String $post_link 
+	 * @param String $post_link
 	 * @param Object $post 投稿情報
 	 * @param String $leavename 記事編集画面でのみ渡される
 	 *
-	 * @version 1.2
+	 * @version 1.3
 	 *
 	 */
 	public function set_permalink( $post_link, $post, $leavename ) {
@@ -238,6 +267,7 @@ class Custom_Post_Type_Permalinks {
 
 		$post_type = $post->post_type;
 		$permalink = $wp_rewrite->get_extra_permastruct( $post_type );
+
 
 		$permalink = str_replace( '%post_type%', get_post_type_object($post->post_type)->rewrite['slug'], $permalink );
 		$permalink = str_replace( '%'.$post_type.'_id%', $post->ID, $permalink );
@@ -259,6 +289,15 @@ class Custom_Post_Type_Permalinks {
 			$permalink = str_replace( '%'.$post_type.'%', $post->post_name, $permalink );
 		}
 
+		//%post_id%/attachment/%attachement_name%;
+		if(  isset($_GET["post"]) &&$_GET["post"] != $post->ID ) {
+
+			if( "%post_id%" == array_pop(explode("/",get_option( $post_type.'_structure' )))) {
+				$permalink = $permalink."/attachment/";
+			};
+		}
+
+
 		$taxonomies = get_taxonomies( array('show_ui' => true),'objects' );
 
 		foreach ( $taxonomies as $taxonomy => $objects ) {
@@ -270,7 +309,7 @@ class Custom_Post_Type_Permalinks {
 					$term = $terms[0]->slug;
 
 					if ( $parent = $terms[0]->parent ) {
-						$term = $this->get_taxonomy_parents( $parent,$taxonomy, false, '/', true ) . $term;						
+						$term = $this->get_taxonomy_parents( $parent,$taxonomy, false, '/', true ) . $term;
 					}
 
 				}
@@ -316,7 +355,7 @@ class Custom_Post_Type_Permalinks {
 	public function get_archives_where( $where, $r ) {
 		$this->get_archives_where_r = $r;
 		if ( isset($r['post_type']) ) {
-			$where = str_replace( '\'post\'', '\'' . $r['post_type'] . '\'', $where );			
+			$where = str_replace( '\'post\'', '\'' . $r['post_type'] . '\'', $where );
 		}
 
 		if(isset($r['taxonomy']) && is_array($r['taxonomy']) ){
@@ -401,12 +440,12 @@ class Custom_Post_Type_Permalinks {
 	 *
 	 * Add rewrite rules for custom taxonomies.
 	 * @since 0.6
-	 * @version 2.0
+	 * @version 2.1
 	 *
 	 */
 	public function add_tax_rewrite() {
 		if(get_option('no_taxonomy_structure')) {
-			return false;			
+			return false;
 		}
 
 
@@ -415,11 +454,12 @@ class Custom_Post_Type_Permalinks {
 		$taxonomies['category'] = 'category';
 
 		if(empty($taxonomies)) {
-			return false;			
+			return false;
 		}
 
 		foreach ($taxonomies as $taxonomy) :
-			$post_types = get_taxonomy($taxonomy)->object_type;
+			$taxonomyObject = get_taxonomy($taxonomy);
+			$post_types = $taxonomyObject->object_type;
 
 			foreach ($post_types as $post_type):
 				$post_type_obj = get_post_type_object($post_type);
@@ -432,13 +472,20 @@ class Custom_Post_Type_Permalinks {
 					$slug = $post_type_obj->has_archive;
 				};
 
-				if($taxonomy == 'category'){
+				if ( $taxonomy == 'category' ){
 					$taxonomypat = ($cb = get_option('category_base')) ? $cb : $taxonomy;
 					$tax = 'category_name';
-				 }else{
-				 	$taxonomypat = $taxonomy;
+				} else {
+					// Edit by [Xiphe]
+				 	if (isset($taxonomyObject->rewrite['slug'])) {
+				 		$taxonomypat = $taxonomyObject->rewrite['slug'];
+				 	} else {
+				 		$taxonomypat = $taxonomy;
+				 	}
+				 	// [Xiphe] stop
+
 				 	$tax = $taxonomy;
-				 }
+				}
 
 
 				//add taxonomy slug
@@ -469,7 +516,7 @@ class Custom_Post_Type_Permalinks {
 	 */
 	public function set_term_link( $termlink, $term, $taxonomy ) {
 		if( get_option('no_taxonomy_structure') ) {
-			return  $termlink;			
+			return  $termlink;
 		}
 
 		$taxonomy = get_taxonomy($taxonomy);
@@ -487,7 +534,7 @@ class Custom_Post_Type_Permalinks {
 
 		//$termlink = str_replace( $term->slug.'/', $this->get_taxonomy_parents( $term->term_id,$taxonomy->name, false, '/', true ), $termlink );
 		$termlink = str_replace( $wp_home, $wp_home.'/'.$slug, $termlink );
-		$str = rtrim( preg_replace("/%[a-z_]*%/","",get_option("permalink_structure")) ,'/');
+		$str = rtrim( preg_replace("/%[a-z_]*%/","",get_option("permalink_structure")) ,'/');//remove with front
 		return str_replace($str, "", $termlink );
 
 	}
@@ -669,7 +716,7 @@ class Custom_Post_Type_Permalinks {
 			?>
 				<script type="text/javascript">
 				jQuery(function($) {
-					
+
 					$("#menu-settings .wp-has-submenu").pointer({
 						content: "<?php echo $content;?>",
 						position: {"edge":"left","align":"center"},
