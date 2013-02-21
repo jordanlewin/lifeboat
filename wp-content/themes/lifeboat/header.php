@@ -10,7 +10,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title><?php wp_title('', true, 'right'); ?></title>
+  <!-- <title><?php wp_title('', true, 'right'); ?></title> -->
+  <title><?php wp_title('|','true','right'); bloginfo('name'); print (is_front_page()) ? ' | Friends At Their Best' : ''; ?></title>
       
   <meta name="viewport" content="width=device-width; initial-scale=1.0">
   

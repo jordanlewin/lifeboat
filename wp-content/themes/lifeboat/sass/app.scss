@@ -758,13 +758,13 @@ nav#secondary {
     }
     #ds-logo-credit {
       display: inline-block;
-      width: 120px;
-      height: 23px;
+      width: 110px;
+      height: 21px;
       margin: -5px 3px 0 3px;
       text-indent: -1000em;
       vertical-align: middle;
       @include background(image-url("ds-logo-credit@2x.png") 0 0 no-repeat);
-      @include background-size(120px auto);
+      @include background-size(110px auto);
       &:hover {
         background-position: 0 -25px;
       }
@@ -2096,5 +2096,14 @@ form {
 .home #sidebar {
   @include breakpoint(tablet-down) {
     margin-top: 50px;
+  }
+}
+
+/* Hide Sidebar Widgets on Landing Pages (For now) */
+.page-template-pagetemplate-landing-php {
+  #sidebar {
+    .widget {
+      display: none;
+    }
   }
 }
