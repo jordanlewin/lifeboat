@@ -9,6 +9,16 @@
           <header>
             <h1 class="page-title blog-title">The Friend Blog</h1>
           </header>
+          <?php //global $query_string;
+            /*$args = array(
+              'p' => 18
+            );
+            query_posts($args);
+            if (have_posts()) : while (have_posts()) : the_post();*/ ?>
+          <section id="content">
+            <p class="intro"><?php //the_content(); ?>Never miss a post. <a href="/become-an-insider/">Subscribe here</a> to get Lifeboat's fresh friend advise &mdash; delivered how you like it.</p>
+          </section>
+          <?php /* endwhile; wp_reset_query(); endif; */ ?>
           <?php endif; ?>
 
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

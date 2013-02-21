@@ -745,6 +745,7 @@ nav#secondary {
     margin: 0 0 30px;
   }
   #footer-credits {
+    line-height: 1.5em;
     .text {
       color: lighten($text-color-light-grey, 20%);
       @include font-size(14);
@@ -757,13 +758,13 @@ nav#secondary {
     }
     #ds-logo-credit {
       display: inline-block;
-      width: 110px;
-      height: 21px;
-      margin: -5px 0 0 3px;
+      width: 120px;
+      height: 23px;
+      margin: -5px 3px 0 3px;
       text-indent: -1000em;
       vertical-align: middle;
       @include background(image-url("ds-logo-credit@2x.png") 0 0 no-repeat);
-      @include background-size(110px auto);
+      @include background-size(120px auto);
       &:hover {
         background-position: 0 -25px;
       }
@@ -1036,6 +1037,10 @@ article {
 #content {
   img {
     margin-bottom: 1em;
+  }
+  .intro {
+    font-size: 1.3em;
+    line-height: 1.5em;
   }
   .pull-quote {
     @include font-size(28);
@@ -1764,6 +1769,11 @@ article {
 .blog {
   h1.page-title {
     margin-bottom: 35px;
+  }
+  #content {
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #{$border-light-grey};
   }
 }
 
