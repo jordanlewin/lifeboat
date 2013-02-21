@@ -4,3 +4,4 @@ uploads/
 ai-cache/
 .sass-cache/
 .DS_Store
+signatures/
