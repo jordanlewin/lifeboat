@@ -1366,9 +1366,16 @@ article {
         }
       }
       form {
+        p {
+          @include font-size(15);
+        }
+        .field-checkbox p {
+          @include font-size(14);
+        }
         margin-bottom: 5px;
         .button.action {
           width: 100%;
+          margin-bottom: 5px;
           @include breakpoint(tablet) {
             @include font-size(20);
           }
