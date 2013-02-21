@@ -647,9 +647,12 @@ nav#secondary {
   #footer-first {
     margin: 0 0 30px;
   }
-  span, a {
+  span {
     display: inline-block;
     @include font-size(16);
+  }
+  a {
+    font-size: inherit;
   }
   .lifeboat-flag {
     img {
@@ -745,6 +748,12 @@ nav#secondary {
     .text {
       color: lighten($text-color-light-grey, 20%);
       @include font-size(14);
+      a {
+        color: $text-color-light-grey;
+        &:hover {
+          color: $lifeboat-blue;
+        }
+      }
     }
     #ds-logo-credit {
       display: inline-block;
