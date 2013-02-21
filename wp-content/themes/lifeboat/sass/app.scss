@@ -754,20 +754,14 @@ nav#secondary {
   position: relative;
   overflow: hidden;
   z-index: 0;
-  @include breakpoint(desktop-down) {
-    height: $home-slider-med-height;
-  }
-  @include breakpoint(phone) {
-    height: $home-slider-sm-height;
-  }
   .slider {
     .slide {
       height: 500px;
-      background-position: 50% 0%;
+      background-position: 50% 30%;
       background-repeat: no-repeat;
       @include background-size(100%);
-      @media screen and (max-width: 860px) {
-        @include background-size(860px auto);
+      @media screen and (max-width: 768px) {
+        @include background-size(768px auto);
       }
       text-align: center;
       .button {
@@ -850,6 +844,16 @@ nav#secondary {
           border-color: $lifeboat-blue;
         }
       }
+    }
+  }
+  @include breakpoint(desktop-down) {
+    &, .slider .slide {
+      height: $home-slider-med-height;
+    }
+  }
+  @include breakpoint(phone) {
+    &, .slider .slide {
+      height: $home-slider-sm-height;
     }
   }
 }
