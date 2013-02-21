@@ -1011,9 +1011,19 @@ article {
   img {
     margin-bottom: 1em;
   }
-  .intro {
+  p.intro {
     font-size: 1.3em;
     line-height: 1.5em;
+  }
+  ul.intro {
+    li {
+      @include font-size(18);
+      margin-bottom: 10px;
+      padding-left: 36px;
+      list-style: none;
+      @include background(image-url("icon-flag-blue.svg") 0 5px no-repeat);
+      @include background-size(25px auto);
+    }
   }
   .pull-quote {
     @include font-size(28);
@@ -1438,6 +1448,38 @@ form {
     //margin-top: -40px;
     margin-top: -26px;
     //z-index: 0;
+  }
+  #content {
+    ul.intro {
+      margin: 20px 0 35px;
+    }
+    hr {
+      margin-bottom: 30px;
+    }
+    #quote-slider {
+      .slide {
+        height: auto;
+        blockquote {
+          padding: 0;
+          border: none;
+          p {
+            @include font-size(21);
+            font-style: italic;
+            font-weight: 100;
+            line-height: 1.2em;
+          }
+          p.attribute {
+            @include font-size(15);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    .orbit-wrapper {
+      .timer {
+        display: none;
+      }
+    }
   }
 }
 
