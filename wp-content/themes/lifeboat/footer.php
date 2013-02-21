@@ -21,8 +21,10 @@
         </div><!-- footer-first -->
         <div id="footer-second">
           <span class="text">You Checkin’ Out Our Footer? Congrats!</span> <span class="link"><a href="">Get Your Random Friend Song</a></span>
-          <?php //bones_footer_links(); ?>
         </div><!-- footer-second -->
+        <div id="footer-credits">
+          <span class="text">Site By</span> <a href="http://digitalsparks.com" id="ds-logo-credit" class="credit-link" target="_blank">Digital Sparks Media // Creative Strategy, Branding, Web Design, Drupal and WordPress Development</a>
+        </div><!-- footer-credits -->
       </div><!-- eighteen columns -->
     </footer><!-- footer row -->
   </div><!-- footer-container container -->

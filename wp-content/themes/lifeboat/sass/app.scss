@@ -31,6 +31,7 @@ body {
 
 a {
   color: $lifeboat-orange;
+  outline: 0;
   &:hover {
     color: $lifeboat-blue;
   }
@@ -106,7 +107,7 @@ mark {
 
 #footer-container {
   margin-top: 3px;
-  padding: 35px 0 50px;
+  padding: 35px 0 40px;
   border-top: 1px solid #7F7F7F;
 }
 
@@ -646,7 +647,7 @@ nav#secondary {
   #footer-first {
     margin: 0 0 30px;
   }
-  span {
+  span, a {
     display: inline-block;
     @include font-size(16);
   }
@@ -738,6 +739,26 @@ nav#secondary {
   }
   #footer-second {
     line-height: 1.5em;
+    margin: 0 0 30px;
+  }
+  #footer-credits {
+    .text {
+      color: lighten($text-color-light-grey, 20%);
+      @include font-size(14);
+    }
+    #ds-logo-credit {
+      display: inline-block;
+      width: 110px;
+      height: 21px;
+      margin: -5px 0 0 3px;
+      text-indent: -1000em;
+      vertical-align: middle;
+      @include background(image-url("ds-logo-credit@2x.png") 0 0 no-repeat);
+      @include background-size(110px auto);
+      &:hover {
+        background-position: 0 -25px;
+      }
+    }
   }
 }
 
