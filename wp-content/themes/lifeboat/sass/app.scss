@@ -763,7 +763,7 @@ nav#secondary {
   .slider {
     .slide {
       height: 500px;
-      background-position: 50% 5%;
+      background-position: 50% 0%;
       background-repeat: no-repeat;
       @include background-size(100%);
       @media screen and (max-width: 860px) {

@@ -7268,7 +7268,7 @@ nav#secondary ul li:last-child {
 /* line 764, ../sass/app.scss */
 #home-slider .slider .slide {
   height: 500px;
-  background-position: 50% 5%;
+  background-position: 50% 0%;
   background-repeat: no-repeat;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
