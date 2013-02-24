@@ -16,7 +16,7 @@
             query_posts($args);
             if (have_posts()) : while (have_posts()) : the_post();*/ ?>
           <section id="content">
-            <p class="intro"><?php //the_content(); ?>Never miss a post. <a href="/become-an-insider/">Subscribe here</a> to get Lifeboat's fresh friend advise &mdash; delivered how you like it.</p>
+            <p class="intro"><?php //the_content(); ?>Never miss a post. <a href="/become-an-insider/">Subscribe here</a> to get Lifeboat's fresh friend advice &mdash; delivered how you like it.</p>
           </section>
           <?php /* endwhile; wp_reset_query(); endif; */ ?>
           <?php endif; ?>
