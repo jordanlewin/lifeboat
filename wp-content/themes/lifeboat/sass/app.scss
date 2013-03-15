@@ -795,84 +795,117 @@ nav#secondary {
         @include background-size(768px auto);
       }
       text-align: center;
-      .button {
-        margin-top: ($home-slider-lg-height - $home-slider-btn-offset);
-        background-color: transparent;
-        @include background(image-url("home-slider-button-arrow-right-yellow.png") no-repeat 100% 50%, image-url("home-slider-button-flap-left-yellow.png") no-repeat 0 50%);
-        @include background-size(12px 100%);
-        padding: 0 12px;
-        font-family: $headerFontFamily;
-        //letter-spacing: $letter-spacing-label;
-        @include font-size(22);
-        color: $text-color-white;
-        @include text-shadow(rgba($text-color-black, 0.2) 0 1px 0);
-        @include opacity(0.95);
-        .button-inner {
-          background-color: $lifeboat-yellow;
-          display: inline-block;
-          padding: 8px 15px;
-        }
-        .icon {
-          display: inline-block;
-          width: 86px;
-          height: 86px;
-          @include background($white image-url("icon-flag.svg") no-repeat 65% 60%);
-          @include background-size(auto 49px);
-          //background-color: $white;
-          border: 6px solid $lifeboat-yellow;
-          @include border-radius(100px);
-          @include box-shadow(rgba($black, .1) 0px 0px 8px);
-          margin: -34px 12px;
-        }
-        &:hover {
-          @include opacity(1);
-          @include text-shadow(rgba($text-color-black, 0.3) 0 1px 0);
+      &:hover {
+        //@include opacity(.5);
+      }
+      .slide-link {
+        display: block;
+        height: 100%;
+        .button {
+          margin-top: ($home-slider-lg-height - $home-slider-btn-offset);
+          background-color: transparent;
+          //@include background(image-url("home-slider-button-arrow-right-yellow.png") no-repeat 100% 50%, image-url("home-slider-button-flap-left-yellow.png") no-repeat 0 50%);
+          //@include background-size(12px 100%);
+          @include background(image-url("home-slider-button-arrow-right.png") no-repeat, image-url("home-slider-button-flap-left.png") no-repeat);
+          @include background-size(12px 200%);
+          background-position: 100% 0%, 0% 0%;
+          padding: 0 12px;
+          font-family: $headerFontFamily;
+          //letter-spacing: $letter-spacing-label;
+          @include font-size(22);
+          color: $text-color-white;
+          @include text-shadow(rgba($text-color-black, 0.2) 0 1px 0);
+          //@include opacity(0.95);
           .button-inner {
+            background-color: $lifeboat-yellow;
+            display: inline-block;
+            padding: 8px 15px;
           }
           .icon {
+            display: inline-block;
+            width: 86px;
+            height: 86px;
+            //@include background($white image-url("icon-flag.svg") no-repeat 65% 60%);
+            //@include background-size(auto 49px);
+            background-color: $white;
+            color: $lifeboat-yellow;
+            text-shadow: none;
+            @include font-size(50);
+            line-height: 0;
+            border: 6px solid $lifeboat-yellow;
+            @include border-radius(100px);
+            //@include box-shadow(rgba($black, .1) 0px 0px 8px);
             @include box-shadow(rgba($black, .3) 0px 0px 8px);
+            padding: 15px 10px;
+            margin: -34px 12px;
+            vertical-align: middle;
           }
-        }
-        @include breakpoint(desktop-down) {
-          margin-top: ($home-slider-med-height - $home-slider-btn-offset);
-        }
-        @include breakpoint(phone) {
-          margin-top: ($home-slider-sm-height - $home-slider-btn-offset - 30px);
-          padding: 0 0 0 21px;
-          @include background-size(21px 100%);
-          @include font-size(20);
-        }
-        @include breakpoint(between, $break-tablet, 860px) {
-          @include font-size(20);
-        }
-        @include breakpoint(tablet-down) {
-          text-align: right;
-          margin-right: -10px;
-          padding: 0 0 0 18px;
-          float: right;
-          width: 50%;
-          @include background-size(18px 100%);
-          .button-inner {
-            display: block;
+          @include breakpoint(desktop-down) {
+            margin-top: ($home-slider-med-height - $home-slider-btn-offset);
           }
-          .icon {
-            display: none;
+          @include breakpoint(phone) {
+            margin-top: ($home-slider-sm-height - $home-slider-btn-offset - 30px);
+            padding: 0 0 0 21px;
+            @include background-size(21px 200%);
+            @include font-size(20);
           }
-          .button-text {
-            display: inline;
-            &:first-child:after {
-              content: ": ";
+          @include breakpoint(between, $break-tablet, 860px) {
+            @include font-size(20);
+          }
+          @include breakpoint(tablet-down) {
+            text-align: right;
+            margin-right: -10px;
+            padding: 0 0 0 18px;
+            float: right;
+            width: 50%;
+            @include background-size(18px 200%);
+            .button-inner {
+              display: block;
+            }
+            .icon {
+              display: none;
+            }
+            .button-text {
+              display: inline;
+              &:first-child:after {
+                content: ": ";
+              }
             }
           }
         }
-      }
-      .button.blue {
-        @include background(image-url("home-slider-button-arrow-right-blue.png") no-repeat 100% 50%, image-url("home-slider-button-flap-left-blue.png") no-repeat 0 50%);
-        .button-inner {
-          background-color: $lifeboat-blue;
+        .button.blue {
+          @include background(image-url("home-slider-button-arrow-right.png") no-repeat, image-url("home-slider-button-flap-left.png") no-repeat);
+          background-position: 100% 100%, 0% 100%;
+          .button-inner {
+            background-color: $lifeboat-blue;
+          }
+          .icon {
+            border-color: $lifeboat-blue;
+            color: $lifeboat-blue;
+          }
         }
-        .icon {
-          border-color: $lifeboat-blue;
+        &:hover {
+          .button {
+            background-position: 100% 100%, 0% 100%;
+            @include text-shadow(rgba($text-color-black, 0.3) 0 1px 0);
+            .button-inner {
+              background-color: $lifeboat-blue;
+            }
+            .icon {
+              border-color: $lifeboat-blue;
+              color: $lifeboat-blue;
+            }
+          }
+          .button.blue {
+            background-position: 100% 0%, 0% 0%;
+            .button-inner {
+              background-color: $lifeboat-yellow;
+            }
+            .icon {
+              border-color: $lifeboat-yellow;
+              color: $lifeboat-yellow;
+            }
+          }
         }
       }
     }
