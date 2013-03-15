@@ -848,6 +848,9 @@ nav#secondary {
             padding: 0 0 0 21px;
             @include background-size(21px 200%);
             @include font-size(20);
+            &.blue {
+              @include background-size(21px 200% !important);
+            }
           }
           @include breakpoint(between, $break-tablet, 860px) {
             @include font-size(20);
@@ -859,6 +862,9 @@ nav#secondary {
             float: right;
             width: 50%;
             @include background-size(18px 200%);
+            &.blue {
+              @include background-size(18px 200% !important);
+            }
             .button-inner {
               display: block;
             }
@@ -875,6 +881,7 @@ nav#secondary {
         }
         .button.blue {
           @include background(image-url("home-slider-button-arrow-right.png") no-repeat, image-url("home-slider-button-flap-left.png") no-repeat);
+          @include background-size(12px 200%);
           background-position: 100% 100%, 0% 100%;
           .button-inner {
             background-color: $lifeboat-blue;
