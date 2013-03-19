@@ -1810,29 +1810,36 @@ form .error input, form input.error, form .error textarea, form textarea.error {
 -----------------------------------------------------
 */
 @media only screen and (max-width: 767px) { #sidebar { margin-top: 30px; padding-top: 45px; border-top: 1px solid #b2b2b2; } }
-#sidebar .widget { margin-bottom: 45px; text-align: center; padding: 5px 5px 8px; }
+#sidebar .widget { margin-bottom: 45px; text-align: center; background-position: 50% 0; background-repeat: no-repeat; }
 #sidebar .widget:last-child { margin-bottom: 0; }
-#sidebar .widget .widget-title { font-size: 18px; font-size: 1.8rem; font-style: italic; line-height: 1.1em; font-family: "MuseoSlab", MuseoSlab, serif; font-weight: normal; margin: 10px 0; }
-#sidebar .widget p { font-style: normal; font-weight: normal; font-size: 15px; font-size: 1.5rem; }
-#sidebar .widget .button { display: block; font-family: "Solano Gothic MVB", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; margin: 0 -15px; padding: 6px 25px 7px; font-size: 26px; font-size: 2.6rem; letter-spacing: 0; text-shadow: rgba(0, 0, 0, 0.15) 0 -1px 0; background: url('../images/button-flap-right.png?1359942677') no-repeat 100% 50%, url('../images/button-flap-left.png?1359942547') no-repeat 0 50%; -webkit-background-size: auto 100%; -moz-background-size: auto 100%; -o-background-size: auto 100%; background-size: auto 100%; }
+#sidebar .widget .widget-link { display: block; height: 100%; padding: 5px 5px 8px; }
+#sidebar .widget .widget-link .button { display: block; font-family: "Solano Gothic MVB", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; margin: 0 -15px; padding: 6px 25px 7px; font-size: 26px; font-size: 2.6rem; letter-spacing: 0; text-shadow: rgba(0, 0, 0, 0.15) 0 -1px 0; background: url('../images/button-flap-right.png?1359942677') no-repeat 100% 50%, url('../images/button-flap-left.png?1359942547') no-repeat 0 50%; background-color: #fbbd26; -webkit-background-size: auto 100%; -moz-background-size: auto 100%; -o-background-size: auto 100%; background-size: auto 100%; }
+#sidebar .widget .widget-link .button .icon { padding-left: 5px; vertical-align: middle; line-height: 0; }
+#sidebar .widget .widget-link:hover .button { background-color: #00aeef; }
+#sidebar .widget .widget-link .button.orange { background-color: #e9722b; }
+#sidebar .widget .widget-link:hover .button.orange { background-color: #00aeef; }
+#sidebar .widget .widget-link .button.blue { background-color: #00aeef; }
+#sidebar .widget .widget-link:hover .button.blue { background-color: #fbbd26; }
+#sidebar .widget .widget-title { color: #00aeef; font-size: 18px; font-size: 1.8rem; font-style: italic; line-height: 1.1em; font-family: "MuseoSlab", MuseoSlab, serif; font-weight: normal; margin: 10px 0; }
+#sidebar .widget p, #sidebar .widget .widget-text { font-style: normal; font-weight: normal; color: #111111; font-size: 15px; font-size: 1.5rem; text-shadow: white 0 0 5px; }
+#sidebar .widget p.on-dark, #sidebar .widget .widget-text.on-dark { color: white; text-shadow: rgba(0, 0, 0, 0.9) 0 0 5px; }
+#sidebar .widget hr { border-color: #e0e0e0; width: 45%; margin: 8px auto; }
 @media only screen and (min-width: 768px) and (max-width: 1070px) { #sidebar .widget { padding-bottom: 0; }
   #sidebar .widget .widget-title { font-size: 16px; font-size: 1.6rem; }
   #sidebar .widget p { font-size: 12px; font-size: 1.2rem; }
-  #sidebar .widget .button { padding: 6px 15px 7px; font-size: 20px; font-size: 2rem; -webkit-background-size: 10px 100%; -moz-background-size: 10px 100%; -o-background-size: 10px 100%; background-size: 10px 100%; } }
-#sidebar #widget-text-2 { background: white; border-top: 3px solid #e9722b; background-image: url('../images/tim-alia@2x.png?1359917323'); background-repeat: no-repeat; background-position: 30% 100%; -webkit-background-size: 130%; -moz-background-size: 130%; -o-background-size: 130%; background-size: 130%; }
+  #sidebar .widget .widget-link .button { padding: 6px 15px 7px; font-size: 20px; font-size: 2rem; -webkit-background-size: 10px 100%; -moz-background-size: 10px 100%; -o-background-size: 10px 100%; background-size: 10px 100%; } }
+#sidebar #widget-text-2 { border-top: 3px solid #e9722b; background-color: white; background-image: url('../images/sidebar-tim-alia@2x.png?1359917323'); background-position: 30% 100%; -webkit-background-size: 130%; -moz-background-size: 130%; -o-background-size: 130%; background-size: 130%; }
 #sidebar #widget-text-2 .widget-title { color: #e9722b; }
-#sidebar #widget-text-2 hr { border-color: #e0e0e0; width: 45%; margin: 8px auto; }
-#sidebar #widget-text-2 .button { margin-top: 107px; background-color: #e9722b; }
-#sidebar #widget-text-2 .button:hover { background-color: #00aeef; }
+#sidebar #widget-text-2 .button { margin-top: 107px; }
 @media only screen and (min-width: 768px) and (max-width: 900px) { #sidebar #widget-text-2 { -webkit-background-size: 212px auto; -moz-background-size: 212px auto; -o-background-size: 212px auto; background-size: 212px auto; }
   #sidebar #widget-text-2 .button { margin-top: 90px; } }
 @media only screen and (max-width: 767px) { #sidebar #widget-text-2 { -webkit-background-size: 360px auto; -moz-background-size: 360px auto; -o-background-size: 360px auto; background-size: 360px auto; background-position: 50% 100%; }
   #sidebar #widget-text-2 .button { margin-top: 155px; } }
 @media only screen and (max-width: 320px) { #sidebar #widget-text-2 { background-position: 30% 100%; } }
-#sidebar #widget-text-3 { background-image: url('../images/manifesto-sidebar.jpg?1361440154'); background-repeat: no-repeat; background-position: 50% 0; -webkit-background-size: 120%; -moz-background-size: 120%; -o-background-size: 120%; background-size: 120%; }
+#sidebar #widget-text-3 { background-image: url('../images/sidebar-manifesto@2x.jpg?1361440154'); -webkit-background-size: 120%; -moz-background-size: 120%; -o-background-size: 120%; background-size: 120%; }
 #sidebar #widget-text-3 p { margin: 85px 0 5px; }
-#sidebar #widget-text-3 .button { background-color: #fbbd26; }
-#sidebar #widget-text-3 .button:hover { background-color: #00aeef; }
+#sidebar #widget-text-4 { background-image: url('../images/sidebar-whats-lifeboat-vid@2x.jpg?1363704063'); background-position: 50% 50%; -webkit-background-size: 150%; -moz-background-size: 150%; -o-background-size: 150%; background-size: 150%; }
+#sidebar #widget-text-4 p { font-weight: 500; font-size: 17px; font-size: 1.7rem; margin: 85px 0 5px; }
 
 @media only screen and (max-width: 767px) { .home #sidebar { margin-top: 50px; } }
 

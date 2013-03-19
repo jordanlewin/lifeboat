@@ -30,10 +30,10 @@ body {
 }
 
 a {
-  color: $lifeboat-orange;
+  color: $color-lifeboat-orange;
   outline: 0;
   &:hover {
-    color: $lifeboat-blue;
+    color: $color-lifeboat-blue;
   }
 }
 
@@ -43,7 +43,7 @@ a {
 
 /* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
 ::-moz-selection, ::selection {
-  background: $lifeboat-yellow;
+  background: $color-lifeboat-yellow;
   color: $text-color-white;
   text-shadow: none;
 }
@@ -54,12 +54,12 @@ a:link {
 }
 
 ins {
-  background-color: $lifeboat-yellow;
+  background-color: $color-lifeboat-yellow;
   color: $text-color-black;
   text-decoration: none;
 }
 mark {
-  background-color: $lifeboat-yellow;
+  background-color: $color-lifeboat-yellow;
   color: $text-color-black;
   font-style: italic;
   font-weight: bold;
@@ -121,14 +121,14 @@ mark {
   font-family: $bodyFontFamily;
   text-transform: none !important;
   letter-spacing: normal !important;
-  color: lighten($lifeboat-blue, 10%);
+  color: lighten($color-lifeboat-blue, 10%);
 }
 .subtitle {
   //@extend .subheader;
   font-family: $bodyFontFamily;
   @include font-size(30);
   font-weight: 100;
-  color: $lifeboat-orange;
+  color: $color-lifeboat-orange;
   margin-top: 0;
   text-transform: none !important;
   letter-spacing: normal !important;
@@ -148,13 +148,13 @@ mark {
   @include transition(background-color 0s);
   @include background(image-url("button-arrow-right.png") no-repeat 100% 50%, image-url("button-flap-left.png") no-repeat 0 50%);
   @include background-size(auto 100%);
-  background-color: $lifeboat-blue;
+  background-color: $color-lifeboat-blue;
   &, &:hover, &:focus, &:active, &:visited {
     @include box-shadow(0 0 0);
     line-height: 1em;
   }
   &:hover, &:focus {
-    background-color: $lifeboat-yellow;
+    background-color: $color-lifeboat-yellow;
   }
   &.small {
     padding: 7px 20px 5px;
@@ -166,14 +166,14 @@ mark {
     letter-spacing: $letter-spacing-label * 2;
   }
   &.highlight {
-    background-color: $lifeboat-yellow;
+    background-color: $color-lifeboat-yellow;
     &:hover, &:focus {
-      background-color: $lifeboat-blue;
+      background-color: $color-lifeboat-blue;
     }
   }
   &.action {
     background-image: none;
-    background-color: $lifeboat-orange;
+    background-color: $color-lifeboat-orange;
     @include background-image(linear-gradient(#F0822E, #E39117 17%, #E77236 62%, #CA6229));
     @include border-radius(4px);
     border: 1px solid #C96927 !important;
@@ -184,21 +184,21 @@ mark {
     @include text-shadow(rgba($text-color-black, 0.2) 0 1px 0);
     @include box-shadow(rgba($black, .2) 0px 2px 8px);
     &:hover, &:focus {
-     @include box-shadow(rgba(darken($lifeboat-orange, 10%), .8) 0px 2px 8px, rgba($lifeboat-yellow, .5) 0 0 15px inset);
+     @include box-shadow(rgba(darken($color-lifeboat-orange, 10%), .8) 0px 2px 8px, rgba($color-lifeboat-yellow, .5) 0 0 15px inset);
      @include text-shadow(rgba($black, .2) 0px 2px 8px, rgba($white, .5) 0 0 15px);
     }
   }
   &.alert {
-    background-color: $lifeboat-orange;
+    background-color: $color-lifeboat-orange;
     &:hover, &:focus {
-     background-color: $lifeboat-blue;
+     background-color: $color-lifeboat-blue;
     }
   }
   &.secondary {
     color: $text-color-white;
     background-color: lighten($background-dark-grey, 2%); // 18% grey
     &:hover, &:focus {
-     background-color: $lifeboat-blue;
+     background-color: $color-lifeboat-blue;
     }
   }
 }
@@ -223,7 +223,7 @@ mark {
       @include background-size(100% 17px);
       a {
         border: none;
-        background-color: $lifeboat-yellow;
+        background-color: $color-lifeboat-yellow;
       }
     }
     a {
@@ -235,7 +235,7 @@ mark {
       padding: 0 10px;
       &:hover {
         //color: lighten($black, 25%);
-        color: $lifeboat-orange;
+        color: $color-lifeboat-orange;
       }
     }
   }
@@ -279,11 +279,11 @@ ul.tabs-content {
       width: 31px;
       padding: 6px 0px;
       border: 2px solid #{$white};
-      background: $lifeboat-yellow;
+      background: $color-lifeboat-yellow;
       color: $white;
       @include border-radius(100px);
       &:hover {
-        background: $lifeboat-blue;
+        background: $color-lifeboat-blue;
       }
       &:last-child {
         margin-right: 0;
@@ -299,9 +299,9 @@ ul.tabs-content {
 
 
 blockquote {
-  color: $lifeboat-blue;
+  color: $color-lifeboat-blue;
   p {
-    color: $lifeboat-blue;
+    color: $color-lifeboat-blue;
     margin-bottom: 10px;
   }
   .attribute {
@@ -472,8 +472,8 @@ nav#primary {
           @include background-size(100% 13px);
         }
         &:hover .link-inner {
-          //background: $lifeboat-blue;
-          @include background-image(linear-gradient(lighten($lifeboat-yellow, 8%), $lifeboat-yellow));
+          //background: $color-lifeboat-blue;
+          @include background-image(linear-gradient(lighten($color-lifeboat-yellow, 8%), $color-lifeboat-yellow));
         }
         &:hover .link-btm {
           background-image: image-url("nav-primary-triangle-hover.png");
@@ -482,7 +482,7 @@ nav#primary {
       &.active {
         a {
           .link-inner {
-            @include background-image(linear-gradient(lighten($lifeboat-blue, 12%), $lifeboat-blue));
+            @include background-image(linear-gradient(lighten($color-lifeboat-blue, 12%), $color-lifeboat-blue));
           }
           .link-btm {
             background-image: image-url("nav-primary-triangle-active.png");
@@ -512,10 +512,10 @@ nav#mobile-primary {
   float: right;
   top: 66px;
   .mobile-primary-inner {
-    //@include background-image(linear-gradient(lighten($lifeboat-blue, 12%), $lifeboat-blue));
-    background-color: $lifeboat-blue;
+    //@include background-image(linear-gradient(lighten($color-lifeboat-blue, 12%), $color-lifeboat-blue));
+    background-color: $color-lifeboat-blue;
     @include background(image-url("nav-mobile-icon.png") 50% 45% no-repeat);
-    @include background(image-url("nav-mobile-icon.png") 50% 45% no-repeat, linear-gradient(lighten($lifeboat-blue, 12%), $lifeboat-blue));
+    @include background(image-url("nav-mobile-icon.png") 50% 45% no-repeat, linear-gradient(lighten($color-lifeboat-blue, 12%), $color-lifeboat-blue));
     @include background-size(36px 17px, 100%);
     width: 66px;
     height: 45px;
@@ -539,7 +539,7 @@ nav#mobile-primary {
     border-width: 1px 0;
     z-index: 100;
     margin: 0;
-    background-color: $lifeboat-blue;
+    background-color: $color-lifeboat-blue;
     @include box-shadow(rgba($black, .15) 0px 3px 8px);
     li {
       list-style: none;
@@ -569,11 +569,11 @@ nav#mobile-primary {
       }
       &.active {
         a {
-          background-color: darken($lifeboat-blue, 7%);
+          background-color: darken($color-lifeboat-blue, 7%);
         }
       }
       & a:hover, &.active a:hover {
-        background-color: $lifeboat-yellow;
+        background-color: $color-lifeboat-yellow;
       }
 
     }
@@ -609,7 +609,7 @@ nav#secondary {
       border-bottom: 1px solid #{$border-light-grey};
       a {
         display: block;
-        color: $lifeboat-orange;
+        color: $color-lifeboat-orange;
         @include font-size(12);
         font-weight: bold;
         letter-spacing: $letter-spacing-label;
@@ -620,8 +620,8 @@ nav#secondary {
         margin-bottom: -1px;
       }
       &.current_page_item a, a:hover {
-        color: $lifeboat-blue;
-        border-bottom: 1px solid #{$lifeboat-blue};
+        color: $color-lifeboat-blue;
+        border-bottom: 1px solid #{$color-lifeboat-blue};
       }
       &:last-child {
         padding-right: 0;
@@ -696,7 +696,7 @@ nav#secondary {
       }
       .first-name {
         @include font-size(22);
-        color: $lifeboat-blue;
+        color: $color-lifeboat-blue;
         letter-spacing: $letter-spacing-label;
         margin-bottom: 2px;
       }
@@ -728,9 +728,9 @@ nav#secondary {
     .button {
       @include font-size(14);
       padding: 5px 20px 6px;
-      background-color: $lifeboat-yellow;
+      background-color: $color-lifeboat-yellow;
       &:hover {
-        background-color: $lifeboat-blue;
+        background-color: $color-lifeboat-blue;
       }
     }
     @include breakpoint(max, 600px) {
@@ -752,7 +752,7 @@ nav#secondary {
       a {
         color: $text-color-light-grey;
         &:hover {
-          color: $lifeboat-blue;
+          color: $color-lifeboat-blue;
         }
       }
     }
@@ -817,7 +817,7 @@ nav#secondary {
           @include text-shadow(rgba($text-color-black, 0.2) 0 1px 0);
           //@include opacity(0.95);
           .button-inner {
-            background-color: $lifeboat-yellow;
+            background-color: $color-lifeboat-yellow;
             display: inline-block;
             padding: 8px 15px;
           }
@@ -828,11 +828,11 @@ nav#secondary {
             //@include background($white image-url("icon-flag.svg") no-repeat 65% 60%);
             //@include background-size(auto 49px);
             background-color: $white;
-            color: $lifeboat-yellow;
+            color: $color-lifeboat-yellow;
             text-shadow: none;
             @include font-size(50);
             line-height: 0;
-            border: 6px solid $lifeboat-yellow;
+            border: 6px solid $color-lifeboat-yellow;
             @include border-radius(100px);
             //@include box-shadow(rgba($black, .1) 0px 0px 8px);
             @include box-shadow(rgba($black, .3) 0px 0px 8px);
@@ -884,11 +884,11 @@ nav#secondary {
           @include background-size(12px 200%);
           background-position: 100% 100%, 0% 100%;
           .button-inner {
-            background-color: $lifeboat-blue;
+            background-color: $color-lifeboat-blue;
           }
           .icon {
-            border-color: $lifeboat-blue;
-            color: $lifeboat-blue;
+            border-color: $color-lifeboat-blue;
+            color: $color-lifeboat-blue;
           }
         }
         &:hover {
@@ -896,21 +896,21 @@ nav#secondary {
             background-position: 100% 100%, 0% 100%;
             @include text-shadow(rgba($text-color-black, 0.3) 0 1px 0);
             .button-inner {
-              background-color: $lifeboat-blue;
+              background-color: $color-lifeboat-blue;
             }
             .icon {
-              border-color: $lifeboat-blue;
-              color: $lifeboat-blue;
+              border-color: $color-lifeboat-blue;
+              color: $color-lifeboat-blue;
             }
           }
           .button.blue {
             background-position: 100% 0%, 0% 0%;
             .button-inner {
-              background-color: $lifeboat-yellow;
+              background-color: $color-lifeboat-yellow;
             }
             .icon {
-              border-color: $lifeboat-yellow;
-              color: $lifeboat-yellow;
+              border-color: $color-lifeboat-yellow;
+              color: $color-lifeboat-yellow;
             }
           }
         }
@@ -981,14 +981,14 @@ nav#secondary {
       .share-icons {
         .icon {
           border-color: $background-light-grey;
-          background: $lifeboat-blue;
+          background: $color-lifeboat-blue;
           line-height: 1em;
           height: 34px;
           width: 35px;
           padding: 8px 0px;
           margin: -11px 5px -13px 0;
           &:hover {
-            background: $lifeboat-yellow;
+            background: $color-lifeboat-yellow;
             border-color: $white;
           }
         }
@@ -1068,7 +1068,7 @@ article {
   .pull-quote {
     @include font-size(28);
     line-height: 1.35em;
-    color: $lifeboat-blue;
+    color: $color-lifeboat-blue;
     border: 1px solid #{$border-light-grey};
     border-width: 1px 0;
     font-weight: 100;
@@ -1178,7 +1178,7 @@ article {
     margin: -10px 0 12px;
   }
   a {
-    color: $lifeboat-blue;
+    color: $color-lifeboat-blue;
     &:hover {
       text-decoration: underline;
     }
@@ -1198,10 +1198,10 @@ article {
       color: lighten($text-color-light-grey, 20%);
     }
     &:hover {
-      color: $lifeboat-blue;
+      color: $color-lifeboat-blue;
       text-decoration: none;
       .icon {
-        color: $lifeboat-orange;
+        color: $color-lifeboat-orange;
       }
     }
   }
@@ -1246,7 +1246,7 @@ article {
       line-height: 1.5em;
       color: $text-color;
       span {
-        color: $lifeboat-orange;
+        color: $color-lifeboat-orange;
         padding: 1px;
       }
       p, li, div, dl, dt, dd {
@@ -1255,11 +1255,11 @@ article {
       &:hover {
         color: lighten($text-color, 20%);
         h2 {
-          color: $lifeboat-orange;
+          color: $color-lifeboat-orange;
         }
         span {
           //color: $text-color-white;
-          //background: $lifeboat-yellow;
+          //background: $color-lifeboat-yellow;
           text-decoration: underline;
         }
       }
@@ -1320,8 +1320,8 @@ article {
       @include text-shadow(rgba($text-color-black, 0.2) 0 -1px 0);
       .title-inner {
         display: block;
-        background-color: $lifeboat-blue;
-        @include background(linear-gradient(top left, $lifeboat-blue, lighten($lifeboat-blue, 8%)));
+        background-color: $color-lifeboat-blue;
+        @include background(linear-gradient(top left, $color-lifeboat-blue, lighten($color-lifeboat-blue, 8%)));
         padding: 14px 35px 14px 18px;
       }
       .corner-flap {
@@ -1378,14 +1378,14 @@ article {
         padding-left: percentage(30px / $main-col-width);
       }
       .landing-action-arrow {
-        @include cssTriangle(24px, $lifeboat-yellow, right);
+        @include cssTriangle(24px, $color-lifeboat-yellow, right);
         position: absolute;
         left: -17px;
         top: 25px;
       }
     }
     .landing-action-content {
-      background-color: $lifeboat-yellow;
+      background-color: $color-lifeboat-yellow;
       padding: 25px;
       h2, h3, h4, h5 {
         margin: 0 0 15px;
@@ -1580,7 +1580,7 @@ form {
             width: 100%;
             padding: 10px;
             overflow: hidden;
-            background: rgba($lifeboat-yellow, .95);
+            background: rgba($color-lifeboat-yellow, .95);
             color: $text-color-white;
             text-transform: uppercase;
             line-height: $line-height-title;
@@ -1655,7 +1655,7 @@ form {
             top: 10px;
           }
           span {
-            background: $lifeboat-blue;
+            background: $color-lifeboat-blue;
             padding: 9px 0px;
             @include font-size(20);
             font-weight: 900;
@@ -1742,7 +1742,7 @@ form {
     &:hover {
       .post-content {
         h2 {
-          color: $lifeboat-orange;
+          color: $color-lifeboat-orange;
         }
         .subtitle {
           color: darken($text-color-dark-grey, 20%);
@@ -1764,7 +1764,7 @@ form {
   .post-content {
     h2 {
       margin-top: 0;
-      color: $lifeboat-yellow;
+      color: $color-lifeboat-yellow;
       @include font-size(62);
       text-transform: uppercase;
       letter-spacing: $letter-spacing-title;
@@ -1942,7 +1942,7 @@ form {
             background-color: #D9D9D9;
             padding: 6px 10px 5px;
             &:hover {
-              background-color: $lifeboat-blue;
+              background-color: $color-lifeboat-blue;
             }
           }
         }
@@ -1986,10 +1986,10 @@ form {
             
           }
           &:hover {
-            background-color: $lifeboat-yellow;
+            background-color: $color-lifeboat-yellow;
             .icon {
-              color: $lifeboat-yellow;
-              border-color: $lifeboat-yellow;
+              color: $color-lifeboat-yellow;
+              border-color: $color-lifeboat-yellow;
             }
           }
           @include breakpoint(phone) {
@@ -2074,11 +2074,50 @@ form {
   .widget {
     margin-bottom: 45px;
     text-align: center;
-    padding: 5px 5px 8px;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
     &:last-child {
       margin-bottom: 0;
     }
+    .widget-link {
+      display: block;
+      height: 100%;
+      padding: 5px 5px 8px;
+      .button {
+        display: block;
+        font-family: $headerFontFamily;
+        margin: 0 -15px;
+        padding: 6px 25px 7px;
+        @include font-size(26);
+        letter-spacing: 0;
+        @include text-shadow(rgba($text-color-black, 0.15) 0 -1px 0);
+        @include background(image-url("button-flap-right.png") no-repeat 100% 50%, image-url("button-flap-left.png") no-repeat 0 50%);
+        background-color: $color-lifeboat-yellow;
+        @include background-size(auto 100%);
+        .icon {
+          padding-left: 5px;
+          vertical-align: middle;
+          line-height: 0;
+        }
+      }
+      &:hover .button {
+        background-color: $color-lifeboat-blue;
+      }
+      .button.orange {
+        background-color: $color-lifeboat-orange;
+      }
+      &:hover .button.orange {
+        background-color: $color-lifeboat-blue;
+      }
+      .button.blue {
+        background-color: $color-lifeboat-blue;
+      }
+      &:hover .button.blue {
+        background-color: $color-lifeboat-yellow;
+      }
+    }
     .widget-title {
+      color: $color-lifeboat-blue;
       @include font-size(18);
       font-style: italic;
       line-height: 1.1em;
@@ -2086,21 +2125,21 @@ form {
       font-weight: normal;
       margin: 10px 0;
     }
-    p {
+    p, .widget-text {
       font-style: normal;
       font-weight: normal;
+      color: $text-color;
       @include font-size(15);
+      @include text-shadow(rgba($white, 1) 0 0 5px);
+      &.on-dark {
+        color: $text-color-white;
+        @include text-shadow(rgba($black, 0.9) 0 0 5px);
+      }
     }
-    .button {
-      display: block;
-      font-family: $headerFontFamily;
-      margin: 0 -15px;
-      padding: 6px 25px 7px;
-      @include font-size(26);
-      letter-spacing: 0;
-      @include text-shadow(rgba($text-color-black, 0.15) 0 -1px 0);
-      @include background(image-url("button-flap-right.png") no-repeat 100% 50%, image-url("button-flap-left.png") no-repeat 0 50%);
-      @include background-size(auto 100%);
+    hr {
+      border-color: $border-light-grey;
+      width: 45%;
+      margin: 8px auto;
     }
     @include breakpoint(between, $break-tablet, 1070px) {
       padding-bottom: 0;
@@ -2110,37 +2149,29 @@ form {
       p {
         @include font-size(12);
       }
-      .button {
-        //margin-bottom: -10px;
-        padding: 6px 15px 7px;
-        @include font-size(20);
-        @include background-size(10px 100%);
+      .widget-link {
+        .button {
+          //margin-bottom: -10px;
+          padding: 6px 15px 7px;
+          @include font-size(20);
+          @include background-size(10px 100%);
+        }
       }
     }
   }
   #widget-text-2 { // Become an Insider
-    background: $white;
-    border-top: 3px solid $lifeboat-orange;
+    border-top: 3px solid $color-lifeboat-orange;
     background: {
-      image: image-url("tim-alia@2x.png");
-      repeat: no-repeat;
+      color: $white;
+      image: image-url("sidebar-tim-alia@2x.png");
       position: 30% 100%;
     }
     @include background-size(130%);
     .widget-title {
-      color: $lifeboat-orange;
-    }
-    hr {
-      border-color: $border-light-grey;
-      width: 45%;
-      margin: 8px auto;
+      color: $color-lifeboat-orange;
     }
     .button {
       margin-top: 107px;
-      background-color: $lifeboat-orange;
-      &:hover {
-        background-color: $lifeboat-blue;
-      }
     }
     @include breakpoint(between, $break-tablet, 900px) {
       @include background-size(212px auto);
@@ -2161,19 +2192,23 @@ form {
   }
   #widget-text-3 { // Share the Manifesto
     background: {
-      image: image-url("manifesto-sidebar.jpg");
-      repeat: no-repeat;
-      position: 50% 0;
+      image: image-url("sidebar-manifesto@2x.jpg");
     }
     @include background-size(120%);
     p {
       margin: 85px 0 5px;
     }
-    .button {
-      background-color: $lifeboat-yellow;
-      &:hover {
-        background-color: $lifeboat-blue;
-      }
+  }
+  #widget-text-4 { // Watch the Video
+    background: {
+      image: image-url("sidebar-whats-lifeboat-vid@2x.jpg");
+      position: 50% 50%;
+    }
+    @include background-size(150%);
+    p {
+      font-weight: 500;
+      @include font-size(17);
+      margin: 85px 0 5px;
     }
   }
 }
