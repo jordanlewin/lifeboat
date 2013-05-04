@@ -8,7 +8,7 @@
             <span class="button blue">
               <span class="button-inner">
                 <span class="button-text">Where to Start?</span>
-                <span class="icon" aria-hidden="true" data-icon="&#xe007;"></span>
+                <span class="icon" aria-hidden="true" data-icon="&#xe008;"></span>
                 <span class="button-text">Check Out the Guide</span>
               </span>
             </span><!-- button feature -->
@@ -24,7 +24,7 @@
             <span class="button">
               <span class="button-inner">
                 <span class="button-text">What&rsquo;s Lifeboat?</span>
-                <span class="icon" aria-hidden="true" data-icon="&#xe007;"></span>
+                <span class="icon" aria-hidden="true" data-icon="&#xe008;"></span>
                 <span class="button-text">Watch The Video</span>
               </span>
             </span><!-- button feature -->
@@ -41,7 +41,7 @@
               <span class="button-inner">
                 <span class="button-text">Turn on Your Friends</span>
                 <!-- <span class="icon" style="background-image: url(/wp-content/themes/lifeboat/images/icon-flag.svg);"></span> -->
-                <span class="icon" aria-hidden="true" data-icon="&#xe007;"></span>
+                <span class="icon" aria-hidden="true" data-icon="&#xe008;"></span>
                 <span class="button-text">Share the Manifesto</span>
               </span>
             </span><!-- button feature -->
