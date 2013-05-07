@@ -29,4 +29,14 @@ jQuery(document).ready( function() {
       });
     }
   });
+  
+  
+	function disqus_config() {
+	    this.callbacks.onNewComment = [function() { 
+	    	console.log('disqus comment');
+//	    	saTracker.eventTrack({type: "01260000000UJEEAA4"}); 
+	    }];
+	}
+  
+  
 });
