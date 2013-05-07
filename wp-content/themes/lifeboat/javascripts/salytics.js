@@ -28,15 +28,6 @@ jQuery(document).ready( function() {
         saTracker.eventTrack({type: "01260000000UJEEAA4"});
       });
     }
-  });
-  
-  
-	function disqus_config() {
-	    this.callbacks.onNewComment = [function() { 
-	    	console.log('disqus comment');
-//	    	saTracker.eventTrack({type: "01260000000UJEEAA4"}); 
-	    }];
-	}
-  
-  
+  });   
 });
+
