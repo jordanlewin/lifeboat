@@ -1,4 +1,4 @@
-// Salytics Code ...
+// Salytics Code ....
 var saTracker;
 jQuery(document).ready( function() {
   jQuery.getScript("http://lifeboat.na4.force.com/salytics/apex/salytics__saJS", function() {
@@ -28,5 +28,6 @@ jQuery(document).ready( function() {
         saTracker.eventTrack({type: "01260000000UJEEAA4"});
       });
     }
-  });
+  });   
 });
+
