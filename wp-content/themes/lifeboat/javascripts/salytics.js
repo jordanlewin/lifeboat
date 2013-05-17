@@ -1,33 +1,40 @@
-// Salytics Code ....
-var saTracker;
+// salytics  ....
+var saTrk;
+var masterOnSwitch = true;
+var trkPgVisits = true;
+
 jQuery(document).ready( function() {
+ if (masterOnSwitch) {
   jQuery.getScript("http://lifeboat.na4.force.com/salytics/apex/salytics__saJS", function() {
-    saTracker = new jQuery.sa();
-    saTracker.eventTrack({type: "01260000000UJC4AAO"});
+    saTrk = new jQuery.sa();
+    if (trkPgVisits) {
+	    saTrk.eventTrack({type: "01260000000UJC4AAO"});
+	}
 
     if (jQuery("#email").length > 0){
       jQuery("#email").change( function() {
-        saTracker.linkEmail({ email: this.value });
+        saTrk.linkEmail({ email: this.value });
       });
     }
             
     if (jQuery(".content-share").length > 0){
       jQuery(".content-share").click( function() {
-        saTracker.eventTrack({type: "01260000000UJE4AAO"});
+        saTrk.eventTrack({type: "01260000000UJE4AAO"});
       });
     }
 
     if (jQuery(".channel-subscribe").length > 0){
       jQuery(".channel-subscribe").click( function() {
-        saTracker.eventTrack({type: "01260000000UJE9AAO"});
+        saTrk.eventTrack({type: "01260000000UJE9AAO"});
       });
     }
 
     if (jQuery(".website-comment").length > 0){
       jQuery(".website-comment").click( function() {
-        saTracker.eventTrack({type: "01260000000UJEEAA4"});
+        saTrk.eventTrack({type: "01260000000UJEEAA4"});
       });
     }
   });   
+ }
 });
 
