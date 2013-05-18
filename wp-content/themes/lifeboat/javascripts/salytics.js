@@ -34,6 +34,22 @@ jQuery(document).ready( function() {
         saTrk.eventTrack({type: "01260000000UJEEAA4"});
       });
     }
+    if (jQuery(".content-download").length > 0){
+      jQuery(".content-download").click( function() {
+    	var classList = $(this).attr('class').split(/\s+/);
+    	var detailVal = 'unspecified';
+    	var i = 0;
+    	var gotIt = false;
+    	while (i < classList.length - 1 && !gotIt) {
+	    	if(classList[i].substring(0,5) == 'dtl__') {
+				detailVal = classList[i].substring(5,classList[i].length).replace(/\_/g, ' ');
+				gotIt = true;	    	
+	    	}
+	    	i++;
+    	}
+    	saTrk.eventTrack({type: "01260000000UKrcAAG", custom: {vadetail: detailVal}});
+      });
+    }
   });   
  }
 });
