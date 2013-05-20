@@ -1545,7 +1545,7 @@ nav#secondary ul li:last-child { padding-right: 0; }
 /* Home Positioning Statement Area */
 #home-intro { margin-top: 15px; margin-bottom: 35px; }
 @media only screen and (max-width: 767px) { #home-intro { margin-top: 90px; } }
-#home-intro .subheader { font-weight: normal; text-align: center; color: black; }
+#home-intro .subheader { font-weight: normal; text-align: center; color: black; font-size: 23px; font-size: 2.3rem; }
 @media only screen and (min-width: 768px) and (max-width: 1024px) { #home-intro .subheader { font-size: 20px; font-size: 2rem; } }
 @media only screen and (max-width: 767px) { #home-intro .subheader { font-size: 22px; font-size: 2.2rem; } }
 @media only screen and (max-width: 480px) { #home-intro .subheader { font-size: 18px; font-size: 1.8rem; } }
@@ -1580,6 +1580,7 @@ article header { position: relative; }
 #content .pull-quote { font-size: 28px; font-size: 2.8rem; line-height: 1.35em; color: #00aeef; border: 1px solid #e0e0e0; border-width: 1px 0; font-weight: 100; font-style: italic; margin-bottom: 20px; margin-top: 20px; padding: 15px 0; }
 @media only screen and (min-width: 768px) { #content .pull-quote { font-size: 32px; font-size: 3.2rem; margin-bottom: 35px; margin-top: 35px; padding: 20px 0; width: 139.96317%; } }
 @media only screen and (min-width: 768px) { #content figure { width: 139.96317%; } }
+#content figure img { width: 100%; }
 #content figure figcaption { font-weight: normal; font-style: italic; padding: 0 0 1em; border-bottom: 1px solid #e0e0e0; /*@include breakpoint(tablet-up) { width: percentage($internal-side-col-width / $main-col-width);
 }*/ font-size: 13px; font-size: 1.3rem; line-height: 1.6em; margin-bottom: 1.6em; }
 @media only screen and (max-width: 767px) { #content .button { display: inline-block; }
@@ -1721,6 +1722,24 @@ form .error input, form input.error, form .error textarea, form textarea.error {
   .getting-started-guide #lifeboat-practices .practice .practice-content .practice-title span { background: transparent; padding: 0; } }
 @media only screen and (min-width: 850px) { .getting-started-guide #lifeboat-practices .practice .practice-content .content-inner { -webkit-column-count: 2; -moz-column-count: 2; -ms-column-count: 2; -o-column-count: 2; column-count: 2; -webkit-column-gap: 40px; -moz-column-gap: 40px; -ms-column-gap: 40px; -o-column-gap: 40px; column-gap: 40px; } }
 .getting-started-guide #lifeboat-practices .practice .practice-content .content-inner ul { padding-left: 1.1em; }
+
+/* -------------------------------------------------- Friend Fact Ecards
+-----------------------------------------------------
+*/
+.friend-fact-ecards .ecard { margin-top: 40px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0; }
+@media only screen and (max-width: 767px) { .friend-fact-ecards .ecard { border-bottom: 1px solid #b2b2b2; } }
+.friend-fact-ecards .ecard:last-child { border-bottom: none; padding-bottom: 0; }
+.friend-fact-ecards .ecard .ecard-card { position: relative; margin-right: 4px; }
+@media only screen and (min-width: 768px) { .friend-fact-ecards .ecard .ecard-card { margin-right: 23px; } }
+.friend-fact-ecards .ecard .ecard-card .ecard-link .ecard-corner-badge { display: block; position: absolute; width: 216px; height: 128px; top: -11px; right: -14px; background: transparent url('../images/ecard-corner-badge@2x.png?1367705910') no-repeat; -webkit-background-size: 100%; -moz-background-size: 100%; -o-background-size: 100%; background-size: 100%; }
+.friend-fact-ecards .ecard .ecard-card .ecard-link:hover .ecard-corner-badge { background-position: 0 -130px; }
+.friend-fact-ecards .ecard .ecard-card .ecard-link .ecard-image { padding: 20px; background: url('../images/paper-texture-brown.jpg?1367693121'); -webkit-background-size: 200px; -moz-background-size: 200px; -o-background-size: 200px; background-size: 200px; -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px; -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px; box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px; }
+.friend-fact-ecards .ecard .ecard-card .ecard-link .ecard-image img { -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 4px; -moz-box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 4px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 4px; }
+.friend-fact-ecards .ecard .ecard-card .ecard-bottom { height: 24px; background: url('../images/ecard-shadow@2x.png?1367692420') no-repeat; -webkit-background-size: 100%; -moz-background-size: 100%; -o-background-size: 100%; background-size: 100%; }
+.friend-fact-ecards .ecard .ecard-content .number-title { font-family: "MuseoSlab", MuseoSlab, serif; font-weight: 500; text-transform: uppercase; letter-spacing: 0.09em; font-size: 11px; font-size: 1.1rem; color: black; border-bottom: 1px solid #e0e0e0; margin: 1px 0 15px; padding-bottom: 3px; }
+.friend-fact-ecards .ecard .ecard-content .ecard-title { color: #e9722b; font-size: 60px; font-size: 6rem; line-height: 0.85em; margin: 0 0 7px; }
+.friend-fact-ecards .ecard .ecard-content .ecard-excerpt p, .friend-fact-ecards .ecard .ecard-content .ecard-excerpt ul { margin-bottom: 12px; }
+.friend-fact-ecards .ecard .ecard-content .ecard-subtitle { font-family: "MuseoSlab", MuseoSlab, serif; color: #00aeef; font-weight: 100; font-style: italic; font-size: 17px; font-size: 1.7rem; line-height: 1.4em; border-top: 1px solid #e5e5e5; margin: 0; padding: 12px 0 10px; }
 
 /* -------------------------------------------------- Custom Pages
 -----------------------------------------------------
