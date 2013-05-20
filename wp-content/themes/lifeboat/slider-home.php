@@ -2,7 +2,7 @@
   <div class="slider">
 
     <div class="slide" style="background-image: url(/wp-content/uploads/2013/05/home-feature-friendship-report.png);">
-      <a href="/goodies/report2013/" class="slide-link">
+      <a href="/friend-blog/report13-findings/" class="slide-link">
         <div class="row">
           <div class="four columns"></div>
           <div class="thirteen columns offset-by-one">
