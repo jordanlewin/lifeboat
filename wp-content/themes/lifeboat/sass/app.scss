@@ -2307,6 +2307,18 @@ form {
       margin: 85px 0 5px;
     }
   }
+  #widget-text-5 { // Friendship Report
+    background: {
+      image: image-url("sidebar-friendship-report@2x.png");
+    }
+    @include background-size(100%);
+    p {
+      margin: 85px 0 5px;
+    }
+    @include breakpoint(between, $break-phone-sm, $break-tablet) {
+      @include background-size(300px auto);
+    }
+  }
 }
 
 .home #sidebar {
@@ -2320,6 +2332,15 @@ form {
   #sidebar {
     .widget {
       display: none;
+    }
+  }
+}
+
+/* But show the Become an Insider widget on the Friendship Report */
+.page-id-1798 {
+  #sidebar {
+    .widget#widget-text-2 {
+      display: block;
     }
   }
 }

@@ -1859,8 +1859,14 @@ form .error input, form input.error, form .error textarea, form textarea.error {
 #sidebar #widget-text-3 p { margin: 85px 0 5px; }
 #sidebar #widget-text-4 { background-image: url('../images/sidebar-whats-lifeboat-vid@2x.jpg?1363704063'); background-position: 50% 50%; -webkit-background-size: 150%; -moz-background-size: 150%; -o-background-size: 150%; background-size: 150%; }
 #sidebar #widget-text-4 p { font-weight: 500; font-size: 17px; font-size: 1.7rem; margin: 85px 0 5px; }
+#sidebar #widget-text-5 { background-image: url('../images/sidebar-friendship-report@2x.png?1369089044'); -webkit-background-size: 100%; -moz-background-size: 100%; -o-background-size: 100%; background-size: 100%; }
+#sidebar #widget-text-5 p { margin: 85px 0 5px; }
+@media only screen and (min-width: 320px) and (max-width: 768px) { #sidebar #widget-text-5 { -webkit-background-size: 300px auto; -moz-background-size: 300px auto; -o-background-size: 300px auto; background-size: 300px auto; } }
 
 @media only screen and (max-width: 767px) { .home #sidebar { margin-top: 50px; } }
 
 /* Hide Sidebar Widgets on Landing Pages (For now) */
 .page-template-pagetemplate-landing-php #sidebar .widget { display: none; }
+
+/* But show the Become an Insider widget on the Friendship Report */
+.page-id-1798 #sidebar .widget#widget-text-2 { display: block; }
