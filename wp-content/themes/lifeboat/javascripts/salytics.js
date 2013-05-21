@@ -40,10 +40,10 @@ jQuery(document).ready( function() {
     	var detailVal = 'unspecified';
     	var i = 0;
     	var gotIt = false;
-    	while (i < classList.length - 1 && !gotIt) {
+    	while (i < classList.length && !gotIt) {
 	    	if(classList[i].substring(0,5) == 'dtl__') {
 				detailVal = classList[i].substring(5,classList[i].length).replace(/\_/g, ' ');
-				gotIt = true;	    	
+				gotIt = true;	    
 	    	}
 	    	i++;
     	}
