@@ -1694,7 +1694,7 @@ form {
         }
         .practice-title {
           margin: 0 0 25px;
-          @include font-size(62);
+          @include font-size(60);
           @include breakpoint(phone) {
             @include font-size(50);
             background: none;
