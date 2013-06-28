@@ -4,35 +4,36 @@
   Options +FollowSymlinks
   RewriteEngine On
   
-# BEGIN WordPress
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
-
-# END WordPress
   
-
-  # Adaptive-Images -----------------------------------------------------------------------------------
+  # BEGIN WordPress -------------------------------------------------------------------------------
+  
+  #RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.php$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.php [L]
+  
+  # END WordPress -------------------------------------------------------------------------------
+  
+  
+  
+  # BEGIN Adaptive-Images -----------------------------------------------------------------------------------
 
   # Add any directories you wish to omit from the Adaptive-Images process on a new line, as follows:
   # RewriteCond %{REQUEST_URI} !ignore-this-directory
   # RewriteCond %{REQUEST_URI} !and-ignore-this-directory-too
-  
-  #RewriteCond %{REQUEST_URI} !wp-content/themes/lifeboat/images
+  # RewriteCond %{REQUEST_URI} !assets
+  RewriteCond %{REQUEST_URI} !wp-content/themes/lifeboat/images
 
   # don't apply the AI behaviour to images inside AI's cache folder:
-  #RewriteCond %{REQUEST_URI} !wp-content/ai-cache
+  RewriteCond %{REQUEST_URI} !wp-content/ai-cache
     
   # Send any GIF, JPG, or PNG request that IS NOT stored inside one of the above directories
   # to adaptive-images.php so we can select appropriately sized versions
   
-  #RewriteRule \.(?:jpe?g|gif|png)$ wp-content/themes/lifeboat/adaptive-images.php
+  RewriteRule \.(?:jpe?g|gif|png)$ wp-content/themes/lifeboat/adaptive-images.php
 
   # END Adaptive-Images -------------------------------------------------------------------------------
-
+  
 </IfModule>
