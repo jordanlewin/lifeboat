@@ -51,7 +51,7 @@
     <div class="nav container">
       <div class="row">
         <div class="four columns">
-          <div id="logo"><a href="<?php echo get_bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/lifeboat-logo@2x.png" alt="<?php bloginfo('name'); ?> // <?php echo get_bloginfo ( 'description' ); ?>"></a></div>
+          <div id="logo"><a href="<?php echo get_bloginfo('url'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/lifeboat-logo.png" alt="<?php bloginfo('name'); ?> // <?php echo get_bloginfo ( 'description' ); ?>"></a></div>
           <nav id="mobile-primary" class="show-for-small">
             <div class="mobile-primary-inner">
               <?php lifeboat_mobile_primary_nav(); ?>

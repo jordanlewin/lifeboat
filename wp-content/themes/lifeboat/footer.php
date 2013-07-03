@@ -5,7 +5,7 @@
     <footer id="footer" class="row">
       <div class="eighteen columns">
         <div id="footer-first">
-          <span class="lifeboat-flag"><img src="<?php echo get_template_directory_uri(); ?>/images/tagline-flag@2x.png" alt="Lifeboat // Friends At Their Best" width="308" /></span>
+          <span class="lifeboat-flag"><img src="<?php echo get_template_directory_uri(); ?>/images/tagline-flag.png" alt="Lifeboat // Friends At Their Best" width="308" /></span>
           <span class="copyright">&copy; <?php print date("Y"); ?></span>
           <span class="from">
             <span class="hearts-minds">From the Minds and Hearts of:</span> 

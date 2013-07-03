@@ -514,6 +514,8 @@ function lifeboat_js(){
     wp_enqueue_script('salytics');
     wp_register_script('lifeboat-custom-js', get_template_directory_uri() . '/javascripts/app.js', 'jQuery', '1.0', true);
     wp_enqueue_script('lifeboat-custom-js');
+    wp_register_script('retina-js', get_template_directory_uri() . '/javascripts/retina.js', false, '0.0.2', true);
+    wp_enqueue_script('retina-js');
 }
 add_action('wp_enqueue_scripts', 'lifeboat_js');
 
