@@ -163,6 +163,13 @@ function bones_footer_links_fallback() {
 function custom_wp_nav_menu($var) {
         return is_array($var) ? array_intersect($var, array(
                 //List of allowed menu classes
+                'current-menu-item',
+                'current-menu-parent',
+                'current-page-item',
+                'current-page-parent',
+                'current-page-ancestor',
+                'current_menu_item',
+                'current_menu_parent',
                 'current_page_item',
                 'current_page_parent',
                 'current_page_ancestor',
@@ -176,21 +183,29 @@ function custom_wp_nav_menu($var) {
 add_filter('nav_menu_css_class', 'custom_wp_nav_menu');
 add_filter('nav_menu_item_id', 'custom_wp_nav_menu');
 add_filter('page_css_class', 'custom_wp_nav_menu');
- 
+
  
 //Replaces "current-menu-item" with "active"
 function current_to_active($text){
         $replace = array(
                 //List of menu item classes that should be changed to "active"
+                'current-menu-item' => 'active',
+                'current-menu-parent' => 'active',
+                'current-menu-ancestor' => 'active',
+                'current-page-item' => 'active',
+                'current-page-parent' => 'active',
+                'current-page-ancestor' => 'active',
+                'current_menu_item' => 'active',
+                'current_menu_parent' => 'active',
                 'current_page_item' => 'active',
                 'current_page_parent' => 'active',
-                'current_page_ancestor' => 'active',
+                'current_page_ancestor' => 'active'
         );
         $text = str_replace(array_keys($replace), $replace, $text);
                 return $text;
         }
 add_filter ('wp_nav_menu','current_to_active');
- 
+
 //Deletes empty classes and removes the sub menu class
 function strip_empty_classes($menu) {
     $menu = preg_replace('/ class=""| class="sub-menu"/','',$menu);
@@ -311,6 +326,26 @@ class footer_links_walker extends Walker_Nav_Menu
 }
 
 
+if (!function_exists('get_post_top_ancestor_id')) {
+  /**
+   * Gets the id of the topmost ancestor of the current page. Returns the current
+   * page's id if there is no parent.
+   * 
+   * @uses object $post
+   * @return int 
+   */
+  function get_post_top_ancestor_id() {
+    global $post;
+    
+    if($post->post_parent){
+      $ancestors = array_reverse(get_post_ancestors($post->ID));
+      return $ancestors[0];
+    }
+    
+    return $post->ID;
+  }
+}
+
 
 /****************** PLUGINS & EXTRA FEATURES **************************/
   
@@ -410,7 +445,7 @@ require_once('library/shortcodes.php');
 
 /************* THUMBNAIL / IMAGE OPTIONS *************/
 
-// Image sizes — in addition to default "thumbnail", set to 450 x 200
+// Custom image sizes — in addition to defaults: Thumbnail 450x200, Medium 1086x1086, Large 1520x1520
 add_image_size('lifeboat-banner', 1520, 650, true);
 add_image_size('lifeboat-index', 800, 500, true);
 

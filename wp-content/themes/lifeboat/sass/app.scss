@@ -180,12 +180,19 @@ mark {
     font-family: $headerFontFamily;
     @include font-size(27);
     letter-spacing: $letter-spacing-title;
-    padding: 8px 10px 9px !important;
+    padding: 8px 10px 9px;
     @include text-shadow(rgba($text-color-black, 0.2) 0 1px 0);
     @include box-shadow(rgba($black, .2) 0px 2px 8px);
     &:hover, &:focus {
      @include box-shadow(rgba(darken($color-lifeboat-orange, 10%), .8) 0px 2px 8px, rgba($color-lifeboat-yellow, .5) 0 0 15px inset);
      @include text-shadow(rgba($black, .2) 0px 2px 8px, rgba($white, .5) 0 0 15px);
+    }
+    &.with-icon {
+      padding-bottom: 7px;
+    }
+    .icon {
+      font-size: 75%;
+      padding-left: 5px;
     }
   }
   &.alert {
@@ -632,7 +639,7 @@ nav#secondary {
         padding: 10px 0 10px;
         margin-bottom: -1px;
       }
-      &.current_page_item a, a:hover {
+      &.current_page_item a, &.current_page_ancestor a, &.current_page_parent a, a:hover {
         color: $color-lifeboat-blue;
         border-bottom: 1px solid #{$color-lifeboat-blue};
       }
@@ -1740,6 +1747,29 @@ form {
 -----------------------------------------------------
 */
 
+// Listing and Ecard details page
+.ecard {
+  .ecard-card {
+    position: relative;
+    .ecard-image {
+      padding: 20px;
+      margin: 0;
+      @include background(image-url("paper-texture-brown.jpg"));
+      @include background-size(200px);
+      @include box-shadow(rgba($black, .15) 0px 0px 6px);
+      img {
+        @include box-shadow(rgba($black, .35) 0px 0px 4px);
+      }
+    }
+    .ecard-bottom {
+      height: 24px;
+      @include background(image-url("ecard-shadow@2x.png") no-repeat);
+      @include background-size(100%);
+    }
+  }
+}
+
+// Listing Page
 .friend-fact-ecards {
   .ecard {
     margin-top: 40px;
@@ -1753,11 +1783,7 @@ form {
       padding-bottom: 0;
     }
     .ecard-card {
-      position: relative;
       margin-right: 4px;
-      @include breakpoint(tablet-up) {
-        margin-right: 23px;
-      }
       .ecard-link {
         .ecard-corner-badge {
           display: block;
@@ -1773,20 +1799,9 @@ form {
         &:hover .ecard-corner-badge {
           background-position: 0 -130px;
         }
-        .ecard-image {
-          padding: 20px;
-          @include background(image-url("paper-texture-brown.jpg"));
-          @include background-size(200px);
-          @include box-shadow(rgba($black, .15) 0px 0px 6px);
-          img {
-            @include box-shadow(rgba($black, .35) 0px 0px 4px);
-          }
-        }
       }
-      .ecard-bottom {
-        height: 24px;
-        @include background(image-url("ecard-shadow@2x.png") no-repeat);
-        @include background-size(100%);
+      @include breakpoint(tablet-up) {
+        margin-right: 23px;
       }
     }
     .ecard-content {
@@ -1822,6 +1837,36 @@ form {
         border-top: 1px solid lighten($border-light-grey, 2%);
         margin: 0;
         padding: 12px 0 10px;
+      }
+    }
+  }
+}
+
+// Ecard details page
+.page .template-ecard .type-page.ecard {
+  .ecard-card {
+    margin-bottom: 25px;
+  }
+  .five.columns {
+    padding-left: 10px;
+    text-align: center;
+    .send-this-ecard {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid $border-light-grey;
+      .button.action {
+        display: block;
+      }
+    }
+    .view-more-ecards {
+      margin-bottom: 20px;
+    }
+    .share {
+      margin: 0;
+      padding: 4px 10px 4px 16px;
+      width: auto;
+      .icon-email {
+        display: none;
       }
     }
   }

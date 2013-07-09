@@ -25,12 +25,12 @@
     		  
           <?php //global $query_string;
             $args = array(
-              'post_type' => 'ecard',
+              'post_type' => 'page',
+            	'post_parent'=> get_the_ID(),
             	'orderby'    => 'menu_order',
             	'order'    => 'ASC'
             );
             $ecards_query = new WP_Query($args);
-            //query_posts($args);
             $c = 1;
             if ($ecards_query->have_posts()) : ?>
   				<section id="ecards">
@@ -39,7 +39,7 @@
     				  <div class="row">
       				  <div class="thirteen columns">
         				  <div class="ecard-card">
-        				    <a href="" class="ecard-link" title="Send this Ecard to a Friend">
+        				    <a href="mailto:?subject=Because we’re friends...&body=...I thought you’d like this friend fact ecard&mdash;enjoy!%0D%0A%0D%0A<?php the_title(); ?>%0D%0A<?php the_permalink(); ?>%0D%0A%0D%0AAnd let’s hangout soon!" class="ecard-link" title="Send this Ecard to a Friend">
             				  <div class="ecard-corner-badge"></div>
             				  <figure class="ecard-image">
               				  <?php if (has_post_thumbnail()): ?>
@@ -53,7 +53,7 @@
       				  <div class="ecard-content content five columns">
         				  <header>
           				  <h5 class="number-title">Friend Fact #<?php print $c; ?></h5>
-          				  <h2 class="ecard-title"><?php the_title(); ?></h2>
+          				  <h2 class="ecard-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
         				  </header>
         				  <section>
           				  <div class="ecard-excerpt">
