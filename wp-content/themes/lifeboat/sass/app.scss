@@ -1760,9 +1760,12 @@ form {
       img {
         @include box-shadow(rgba($black, .35) 0px 0px 4px);
       }
+      @include breakpoint(phone-sm) {
+        padding: 13px;
+      }
     }
     .ecard-bottom {
-      height: 24px;
+      height: 25px;
       @include background(image-url("ecard-shadow@2x.png") no-repeat);
       @include background-size(100%);
     }
@@ -1846,6 +1849,9 @@ form {
 .page .template-ecard .type-page.ecard {
   .ecard-card {
     margin-bottom: 25px;
+    @include breakpoint(phone) {
+      margin-bottom: 0;
+    }
   }
   .five.columns {
     padding-left: 10px;
@@ -1860,6 +1866,9 @@ form {
     }
     .view-more-ecards {
       margin-bottom: 20px;
+      .button.small {
+        display: inline-block;
+      }
     }
     .share {
       margin: 0;
@@ -2359,7 +2368,7 @@ form {
     p {
       margin: 85px 0 5px;
     }
-    @include breakpoint(between, $break-phone-sm, $break-tablet) {
+    @include breakpoint(between, $break-phone-sm, ($break-tablet - 1px)) {
       @include background-size(300px auto);
     }
   }
@@ -2383,7 +2392,7 @@ form {
     p {
       margin: 85px 0 5px;
     }
-    @include breakpoint(between, $break-phone-sm, $break-tablet) {
+    @include breakpoint(between, $break-phone-sm, ($break-tablet - 1px)) {
       @include background-size(300px auto);
     }
   }

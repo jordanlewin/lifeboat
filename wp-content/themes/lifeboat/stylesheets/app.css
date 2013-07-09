@@ -1735,7 +1735,8 @@ form .error input, form input.error, form .error textarea, form textarea.error {
 .ecard .ecard-card { position: relative; }
 .ecard .ecard-card .ecard-image { padding: 20px; margin: 0; background: url('../images/paper-texture-brown.jpg?1372785579'); -webkit-background-size: 200px; -moz-background-size: 200px; -o-background-size: 200px; background-size: 200px; -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px; -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px; box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px; }
 .ecard .ecard-card .ecard-image img { -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 4px; -moz-box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 4px; box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 4px; }
-.ecard .ecard-card .ecard-bottom { height: 24px; background: url('../images/ecard-shadow@2x.png?1372785047') no-repeat; -webkit-background-size: 100%; -moz-background-size: 100%; -o-background-size: 100%; background-size: 100%; }
+@media only screen and (max-width: 320px) { .ecard .ecard-card .ecard-image { padding: 13px; } }
+.ecard .ecard-card .ecard-bottom { height: 25px; background: url('../images/ecard-shadow@2x.png?1372785047') no-repeat; -webkit-background-size: 100%; -moz-background-size: 100%; -o-background-size: 100%; background-size: 100%; }
 
 .friend-fact-ecards .ecard { margin-top: 40px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0; }
 @media only screen and (max-width: 767px) { .friend-fact-ecards .ecard { border-bottom: 1px solid #b2b2b2; } }
@@ -1751,10 +1752,12 @@ form .error input, form input.error, form .error textarea, form textarea.error {
 .friend-fact-ecards .ecard .ecard-content .ecard-subtitle { font-family: "MuseoSlab", MuseoSlab, serif; color: #00aeef; font-weight: 100; font-style: italic; font-size: 17px; font-size: 1.7rem; line-height: 1.4em; border-top: 1px solid #e5e5e5; margin: 0; padding: 12px 0 10px; }
 
 .page .template-ecard .type-page.ecard .ecard-card { margin-bottom: 25px; }
+@media only screen and (max-width: 480px) { .page .template-ecard .type-page.ecard .ecard-card { margin-bottom: 0; } }
 .page .template-ecard .type-page.ecard .five.columns, .page .template-ecard .type-page.ecard .row .columns.five, .row .page .template-ecard .type-page.ecard .columns.five { padding-left: 10px; text-align: center; }
 .page .template-ecard .type-page.ecard .five.columns .send-this-ecard, .page .template-ecard .type-page.ecard .row .columns.five .send-this-ecard, .row .page .template-ecard .type-page.ecard .columns.five .send-this-ecard { padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid #e0e0e0; }
 .page .template-ecard .type-page.ecard .five.columns .send-this-ecard .button.action, .page .template-ecard .type-page.ecard .row .columns.five .send-this-ecard .button.action, .row .page .template-ecard .type-page.ecard .columns.five .send-this-ecard .button.action { display: block; }
 .page .template-ecard .type-page.ecard .five.columns .view-more-ecards, .page .template-ecard .type-page.ecard .row .columns.five .view-more-ecards, .row .page .template-ecard .type-page.ecard .columns.five .view-more-ecards { margin-bottom: 20px; }
+.page .template-ecard .type-page.ecard .five.columns .view-more-ecards .button.small, .page .template-ecard .type-page.ecard .row .columns.five .view-more-ecards .button.small, .row .page .template-ecard .type-page.ecard .columns.five .view-more-ecards .button.small { display: inline-block; }
 .page .template-ecard .type-page.ecard .five.columns .share, .page .template-ecard .type-page.ecard .row .columns.five .share, .row .page .template-ecard .type-page.ecard .columns.five .share { margin: 0; padding: 4px 10px 4px 16px; width: auto; }
 .page .template-ecard .type-page.ecard .five.columns .share .icon-email, .page .template-ecard .type-page.ecard .row .columns.five .share .icon-email, .row .page .template-ecard .type-page.ecard .columns.five .share .icon-email { display: none; }
 
@@ -1875,12 +1878,12 @@ form .error input, form input.error, form .error textarea, form textarea.error {
 @media only screen and (max-width: 320px) { #sidebar #widget-text-2 { background-position: 30% 100%; } }
 #sidebar #widget-text-3 { background-color: #3c92b3; background-image: url('../images/sidebar-manifesto.jpg?1372786013'); -webkit-background-size: 120%; -moz-background-size: 120%; -o-background-size: 120%; background-size: 120%; }
 #sidebar #widget-text-3 p { margin: 85px 0 5px; }
-@media only screen and (min-width: 320px) and (max-width: 768px) { #sidebar #widget-text-3 { -webkit-background-size: 300px auto; -moz-background-size: 300px auto; -o-background-size: 300px auto; background-size: 300px auto; } }
+@media only screen and (min-width: 320px) and (max-width: 767px) { #sidebar #widget-text-3 { -webkit-background-size: 300px auto; -moz-background-size: 300px auto; -o-background-size: 300px auto; background-size: 300px auto; } }
 #sidebar #widget-text-4 { background-image: url('../images/sidebar-whats-lifeboat-vid@2x.jpg?1372717193'); background-position: 50% 50%; -webkit-background-size: 150%; -moz-background-size: 150%; -o-background-size: 150%; background-size: 150%; }
 #sidebar #widget-text-4 p { font-weight: 500; font-size: 17px; font-size: 1.7rem; margin: 85px 0 5px; }
 #sidebar #widget-text-5 { background-image: url('../images/sidebar-friendship-report.png?1372785935'); -webkit-background-size: 100%; -moz-background-size: 100%; -o-background-size: 100%; background-size: 100%; }
 #sidebar #widget-text-5 p { margin: 85px 0 5px; }
-@media only screen and (min-width: 320px) and (max-width: 768px) { #sidebar #widget-text-5 { -webkit-background-size: 300px auto; -moz-background-size: 300px auto; -o-background-size: 300px auto; background-size: 300px auto; } }
+@media only screen and (min-width: 320px) and (max-width: 767px) { #sidebar #widget-text-5 { -webkit-background-size: 300px auto; -moz-background-size: 300px auto; -o-background-size: 300px auto; background-size: 300px auto; } }
 
 @media only screen and (max-width: 767px) { .home #sidebar { margin-top: 50px; } }
 
