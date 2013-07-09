@@ -33,7 +33,7 @@ Template Name: Ecard
               <?php if (!get_field("bottom_tabs")) { get_template_part('references'); } ?>
             </div><!-- twelve columns -->
             <div class="five columns">
-              <div class="send-this-ecard"><a href="mailto:?subject=Because we’re friends...&body=...I thought you’d like this friend fact ecard&mdash;enjoy!%0D%0A%0D%0A<?php the_title(); ?>%0D%0A<?php the_permalink(); ?>%0D%0A%0D%0AAnd let’s hangout soon!" class="button action with-icon">Send This Ecard <span class="icon" aria-hidden="true" data-icon="&#xe002;"></span></a></div>
+              <div class="send-this-ecard"><a href="mailto:?subject=Because we’re friends...&body=...I thought you’d like this friend fact ecard&mdash;enjoy!%0D%0A%0D%0A<?php the_title(); ?>%0D%0A<?php the_permalink(); ?>%0D%0A%0D%0AAnd let’s hangout soon!" class="button action with-icon content-share">Send This Ecard <span class="icon" aria-hidden="true" data-icon="&#xe002;"></span></a></div>
               <div class="view-more-ecards"><a href="/goodies/friend-fact-ecards" class="button small highlight">View More Ecards</a></div>
               <?php get_template_part('share', 'icons'); ?>
             </div><!-- five columns -->

@@ -39,7 +39,7 @@
     				  <div class="row">
       				  <div class="thirteen columns">
         				  <div class="ecard-card">
-        				    <a href="mailto:?subject=Because we’re friends...&body=...I thought you’d like this friend fact ecard&mdash;enjoy!%0D%0A%0D%0A<?php the_title(); ?>%0D%0A<?php the_permalink(); ?>%0D%0A%0D%0AAnd let’s hangout soon!" class="ecard-link" title="Send this Ecard to a Friend">
+        				    <a href="mailto:?subject=Because we’re friends...&body=...I thought you’d like this friend fact ecard&mdash;enjoy!%0D%0A%0D%0A<?php the_title(); ?>%0D%0A<?php the_permalink(); ?>%0D%0A%0D%0AAnd let’s hangout soon!" class="ecard-link content-share" title="Send this Ecard to a Friend">
             				  <div class="ecard-corner-badge"></div>
             				  <figure class="ecard-image">
               				  <?php if (has_post_thumbnail()): ?>
