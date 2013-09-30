@@ -35,7 +35,7 @@
       </a><!-- slide-link -->
     </div><!-- slide -->
 
-    <?php /*<div class="slide" style="background-image: url(/wp-content/uploads/2013/09/home-feature-toast.jpg);">
+    <div class="slide" style="background-image: url(/wp-content/uploads/2013/09/home-feature-toast.jpg);">
       <a href="/goodies/toast/" class="slide-link">
         <div class="row">
           <div class="four columns"></div>
@@ -50,7 +50,7 @@
           </div><!-- thirteen columns -->
         </div><!-- row -->
       </a><!-- slide-link -->
-    </div><!-- slide --> */ ?>
+    </div><!-- slide -->
 
     <div class="slide" style="background-image: url(/wp-content/uploads/2013/05/home-feature-friendship-report.png);">
       <a href="/friend-blog/report13-findings/" class="slide-link">
