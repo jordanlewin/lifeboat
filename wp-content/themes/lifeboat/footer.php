@@ -8,9 +8,9 @@
           <span class="lifeboat-flag"><img src="<?php echo get_template_directory_uri(); ?>/images/tagline-flag.png" alt="Lifeboat // Friends At Their Best" width="308" /></span>
           <span class="copyright">&copy; <?php print date("Y"); ?></span>
           <span class="from">
-            <span class="hearts-minds">From the Minds and Hearts of:</span> 
+            <span class="hearts-minds">From the Minds and Hearts of:</span>
             <span class="name">
-              <span class="first-name">Alia</span> <span class="last-name">McKee</span> 
+              <span class="first-name">Alia</span> <span class="last-name">McKee</span>
             </span><!-- name -->
             <span class="plus">+</span> 
             <span class="name">

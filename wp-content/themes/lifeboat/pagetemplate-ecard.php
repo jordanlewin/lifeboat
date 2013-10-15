@@ -17,7 +17,7 @@ Template Name: Ecard
         
         <article id="page-<?php the_ID(); ?>" <?php post_class('ecard clearfix'); ?> role="article">
           <header>
-            <h1 class="page-title"><?php the_title(); ?></h1>
+            <?php if (get_the_title()) : ?><h1 class="page-title"><?php the_title(); ?></h1><?php endif; ?>
   				  <?php if (has_post_thumbnail()): ?>
   				  <div class="ecard-card">
     				  <figure class="ecard-image">

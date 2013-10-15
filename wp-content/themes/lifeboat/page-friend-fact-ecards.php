@@ -53,7 +53,7 @@
       				  <div class="ecard-content content five columns">
         				  <header>
           				  <h5 class="number-title">Friend Fact #<?php print $c; ?></h5>
-          				  <h2 class="ecard-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+          				  <?php if (get_the_title()) : ?><h2 class="ecard-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2><?php endif; ?>
         				  </header>
         				  <section>
           				  <div class="ecard-excerpt">

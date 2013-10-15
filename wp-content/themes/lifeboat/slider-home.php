@@ -1,7 +1,7 @@
 <div id="home-slider" class="container">
   <div class="slider">
 
-    <div class="slide" style="background-image: url(/wp-content/uploads/2013/09/home-feature-ecards.jpg);">
+    <?php /*<div class="slide" style="background-image: url(/wp-content/uploads/2013/09/home-feature-ecards.jpg);">
       <a href="/goodies/friend-fact-ecards/" class="slide-link">
         <div class="row">
           <div class="four columns"></div>
@@ -18,7 +18,7 @@
       </a><!-- slide-link -->
     </div><!-- slide -->
 
-    <?php /*<div class="slide" style="background-image: url(/wp-content/uploads/2013/09/home-feature-brooklyn-treats.jpg);">
+    <div class="slide" style="background-image: url(/wp-content/uploads/2013/09/home-feature-brooklyn-treats.jpg);">
       <a href="/goodies/story-contest/ " class="slide-link">
         <div class="row">
           <div class="four columns"></div>
