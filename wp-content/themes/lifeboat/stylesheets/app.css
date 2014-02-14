@@ -1680,6 +1680,9 @@ article header { position: relative; }
 form .errMsg { display: none; }
 form .error input, form input.error, form .error textarea, form textarea.error { background-color: rgba(255, 255, 255, 0.7); border-width: 2px; }
 
+/* Hidden text field to trip up spammers */
+form input.fightback { width: 1px; height: 1px; padding: 0; margin: 0; border: none; position: relative; left: -1000px; }
+
 /* Become an Insider */
 .page-id-166 #img-vid { margin-top: -26px; }
 .page-id-166 #content ul.intro { margin: 20px 0 35px; }
